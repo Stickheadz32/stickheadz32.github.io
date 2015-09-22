@@ -1,0 +1,203 @@
+<!doctype html>
+<html><head>
+<title>How To C++ HLSL</title>
+<style>
+body{background:url(swirl1.png);}
+p{color:#FFF;}
+</style>
+</head><body>
+<h1>How to C++ HLSL</h1>
+<p>Texture2D texChecker;<br>
+Texture2D texNoise;<br>
+Texture2D texTex1;<br>
+Texture2D texTex2;<br>
+Texture2D texTex3;<br>
+Texture2D texTex4;  <br>
+Texture1D texFFT; // towards 0.0 is bass / lower freq, towards 1.0 is higher / treble freq<br>
+Texture1D texFFTSmoothed; // this one has longer falloff and less harsh transients<br>
+SamplerState smp;<br>
+<br>
+cbuffer constants<br>
+{<br>
+  float fGlobalTime; // in seconds<br>
+  float2 v2Resolution; // viewport resolution (in pixels)<br>
+}<br>
+<br>
+//swirl method parameters<br>
+float rubban(float3 p){ return length(p.xy + float2(cos(p.z), sin(p.z))) - .1; }<br>
+float rubban1(float3 p){ return length(p.xy + float2(cos(p.z + 2), sin(p.z + 2))) - .1; }<br>
+float rubban2(float3 p){ return length(p.xy + float2(cos(p.z + 4), sin(p.z + 4))) - .1; }<br>
+<br>
+//map of pillars<br>
+float map(in float3 p){<br>
+	float d = p.y + 1;<br>
+	d = min(d, -p.y + 1);<br>
+  //pillars<br>
+	d = min(d, cos(p.x) + cos(p.y) + cos(p.z) + cos(p.y * 20) * 25 * texFFT.Sample(smp, .05).r);<br>
+	p.x += 3;<br>
+  //margin of repeating pillars<br>
+	p.x = (p.x%6) - 3;<br>
+	d = min(d, rubban(p));<br>
+	d = min(d, rubban1(p));<br>
+	d = min(d, rubban2(p));<br>
+	return d;<br>
+}<br>
+<br>
+//camera rotate method<br>
+float2 rotate(float2 v, float a){<br>
+	return float2(v.y*cos(a) - v.x*sin(a), v.x*cos(a) + v.y*sin(a));<br>
+}<br>
+<br>
+float4 main( float4 position : SV_POSITION, float2 TexCoord : TEXCOORD ) : SV_TARGET<br>
+{<br>
+  //center screen<br>
+  float2 uv = TexCoord;<br>
+  uv -= 0.5;<br>
+  uv /= float2(v2Resolution.y / v2Resolution.x, 1);<br>
+  <br>
+  //used for text<br>
+  float2 uv2 = uv;<br>
+  <br>
+<br>
+  uv.x += texFFT.Sample(smp, uv.y*.5 + .5).r;<br>
+  //color<br>
+  float3 col = float3(0,0,0);<br>
+  <br>
+  //camera shake<br>
+  float3 org = float3(cos(fGlobalTime * 10)*texFFT.Sample(smp, .1).r * 50, 0, fGlobalTime);<br>
+  float3 dir = normalize(float3(uv, 0.5));<br>
+<br>
+  //camera rotate<br>
+  dir.xy = rotate(dir.xy, fGlobalTime*.25);<br>
+  dir.xz = rotate(dir.xz, fGlobalTime*.2);<br>
+<br>
+  //repeating pillars<br>
+  float4 p = float4(org, 0);<br>
+  [unroll(128)] for (int i = 0; i<128; i++){<br>
+	  float d = map(p.xyz);<br>
+	  p += float4(dir*d, 1 / 128);<br>
+  //limit to last observable pillar, prevent infinite repeats<br>
+	  if (d<0.01)<br>
+		  break;<br>
+  }<br>
+  //camera position change<br>
+  p.x += 3;<br>
+<br>
+  //margin of repeating pillars<br>
+  p.x = (p.x%6) - 3;<br>
+<br>
+  //swirl bass (0-500 Hz)<br>
+  float coef = 0;<br>
+  for (int bass = 0; bass<500; bass += 50)<br>
+  {<br>
+	  coef += texFFT.Sample(smp, bass / 10000).r;<br>
+  }<br>
+  //bump light from swirl to surrounding surfaces<br>
+  col += float3(1, 0, 0) / (.2 + pow(rubban(p.xyz), 2))*coef;<br>
+<br>
+  //swirl mid (500-5000 Hz)<br>
+  coef = 0;<br>
+  for (int mid = 500; mid<5000; mid += 200)<br>
+  {<br>
+	  coef += texFFT.Sample(smp, i / 20000).r;<br>
+  }<br>
+  //bump light from swirl to surrounding surfaces<br>
+  col += float3(0, 1, 0) / (.2 + pow(rubban1(p.xyz), 2))*coef;<br>
+<br>
+  //swirl treble (5000-20000 Hz)<br>
+  coef = 0;<br>
+  for (float treble = 5000; treble<20000; treble += 1000)<br>
+  {<br>
+	  coef += texFFT.Sample(smp, treble / 20000).r;  <br>
+  }<br>
+  //bump light from swirl to surrounding surfaces<br>
+  col += float3(0, 0, 1) / (.2 + pow(rubban2(p.xyz), 2))*coef;<br>
+<br>
+  col = lerp(col.rgb, col.bgr, texFFT.Sample(smp, uv.y*.5 + .5).r * 10);<br>
+<br>
+  //fade swirl based on distance<br>
+  col *= exp(-length(p.xyz - org)*.25);<br>
+<br>
+  //reset to center screen<br>
+  uv = uv2;<br>
+  <br>
+  //color for text<br>
+  float3 te = float3(.15, .15, .15);<br>
+<br>
+  //position for 1st letter<br>
+  uv += float2(.42,-.12);<br>
+  //square<br>
+  if (uv.x < .12 && uv.x > -.12 && uv.y < .12 && uv.y > -.12<br>
+  //remove square<br>
+&&!(uv.x < .12 && uv.x > -.06 && uv.y < .06 && uv.y > -.12))<br>
+  //draw letter R<br>
+  col += te;<br>
+<br>
+  //position for 2nd letter<br>
+  uv -= float2(.28,0);<br>
+  //square<br>
+  if (uv.x < .12 && uv.x > -.12 && uv.y < .12 && uv.y > -.12<br>
+  //remove square<br>
+&&!(uv.x < .12 && uv.x > -.12 && uv.y < .06 && uv.y > .0275)<br>
+  //remove square<br>
+&&!(uv.x < .12 && uv.x > -.12 && uv.y < -.0275 && uv.y > -.06))<br>
+  //draw letter E<br>
+  col += te;<br>
+<br>
+  //position for 3rd letter<br>
+  uv -= float2(.28,0);<br>
+  //square<br>
+  if (uv.x < .12 && uv.x > -.12 && uv.y < .12 && uv.y > -.12<br>
+  //remove square<br>
+  &&!(uv.x < .06 && uv.x > -.12 && uv.y < .06 && uv.y > .0275)<br>
+  //remove square<br>
+&&!(uv.x < .06 && uv.x > -.06 && uv.y < -.0275 && uv.y > -.06))<br>
+  //draw letter A<br>
+  col += te;<br>
+<br>
+  //position for 4th letter<br>
+  uv -= float2(.28,0);<br>
+  //square<br>
+  if (uv.x < .12 && uv.x > -.12 && uv.y < .12 && uv.y > -.12<br>
+  //remove square<br>
+&&!(uv.x < .12 && uv.x > -.06 && uv.y < .12 && uv.y > -.06))<br>
+  //draw letter L<br>
+  col += te;<br>
+<br>
+  //position for 5th letter<br>
+  uv += float2(.56,.28);<br>
+  //square<br>
+  if (uv.x < .12 && uv.x > -.12 && uv.y < .12 && uv.y > -.12<br>
+  //remove square<br>
+&&!(uv.x < .12 && uv.x > -.06 && uv.y < .12 && uv.y > -.06))<br>
+  //draw letter L<br>
+  col += te;<br>
+<br>
+  //position for 6th letter<br>
+  uv -= float2(.28,0);<br>
+  //square<br>
+  if (uv.x < .12 && uv.x > -.12 && uv.y < .12 && uv.y > -.12<br>
+  //remove square<br>
+&&!(uv.x < .06 && uv.x > -.12 && uv.y < .06 && uv.y > .0275)<br>
+  //remove square<br>
+&&!(uv.x < .06 && uv.x > -.06 && uv.y < -.0275 && uv.y > -.06))<br>
+  //draw letter A<br>
+  col += te;<br>
+<br>
+  //position for 7th letter<br>
+  uv -= float2(.28,0);<br>
+  //square<br>
+  if (uv.x < .12 && uv.x > -.12 && uv.y < .12 && uv.y > -.12<br>
+  //remove square<br>
+&&!(uv.x < .06 && uv.x > -.06 && uv.y < .06 && uv.y > -.12))<br>
+  //draw letter N<br>
+  col += te;<br>
+<br>
+  //artifacts<br>
+  uv.y -= texFFT.Sample(smp, pow(uv.x, 200) * 5).r*(uv.x * 80 - pow(uv.x * 20, 4) + pow(uv.x * 40, 2));<br>
+<br>
+  //draw everything<br>
+  return float4(col,1);<br>
+}
+</p>
+</body></html>
