@@ -45,6 +45,6 @@ Texture1D texFFT;/* 0.0 = 0 Hz | 1.0 = 20 000 Hz */SamplerState smp;cbuffer cons
 	codeChanged = codeChanged.replace(/exp\(/g,'<div id="c_method">exp</div>(');
 	codeChanged = codeChanged.replace(/for\(/g,'<div id="c_statement">for ( ');
 code.innerHTML = codeChanged;
-document.getElementsByTagName('head').item(0).innerHTML+="<style>#c_comment{display:inline;color:rgba(0,255,0,0.75);}#c_datatype{display:inline;color:rgba(0,192,255,0.75);}#c_method{display:inline;color:rgba(0,255,192,0.75);}#c_statement{display:inline;color:rgba(255,192,64,0.75)}</style>";
+document.getElementsByTagName('head').item(0).innerHTML+="<style>#c_comment{display:inline;color:rgba(0,255,0,0.75);}#c_datatype{display:inline;color:rgba(0,192,255,0.75);}#c_method{display:inline;color:rgba(0,255,192,0.75);}#c_statement{display:inline;color:rgba(255,192,64,0.75)}.block{padding-left:25px;margin-left:5px;border-right:solid 1px rgba(255,255,255,0.5);}</style>";
 </script>
 </body></html>
