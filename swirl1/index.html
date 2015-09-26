@@ -8,8 +8,8 @@
 <div id="code">
 Texture1D texFFT;/* 0.0 = 0 Hz | 1.0 = 20 000 Hz */SamplerState smp;cbuffer constants{float fGlobalTime;/* in seconds */float2 v2Resolution;/* viewport resolution (in pixels) */}/*swirl method parameters*/float rubban(float3 p){return length(p.xy+float2(cos(p.z),sin(p.z)))-.1;}float rubban1(float3 p){return length(p.xy+float2(cos(p.z+2),sin(p.z+2)))-.1;}float rubban2(float3 p){return length(p.xy+float2(cos(p.z+4),sin(p.z+4)))-.1;}/*map of pillars*/float map(in float3 p){float d=p.y+1;d=min(d,-p.y+1);/*pillars*/d=min(d,cos(p.x)+cos(p.y)+cos(p.z)+cos(p.y*20)*25*texFFT.Sample(smp,.05).r);p.x+=3;/*margin of repeating pillars*/p.x=(p.x%6)-3;d=min(d,rubban(p));d=min(d,rubban1(p));d=min(d,rubban2(p));return d;}/*camera rotate method*/float2 rotate(float2 v,float a){return float2(v.y*cos(a)-v.x*sin(a),v.x*cos(a)+v.y*sin(a));}float4 main(float4 position:SV_POSITION,float2 TexCoord:TEXCOORD):SV_TARGET{/*center screen*/float2 uv=TexCoord;uv-=0.5;uv/=float2(v2Resolution.y/v2Resolution.x,1);/*used for text*/float2 uv2=uv;uv.x+=texFFT.Sample(smp,uv.y*.5+.5).r;/*color*/float3 col=float3(0,0,0);/*camera shake*/float3 org=float3(cos(fGlobalTime*10)*texFFT.Sample(smp,.1).r*50,0,fGlobalTime);float3 dir=normalize(float3(uv,0.5));/*camera rotate*/dir.xy=rotate(dir.xy,fGlobalTime*.25);dir.xz=rotate(dir.xz,fGlobalTime*.2);/*repeating pillars*/float4 p=float4(org,0);[unroll(128)]for(int i=0;i&lt;128;i++){float d = map(p.xyz);p+=float4(dir*d,1/128);/*limit to last observable pillar, prevent infinite repeats*/if (d&lt;0.01)break;}/*camera position change*/p.x+=3;/*margin of repeating pillars*/p.x=(p.x%6)-3;/*swirl bass (0-500 Hz)*/float coef=0;for(int bass=0;bass&lt;10;bass++){coef+=texFFT.Sample(smp,bass/200).r;}/*bump light from swirl to surrounding surfaces*/col+=float3(1,0,0)/(.2+pow(rubban(p.xyz),2))*coef;/*swirl mid (500-5000 Hz)*/coef=0;for(int mid=5;mid&lt;50;mid+=2){coef+=texFFT.Sample(smp,i/200).r;}/*bump light from swirl to surrounding surfaces*/col+=float3(0,1,0)/(.2+pow(rubban1(p.xyz),2))*coef;/*swirl treble (5000-20000 Hz)*/coef=0;for(int treble=5;treble&lt;20;treble++){coef+=texFFT.Sample(smp,treble/20).r;}/*bump light from swirl to surrounding surfaces*/col+=float3(0,0,1)/(.2+pow(rubban2(p.xyz),2))*coef;col=lerp(col.rgb,col.bgr,texFFT.Sample(smp,uv.y*.5+.5).r*10);/*fade swirl based on distance*/col*=exp(-length(p.xyz-org)*.25);/*reset to center screen*/uv=uv2;/*color for text*/float3 te=float3(.15,.15,.15);/*position for 1st letter*/uv+=float2(.42,-.12);/*square*/if(uv.x&lt;.12&amp;&amp;uv.x&gt;-.12&amp;&amp;uv.y&lt;.12&amp;&amp;uv.y&gt;-.12/*remove square*/&amp;&amp;!(uv.x&lt;.12&amp;&amp;uv.x&gt;-.06&amp;&amp;uv.y&lt;.06&amp;&amp;uv.y&gt;-.12))/*draw letter R*/col+=te;/*position for 2nd letter*/uv-=float2(.28,0);/*square*/if(uv.x&lt;.12&amp;&amp;uv.x&gt;-.12&amp;&amp;uv.y&lt;.12&amp;&amp;uv.y&gt;-.12/*remove square*/&amp;&amp;!(uv.x&lt;.12&amp;&amp;uv.x&gt;-.12&amp;&amp; uv.y&lt;.06&amp;&amp;uv.y&gt;.0275)/*remove square*/&amp;&amp;!(uv.x&lt;.12&amp;&amp;uv.x&gt;-.12&amp;&amp;uv.y&lt;-.0275&amp;&amp;uv.y&gt;-.06))/*draw letter E*/col+=te;/*position for 3rd letter*/uv-=float2(.28,0);/*square*/if(uv.x&lt;.12&amp;&amp;uv.x&gt;-.12&amp;&amp;uv.y&lt;.12&amp;&amp;uv.y&gt;-.12/*remove square*/&amp;&amp;!(uv.x&lt;.0&amp;&amp;uv.x&gt;-.12&amp;&amp;uv.y&lt;.06&amp;&amp;uv.y&gt;.0275)/*remove square*/&amp;&amp;!(uv.x&lt;.06&amp;&amp;uv.x&gt;-.06&amp;&amp;uv.y&lt;-.0275&amp;&amp;uv.y&gt;-.06))/*draw letter A*/col+=te;/*position for 4th letter*/uv-=float2(.28,0);/*square*/if(uv.x&lt;.12&amp;&amp;uv.x&gt;-.12&amp;&amp;uv.y&lt;.12&amp;&amp;uv.y&gt;-.12/*remove square*/&amp;&amp;!(uv.x&lt;.12&amp;&amp;uv.x&gt;-.06&amp;&amp;uv.y&lt;.12&amp;&amp;uv.y&gt;-.06))/*draw letter L*/col+=te;/*position for 5th letter*/uv+=float2(.56,.28);/*square*/if(uv.x&lt;.12&amp;&amp;uv.x&gt;-.12&amp;&amp;uv.y&lt;.12&amp;&amp;uv.y&gt;-.12/*remove square*/&amp;&amp;!(uv.x&lt;.12&amp;&amp;uv.x&gt;-.06&amp;&amp;uv.y&lt;.12&amp;&amp;uv.y&gt;-.06))/*draw letter L*/col+=te;/*position for 6th letter*/uv-=float2(.28,0);/*square*/if(uv.x&lt;.12&amp;&amp;uv.x&gt;-.12&amp;&amp;uv.y&lt;.12&amp;&amp;uv.y&gt;-.12/*remove square*/&amp;&amp;!(uv.x&lt;.06&amp;&amp;uv.x&gt;-.12&amp;&amp;uv.y&lt;.06&amp;&amp;uv.y&gt;.0275)/*remove square*/&amp;&amp;!(uv.x&lt;.06&amp;&amp;uv.x&gt;-.06&amp;&amp;uv.y&lt;-.0275&amp;&amp;uv.y&gt;-.06))/*draw letter A*/col+=te;/*position for 7th letter*/uv-=float2(.28,0);/*square*/if(uv.x&lt;.12&amp;&amp;uv.x&gt;-.12&amp;&amp;uv.y&lt;.12&amp;&amp;uv.y&gt;-.12/*remove square*/&amp;&amp;!(uv.x&lt;.06&amp;&amp;uv.x&gt;-.06&amp;&amp;uv.y&lt;.06&amp;&amp;uv.y&gt;-.12))/*draw letter N*/col+=te;/*artifacts*/uv.y-=texFFT.Sample(smp,pow(uv.x,200)*5).r*(uv.x*80-pow(uv.x*20,4)+pow(uv.x*40,2));/*draw everything*/return float4(col,1);}</div>
 <script type="text/javascript">
-    var code = document.getElementById("code"),
-    codeChanged = code.innerHTML.replace(/;/g, ';<br>');
+    var code = document.getElementById("code"),codeChanged=code.innerHTML;
+    codeChanged = codeChanged.replace(/;/g, '; ');
     codeChanged = codeChanged.replace(/&gt;<br>/g, ' &gt; ');
 	codeChanged = codeChanged.replace(/&lt;<br>/g, ' &lt; ');
 	codeChanged = codeChanged.replace(/&amp;<br>&amp;<br>/g, ' && ');
@@ -20,14 +20,16 @@ Texture1D texFFT;/* 0.0 = 0 Hz | 1.0 = 20 000 Hz */SamplerState smp;cbuffer cons
     codeChanged = codeChanged.replace(/=/g, ' = ');
     codeChanged = codeChanged.replace(/\+/g, ' + ');
 	codeChanged = codeChanged.replace(/%/g, ' % ');
-	
+	codeChanged = codeChanged.replace(/,/g,', ');
     codeChanged = codeChanged.replace(/\*/g, ' * ');
     codeChanged = codeChanged.replace(/\//g, ' / ');
     codeChanged = codeChanged.replace(/< \/ /g, '</');
     codeChanged = codeChanged.replace(/ \/  \* /g, '<div id="c_comment">/*');
 	codeChanged = codeChanged.replace(/ \*  \/ /g, '*/</div>');
 	codeChanged = codeChanged.replace(/\+  =/g, '\+=');
-	codeChanged = codeChanged.replace(/ \+  \+ /g,'++ <\/div>');
+	codeChanged = codeChanged.replace(/ \+  \+ /g,'++ ');
+	codeChanged = codeChanged.replace(/\*  =/g,'*=');
+	codeChanged = codeChanged.replace(/\/  =/g,'/=');
 	codeChanged = codeChanged.replace(/float/g,'<div id="c_datatype">float</div>');
 	codeChanged = codeChanged.replace(/float<\/div>2/g,'float2</div>');
 	codeChanged = codeChanged.replace(/float<\/div>3/g,'float3</div>');
@@ -43,8 +45,12 @@ Texture1D texFFT;/* 0.0 = 0 Hz | 1.0 = 20 000 Hz */SamplerState smp;cbuffer cons
 	codeChanged = codeChanged.replace(/cos\(/g,'<div id="c_method">cos</div>(');
 	codeChanged = codeChanged.replace(/normalize\(/g,'<div id="c_method">normalize</div>(');
 	codeChanged = codeChanged.replace(/exp\(/g,'<div id="c_method">exp</div>(');
-	codeChanged = codeChanged.replace(/for\(/g,'<div id="c_statement">for ( ');
+	codeChanged = codeChanged.replace(/for\(/g,'<div id="c_statement">for</div> ( ');
+	codeChanged = codeChanged.replace(/if\(/g,'<div id="c_statement">if</div> ( ');
+	codeChanged = codeChanged.replace(/return /g,'<div id="c_statement">return</div> ');
+	codeChanged = codeChanged.replace(/{/g,'<div id="c_operator">{</div>');
+	
 code.innerHTML = codeChanged;
-document.getElementsByTagName('head').item(0).innerHTML+="<style>#c_comment{display:inline;color:rgba(0,255,0,0.75);}#c_datatype{display:inline;color:rgba(0,192,255,0.75);}#c_method{display:inline;color:rgba(0,255,192,0.75);}#c_statement{display:inline;color:rgba(255,192,64,0.75)}.block{padding-left:25px;margin-left:5px;border-right:solid 1px rgba(255,255,255,0.5);}</style>";
+document.getElementsByTagName('head').item(0).innerHTML+="<style>#c_comment{display:inline;color:rgba(0,255,0,0.75);}#c_datatype{display:inline;color:rgba(0,192,255,0.75);}#c_method{display:inline;color:rgba(0,255,192,0.75);}#c_statement{display:inline;color:rgba(255,100,32,0.75)}.block{padding-left:25px;margin-left:5px;border-left:solid 1px rgba(255,255,255,0.5);}#c_operator{display:inline;color:rgba(255,255,0.75);}</style>";
 </script>
 </body></html>
