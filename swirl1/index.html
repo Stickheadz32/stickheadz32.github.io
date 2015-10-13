@@ -18,7 +18,7 @@ Texture1D texFFT;/* 0.0 = 0 Hz | 1.0 = 20 000 Hz */SamplerState smp;cbuffer cons
     codeChanged = codeChanged.replace(/{/g, '<br>{<div class="block">');
     codeChanged = codeChanged.replace(/}/g, '</div>}<br>');
     codeChanged = codeChanged.replace(/\+/g, ' + ');
-	codeChanged = codeChanged.replace(/%/g, ' % ');
+	codeChanged = codeChanged.replace(/%/g, ' <div id="c_operator">%</div> ');
 	codeChanged = codeChanged.replace(/,/g,', ');
     codeChanged = codeChanged.replace(/\*/g, ' * ');
     codeChanged = codeChanged.replace(/\//g, ' / ');
@@ -50,20 +50,27 @@ Texture1D texFFT;/* 0.0 = 0 Hz | 1.0 = 20 000 Hz */SamplerState smp;cbuffer cons
 	codeChanged = codeChanged.replace(/cos\(/g,'<div id="c_method">cos</div>(');
 	codeChanged = codeChanged.replace(/normalize\(/g,'<div id="c_method">normalize</div>(');
 	codeChanged = codeChanged.replace(/exp\(/g,'<div id="c_method">exp</div>(');
+	codeChanged = codeChanged.replace(/pow\(/g,'<div id="c_method">pow</div>(');
+	codeChanged = codeChanged.replace(/Sample\(/g,'<div id="c_method">Sample</div>(');
 	codeChanged = codeChanged.replace(/for\(/g,'<div id="c_statement">for</div> ( ');
 	codeChanged = codeChanged.replace(/if\(/g,'<div id="c_statement">if</div> ( ');
 	codeChanged = codeChanged.replace(/return /g,'<div id="c_statement">return</div> ');
 	codeChanged = codeChanged.replace(/{/g,'<div id="c_operator">{</div>');
 	codeChanged = codeChanged.replace(/}/g,'<div id="c_operator">}</div>');
-	codeChanged = codeChanged.replace(/&amp; &amp; /g, ' <div id="c_operator">&amp;&amp;</div> ');
 	codeChanged = codeChanged.replace(/;/g,'<div id="c_operator">;</div>');
+	codeChanged = codeChanged.replace(/&amp<div id="c_operator">;<\/div>/g,'&amp;');
+	codeChanged = codeChanged.replace(/&lt<div id="c_operator">;<\/div>/g,' <div id="c_operator">&lt;</div> ');
+	codeChanged = codeChanged.replace(/&gt<div id="c_operator">;<\/div>/g,' <div id="c_operator">&gt;</div> ');
+	codeChanged = codeChanged.replace(/&amp; &amp; /g, ' <div id="c_operator">&amp;&amp;</div> ');
 	codeChanged = codeChanged.replace(/\+  <div id="c_operator">=<\/div>/g,'<div id="c_operator">+=</div>');
-	codeChanged = codeChanged.replace(/-  =/g,'<div id="c_operator">-=</div>');
+	codeChanged = codeChanged.replace(/-  <div id="c_operator">=<\/div>/g,'<div id="c_operator">-=</div>');
+	codeChanged = codeChanged.replace(/\*<\/div><div id="c_operator">=/g,'*=');
 	codeChanged = codeChanged.replace(/ \* /g,' <div id="c_operator">*</div> ');
 	codeChanged = codeChanged.replace(/ \+ /g,' <div id="c_operator">+</div> ');
-	codeChanged = codeChanged.replace(/&lt;<div id="c_operator">;/g,' <div id="c_operator">&lt; ');
+	codeChanged = codeChanged.replace(/ \/ /g,' <div id="c_operator">/</div> ');
+	codeChanged = codeChanged.replace(/,/g,'<div id="c_operator">,</div>');
 	
 code.innerHTML = codeChanged;
-document.getElementsByTagName('head').item(0).innerHTML+="<style>#c_comment{display:inline;color:rgba(0,255,0,0.75);}#c_datatype{display:inline;color:rgba(0,192,255,0.75);}#c_method{display:inline;color:rgba(0,255,192,0.75);}#c_statement{display:inline;color:rgba(255,100,32,0.75)}.block{padding-left:25px;margin-left:5px;border-left:solid 1px rgba(255,255,255,0.5);}#c_operator{display:inline;color:rgba(255,192,0,0.75);}</style>";
+document.getElementsByTagName('head').item(0).innerHTML+="<style>#c_comment{display:inline;color:rgba(0,255,0,0.75);}#c_datatype{display:inline;color:rgba(0,192,255,0.75);}#c_method{display:inline;color:rgba(0,255,192,0.75);}#c_statement{display:inline;color:rgba(255,100,32,0.75)}.block{padding-left:25px;margin-left:5px;border-left:solid 1px rgba(255,255,255,0.25);}#c_operator{display:inline;color:rgba(255,192,0,0.75);}</style>";
 </script>
 </body></html>
