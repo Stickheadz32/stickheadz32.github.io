@@ -1,0 +1,107 @@
+/*Designed by Stickheadz32*/
+
+/*Font by Vissol Ltd. Free for commercial use.*/
+@import url("fonts/mavenpro_regular.css");
+
+html{
+	display:block;
+	/*Deep blue theme*/
+	background:#013;
+	-webkit-box-shadow:inset 0 0 400px #000;
+	-moz-box-shadow:inset 0 0 400px #000;
+	box-shadow:inset 0 0 400px #000;
+	width:100%;
+	height:100%;
+	/*100% for html to cover the entire page for box-shadow*/
+	padding:20px;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+}
+
+body{
+	margin: auto;
+	max-width: 1100px;
+	display: block;
+	font-family: "MavenPro Regular";
+	/*IE 9 or higher*/
+}
+header{
+	display:block;
+	background: #BCF;
+	-webkit-box-shadow: 0 0 120px #08F;
+	-moz-box-shadow: 0 0 120px #08F;
+	box-shadow: 0 0 120px #08F;
+	margin:0 0 10px 0;
+	padding:10px;
+}
+header .leftTab{
+display:inline-block;
+min-width:50%;
+}
+header .rightTab{
+display:inline-block;
+min-width:30%;
+}
+header .rightTab .searchTab{
+margin:0;
+display:inline-block;
+min-width:50px;
+}
+header .rightTab .searchTab input{
+font-family:"MavenPro Regular";
+font-size:15px;
+width:100%;
+padding:5px;
+}
+/*Start menu*/
+ul.startMenu{
+	display:block;
+	padding:0;
+	margin:10px 10px 0 10px;
+	font-size:19px;
+}
+ul.startMenu li.sM_Link{
+	display:inline-block;
+	background:#69F;
+	z-index:2;
+	padding:10px;
+	margin:0 2px 0 2px;
+	text-decoration:none;
+}
+li.sM_Link a{
+	color:#000;
+	text-decoration:none;
+}
+ul.startMenu li.sM_selectedLink{
+	display: inline-block;
+	background: #FFF;
+	z-index: 3;
+	padding: 10px;
+	margin: 0 2px 0 2px;
+}
+ul.startMenu li.sM_selectedLink a{
+	text-decoration:none;
+}
+.pageContent{
+	display:block;
+	background:#FFF;
+	margin:0 0 20px 0;
+	padding:10px;
+	z-index:4;
+}
+h2{margin:5px;padding:10px;font-size:30px;border-bottom:solid 1px rgba(0,0,0,0.3);}
+p{}
+abbr{
+	border:solid 1px rgba(0,0,0,0.1);
+	}
+abbr:hover{
+text-shadow:0 0 20px rgba(0,128,255,0.6);
+}
+footer{
+	margin:30px;
+	padding:20px;
+	display:block;
+	background: #8CF;
+	-webkit-box-shadow: 0 0 60px #08F;
+	-moz-box-shadow: 0 0 60px #08F;
+	box-shadow: 0 0 60px #08F;
+}
