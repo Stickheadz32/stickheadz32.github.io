@@ -18,39 +18,54 @@ html{
 }
 
 body{
-	margin: auto;
+	margin: 0 auto;
+	padding:3px;
 	max-width: 1100px;
 	display: block;
 	font-family: "MavenPro Regular";
 	/*IE 9 or higher*/
 }
 header{
-	display:block;
+	display: block;
 	background: #BCF;
 	-webkit-box-shadow: 0 0 120px #08F;
 	-moz-box-shadow: 0 0 120px #08F;
 	box-shadow: 0 0 120px #08F;
-	margin:0 0 10px 0;
-	padding:10px;
+	margin: 0 0 10px 0;
+	padding: 10px;
 }
 header .leftTab{
 display:inline-block;
-min-width:50%;
+max-width:70%;
+margin:0;padding:5px;
 }
 header .rightTab{
-display:inline-block;
-min-width:30%;
+	display: inline-block;
+	position:relative;
+	max-width:30%;
+	margin:0px;padding:5px;
 }
 header .rightTab .searchTab{
-margin:0;
-display:inline-block;
-min-width:50px;
+	margin: 0px;
+	padding: 5px;
+	display: inline-block;
 }
 header .rightTab .searchTab input{
+	display:inline-block;
+	font-family: "MavenPro Regular";
+	font-size: 15px;
+	margin:1px;
+	padding: 5px;
+	border:solid 1px rgba(0,0,0,0.3);
+}
+header .rightTab .searchTab button{
+display:inline-block;
+position:absolute;
+background:#FFF;
+border:solid 1px rgba(0,0,0,0.4);
 font-family:"MavenPro Regular";
 font-size:15px;
-width:100%;
-padding:5px;
+margin:1px;padding:5px;
 }
 /*Start menu*/
 ul.startMenu{
@@ -58,17 +73,17 @@ ul.startMenu{
 	padding:0;
 	margin:10px 10px 0 10px;
 	font-size:19px;
+	list-style:none;
 }
 ul.startMenu li.sM_Link{
 	display:inline-block;
-	background:#69F;
+	background:#8BF;
 	z-index:2;
 	padding:10px;
 	margin:0 2px 0 2px;
-	text-decoration:none;
 }
-li.sM_Link a{
-	color:#000;
+ul.startMenu a{
+	color:#004;
 	text-decoration:none;
 }
 ul.startMenu li.sM_selectedLink{
@@ -77,6 +92,12 @@ ul.startMenu li.sM_selectedLink{
 	z-index: 3;
 	padding: 10px;
 	margin: 0 2px 0 2px;
+}
+ul.startMenu li.sM_Link:hover{
+background:#CDF;
+}
+ul.startMenu li.sM_Link:active{
+	background:#69F;
 }
 ul.startMenu li.sM_selectedLink a{
 	text-decoration:none;
@@ -87,9 +108,14 @@ ul.startMenu li.sM_selectedLink a{
 	margin:0 0 20px 0;
 	padding:10px;
 	z-index:4;
+	-webkit-box-shadow:0 0 80px #04F;
+	-moz-box-shadow:0 0 80px #04F;
+	box-shadow:0 0 80px #04F;
 }
 h2{margin:5px;padding:10px;font-size:30px;border-bottom:solid 1px rgba(0,0,0,0.3);}
-p{}
+.pageContent p{
+	margin:10px;
+}
 abbr{
 	border:solid 1px rgba(0,0,0,0.1);
 	}
