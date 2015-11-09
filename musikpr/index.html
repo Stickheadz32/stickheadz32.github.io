@@ -1,11 +1,54 @@
 <!--Structured by Stickheadz32 (c) 2015-->
 
 <!doctype html>
-<html lang="en"><head>
-<title>The Works of Stickheadz32</title>
+<html lang="en">
+
+<head><title>The Works of Stickheadz32</title>
+
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <link href="musikpr.css" rel="stylesheet" type="text/css"/>
-</head><body>
+<!-- jQuery v1.11.3 - (c) 2005, 2015 jQuery Foundation, Inc. - jquery.org/license -->
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="jQ-jPlayer.js"></script>
+<script type="text/javascript" src="jPlayer.js"></script>
+<style>
+<!--
+
+.demo-container {
+	border: 1px solid #009BE3;
+	padding:0 20px;
+	font-family: "Myriad Pro Regular","Trebuchet MS";
+}
+
+.demo-container a, .demo-container a:link, .demo-container a:visited, .demo-container a:hover, .demo-container a:focus, .demo-container a:active {
+	color: #009BE3;
+}
+
+.demo-container ul {
+	list-style-type:none;
+	padding:0;
+	margin:1em 0;
+	width:100%;
+	overflow:hidden;
+}
+
+.demo-container ul span {
+	color: #A0A600;
+}
+
+.demo-container li {
+	float:left;
+	margin-right:1em;
+}
+
+.demo-container p span.track-name {
+	color: #CC0090;
+}
+
+-->
+</style>
+</head>
+<body>
 
 <!--start header-->
 <header>
@@ -22,6 +65,22 @@ The Works of Stickheadz32
 <form class="searchTab" method="get" role="search">
 <input type="text" placeholder="Search in The Works of Stickheadz32..."><button>Search</button>
 </form>
+<div id="time_span"></div>
+<script>
+function updateTime(){
+    var currentTime = new Date()
+    var hours = currentTime.getHours()
+    var minutes = currentTime.getMinutes()
+    if (minutes < 10) minutes = "0" + minutes;
+	var secs = currentTime.getSeconds()
+    if (secs < 10) secs = "0" + secs;
+    var t_str = hours + ":" + minutes + ":" + secs;
+    document.getElementById('time_span').innerHTML = t_str;
+}
+updateTime();
+setInterval(updateTime, 1000);
+</script>
+
 </div>
 
 </header>
@@ -39,10 +98,39 @@ The Works of Stickheadz32
 <h2>Guestbook</h2>
 <p>test paragraph text two letters long lines big words broad letters short terms wide audiences big chunks of code</p>
 <p>test paragraph text two letters long lines big words broad letters short terms wide audiences big chunks of code</p>
+<div id="jquery_jplayer"></div>
 
+<!-- Using the cssSelectorAncestor option with the default cssSelector class names to enable control association of standard functions using built in features -->
+
+<div id="jp_container" class="demo-container">
+	<ul>
+		<li><span>Select a track : </span></li>
+		<li><a href="songs/ISVKRAN_mixdown.mp3" class="track track-default">Unreal #9 - Michiel Van der Bos</a></li>
+		<li><a href="songs/Go Down.mp3" class="track">Go Down - Alexander Brandon</a></li>
+	</ul>
+	<p>
+		<span class="play-state"></span>:
+		<span class="track-name">nothing</span>
+		at <span class="extra-play-info"></span>
+		of <span class="jp-duration"></span>, which is
+		<span class="jp-current-time"></span>
+	</p>
+	<ul>
+		<li><a class="jp-play" href="#">Play</a></li>
+		<li><a class="jp-pause" href="#">Pause</a></li>
+		<li><a class="jp-stop" href="#">Stop</a></li>
+	</ul>
+	<ul>
+		<li>volume :</li>
+		<li><a class="jp-mute" href="#">Mute</a></li>
+		<li><a class="jp-unmute" href="#">Unmute</a></li>
+		<li> <a class="jp-volume-bar" href="#">|&lt;----------&gt;|</a></li>
+		<li><a class="jp-volume-max" href="#">Max</a></li>
+	</ul>
+</div>
 </div>
 
 <footer>
-Website structured and designed by Stickheadz32
+Website structured and designed by Stickheadz32. 
 </footer>
 </body></html>
