@@ -8,9 +8,9 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <link href="musikpr.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery v1.11.3 - (c) 2005, 2015 jQuery Foundation, Inc. - jquery.org/license -->
-<script type="text/javascript" src="player-js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="player-js/mediaelement-player.min.js"></script>
-<link rel="stylesheet" type="text/css" href="player-css/styles.css"/>
+<script type="text/javascript" src="player/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="player/mediaelementplayer-min.js"></script>
+<link rel="stylesheet" type="text/css" href="player/mediaelementplayer.css"/>
 </head>
 <body>
 
@@ -85,23 +85,11 @@
 	<h2>Go Down - Alexander Brandon</h2>
 	<audio id="audio-player" src="songs/Go Down.mp3" type="audio/mp3" controls="controls"></audio>
 </div>
+<script>
+$('audio,video').mediaelementplayer();
+</script>
 
 </div>
-
-<script type="text/javascript">
-$(function(){
-  $('#audio-player').mediaelementplayer({
-    alwaysShowControls: true,
-    features: ['playpause','progress','volume','duration','seeking'],
-    audioVolume: 'horizontal',
-    audioWidth: 450,
-    audioHeight: 70,
-    iPadUseNativeControls: true,
-    iPhoneUseNativeControls: true,
-    AndroidUseNativeControls: true
-  });
-});
-</script>
 <footer>
 Website structured and designed by Stickheadz32. 
 </footer>
