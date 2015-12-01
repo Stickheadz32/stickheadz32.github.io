@@ -1,15 +1,1 @@
-var NS4=(document.layers),IE4=(document.all),win=window,n=0;
-function findInPage(str){
-	var txt,i,found;
-if(str=="")return false;
-if(NS4){
-	if(!win.find(str))while(win.find(str,false,true))n++;else n++;
-	if(n==0)alert("Not found.");}
-if(IE4){
-	txt=win.document.body.createTextRange();
-	for(i=0;i<=n&&(found=txt.findText(str))!=false;i++)
-	{txt.moveStart("character",1);txt.moveEnd("textedit");}
-	if(found){txt.moveStart("character",-1);txt.findText(str);txt.select();txt.scrollIntoView();n++;}
-	else{if(n>0){n=0;findInPage(str);}
-	else alert("Not found.");}
-}return false;}
+var a=(document.layers),b=(document.all),w=window,n=0,t,i,f;function findInPage(s){if(s=="")return false;if(a){if(!w.find(s))while(w.find(s,false,true))n++;else n++;if(n==0)alert("Not found.");}if(b){t=w.document.body.createTextRange();for(i=0;i<=n&&(f=t.findText(s))!=false;i++){t.moveStart("character",1);t.moveEnd("textedit");}if(f){t.moveStart("character",-1);t.findText(s);t.select();t.scrollIntoView();n++;}else{if(n>0){n=0;findInPage(s);}else alert("Not found.");}}return false;}
