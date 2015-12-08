@@ -17,6 +17,7 @@ html{
 
 body{margin:0 auto;padding:20px;max-width:1100px;display:block;font-family:"MavenPro Regular";/*IE 9 or higher*/}
 header{display:block;background:#BCF;-webkit-box-shadow:0 0 120px #08F;-moz-box-shadow:0 0 120px #08F;box-shadow:0 0 120px #08F;margin:0 0 10px 0;padding:10px;}
+header a{color:#015;text-decoration:none;}
 
 /*Left side of header*/
 header .leftTab{display:inline-block;max-width:40%;margin:0;padding:5px;}
@@ -43,17 +44,9 @@ ul.startMenu li.sM_Link a:active{background:#69F;}
 ul.startMenu li.sM_selectedLink{display: inline-block;background: #FFF;z-index: 3;padding: 10px;margin: 0 2px 0 2px;}
 
 /*Page content*/
-.pageContent{display:block;background:#FFF;margin:0 0 20px 0;padding:10px;z-index:4;
-	-webkit-box-shadow:0 0 80px #04F;
-	-moz-box-shadow:0 0 80px #04F;
-	box-shadow:0 0 80px #04F;
-}
+.pageContent{display:block;background:#FFF;margin:0 0 20px 0;padding:10px;z-index:4;-webkit-box-shadow:0 0 80px #04F;-moz-box-shadow:0 0 80px #04F;box-shadow:0 0 80px #04F;}
 h2{margin:5px;padding:10px;font-size:30px;border-bottom:solid 1px rgba(0,0,0,0.3);}
 .pageContent p{margin:15px 10px;}
 abbr{border:solid 1px rgba(0,0,0,0.1);}
 abbr:hover{text-shadow:0 0 20px rgba(0,128,255,0.6);}
-footer{margin:30px;padding:20px;display:block;background: #8CF;
-    -webkit-box-shadow: 0 0 60px #08F;
-    -moz-box-shadow: 0 0 60px #08F;
-    box-shadow: 0 0 60px #08F;
-}
+footer{margin:30px;padding:20px;display:block;background: #8CF;-webkit-box-shadow: 0 0 60px #08F;-moz-box-shadow: 0 0 60px #08F;box-shadow: 0 0 60px #08F;}
