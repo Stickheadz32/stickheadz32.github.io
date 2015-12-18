@@ -3,24 +3,19 @@
 /*Font by Vissol Ltd. Free for commercial use.*/
 @import url("fonts/mavenpro_regular.css");
 
-html{
-	display:block;
-	/*Deep blue theme*/
-	background:#013;
-	-webkit-box-shadow:inset 0 0 400px #000;
-	-moz-box-shadow:inset 0 0 400px #000;
-	box-shadow:inset 0 0 400px #000;
-	width:100%;/*100% for html to cover the entire page for box-shadow*/
-	height:100%;
-	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
-}
-
+html{display:block;background:#013;-webkit-box-shadow:inset 0 0 400px #000;-moz-box-shadow:inset 0 0 400px #000;box-shadow:inset 0 0 400px #000;width:100%;height:100%;font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans","DejaVu Sans",Verdana,sans-serif;}
 body{margin:0 auto;padding:20px;max-width:1100px;display:block;font-family:"MavenPro Regular";/*IE 9 or higher*/}
+html.lte8{display:block;background:#000;}
+.lte8 body{display:block;padding:20px;background:#013;}
+
 header{display:block;background:#BCF;-webkit-box-shadow:0 0 120px #08F;-moz-box-shadow:0 0 120px #08F;box-shadow:0 0 120px #08F;margin:0 0 10px 0;padding:10px;}
+.lte8 header{display:block;background:#BCF;padding:10px;margin:0;}
 header a{color:#015;text-decoration:none;}
+.lte8 header a:link,.lte8 header a:visited{background:#BCF;color:#015;text-decoration:none;}
 
 /*Left side of header*/
 header .leftTab{display:inline-block;max-width:40%;margin:0;padding:5px;}
+.lte8 header .leftTab{display:block;float:left;background:#BCF;max-width:40%;margin:0;padding:5px;}
 
 /*Right side of header*/
 header .rightTab{display:inline-block;margin:0px;padding:5px;}
@@ -29,24 +24,27 @@ header .rightTab .searchTab input{display:inline-block;font-family: "MavenPro Re
 header .rightTab .searchTab button{display:inline-block;position:relative;background:#FFF;border:solid 1px rgba(0,0,0,0.4);font-family:"MavenPro Regular";font-size:15px;margin:1px;padding:5px;}
 
 /*Current date and time*/
-header .dateNow{display:block;float:right;max-width:100px;}
+header .dateNow{display:block;float:right;min-width:100px;}
 header #dateNow_clock{display:block;text-align:right; font-size:16px;}
 header #dateNow_dayMonth{display:block;text-align:right;font-size:14px;}
 header #dateNow_year{display:block;text-align:right;font-size:20px;}
 
+header noscript{display:block;background:#8AF;color:#000;box-shadow:0 0 10px #015;-webkit-box-shadow:0 0 10px #015;-moz-box-shadow:0 0 10px #015;}
+.ite8 header noscript{display:block;background:#8AF;color:#000;}
+
 /*Start menu*/
 ul.startMenu{display:block;padding:0;margin:10px 10px 0 10px;font-size:19px;list-style:none;}
-ul.startMenu li.sM_Link{
-	display: inline-block;background: #8BF;transition: ease-in-out background 300ms;z-index:2;padding:0;margin:0 2px 0 2px;}
+ul.startMenu li.sM_Link{display: inline-block;background: #8BF;transition: ease-in-out background 300ms;padding:0;margin:0 2px 0 2px;}
 ul.startMenu li.sM_Link a{color:#004;background:#8BF;text-decoration:none;padding:10px;margin:0;}
 ul.startMenu li.sM_Link a:hover{transition:ease-out background 100ms;background:#CDF;}
 ul.startMenu li.sM_Link a:active{background:#69F;}
-ul.startMenu li.sM_selectedLink{display: inline-block;background: #FFF;z-index: 3;padding: 10px;margin: 0 2px 0 2px;}
+ul.startMenu li.sM_selectedLink{display: inline-block;background: #FFF;padding: 10px;margin: 0 2px 0 2px;}
+.lte8 ul.startMenu{display:block;float:left;}
 
 /*Page content*/
-.pageContent{display:block;background:#FFF;margin:0 0 20px 0;padding:10px;z-index:4;-webkit-box-shadow:0 0 80px #04F;-moz-box-shadow:0 0 80px #04F;box-shadow:0 0 80px #04F;}
-h2{margin:5px;padding:10px;font-size:30px;border-bottom:solid 1px rgba(0,0,0,0.3);}
-.pageContent p{margin:15px 10px;}
+.pageContent{display:block;background:#FFF;margin:0 0 20px 0;padding:10px;-webkit-box-shadow:0 0 80px #04F;-moz-box-shadow:0 0 80px #04F;box-shadow:0 0 80px #04F;}
+.pageContent h2{margin:5px;padding:10px;font-size:30px;border-bottom:solid 1px rgba(0,0,0,0.3);}
+.pageContent p{margin:20px 10px;font-size:18px;line-height:25px;color:#000;}
 abbr{border:solid 1px rgba(0,0,0,0.1);}
 abbr:hover{text-shadow:0 0 20px rgba(0,128,255,0.6);}
-footer{margin:30px;padding:20px;display:block;background: #8CF;-webkit-box-shadow: 0 0 60px #08F;-moz-box-shadow: 0 0 60px #08F;box-shadow: 0 0 60px #08F;}
+footer{margin:30px;padding:20px;display:block;background:#8CF;-webkit-box-shadow:0 0 60px #08F;-moz-box-shadow:0 0 60px #08F;box-shadow:0 0 60px #08F;}

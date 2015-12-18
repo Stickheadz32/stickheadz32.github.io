@@ -1,0 +1,13 @@
+html{font-family:Verdana;background:url("jpg/jultest1.jpg") no-repeat round fixed s;padding:20px;color:#FFF;}
+#wLog{font-size:32px;}
+body{display:block;background:rgba(192,20,20,.1);margin:30px;padding:10px;border:solid 7px #A00;border-radius:15px;box-shadow:0 0 20px 10px #200;}
+header{display:block;background:rgba(192,0,0,.6);margin:0;padding:20px;}
+.content{display:block;margin:20px 0 10px 0;padding:30px;background:rgba(0,0,0,.5);}
+header ul{display:block;list-style-type:none;padding:20px;background:#400;box-shadow:inset 0 0 30px #000;}
+header ul li{display:inline-block;font-size:20px;margin:5px;}
+header ul li a:link,header ul li a:visited{box-shadow:0 0 30px 8px #00F;color:#003;text-decoration:none;text-transform:uppercase;margin:4px;padding:10px;background:#CCF;}
+header ul ul{display:none;text-transform:none;}
+header ul li a:hover{text-shadow:0 0 80px 20px #000;}
+header ul li:hover ul{margin:0;padding:5px;position:absolute;text-transform:none;display:block;background:rgba(0,0,0,0.8);color:#FFF;}
+header ul li:hover ul li{font-size:17px;display:block;margin:0;padding:10px;text-shadow:0 0 10px #000;}
+header ul li:hover ul li:hover{background:#FFF;color:#000;box-shadow:0 0 30px 10px #088;text-shadow:0 0 0px#FFF;}
