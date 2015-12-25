@@ -45,6 +45,8 @@ ul.startMenu li.sM_selectedLink{display: inline-block;background: #FFF;padding: 
 .pageContent{display:block;background:#FFF;margin:0 0 20px 0;padding:10px;-webkit-box-shadow:0 0 80px #04F;-moz-box-shadow:0 0 80px #04F;box-shadow:0 0 80px #04F;}
 .pageContent h2{margin:5px;padding:10px;font-size:30px;border-bottom:solid 1px rgba(0,0,0,0.3);}
 .pageContent p{margin:20px 10px;font-size:18px;line-height:25px;color:#000;}
+.pageContent audio{margin:20px 10px;width:100%;}
+
 abbr{border:solid 1px rgba(0,0,0,0.1);}
 abbr:hover{text-shadow:0 0 20px rgba(0,128,255,0.6);}
 footer{margin:30px;padding:20px;display:block;background:#8CF;-webkit-box-shadow:0 0 60px #08F;-moz-box-shadow:0 0 60px #08F;box-shadow:0 0 60px #08F;}

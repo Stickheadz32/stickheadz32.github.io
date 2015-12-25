@@ -15,11 +15,7 @@
 	
     <script type="text/javascript" src="player/mediaelementplayer-min.js"></script>
     <link rel="stylesheet" type="text/css" href="player/mediaelementplayer.css"/>
-    <script>
-    $(document).ready(function(){
-	$('audio,video').mediaelementplayer();
-	});
-    </script>
+	<link rel="stylesheet" type="text/css" href="player/mejs-skins.css"/>
 </head>
 <body>
 <!--start header-->
@@ -64,9 +60,19 @@
     <h2>Guestbook</h2>
     <p>test paragraph text two letters long lines big words broad letters short terms wide audiences big chunks of code two letters long lines big words broad letters short terms wide audiences big chunks of code</p>
     <p>test paragraph text two letters long lines big words broad letters short terms wide audiences big chunks of code two letters long lines big words broad letters short terms wide audiences big chunks of code</p>
-	<p id="demo"></p>
     <h2>Go Down - Alexander Brandon</h2>
-	<audio id="player" src="songs/Go%20Down.mp3" type="audio/mp3" controls="controls"></audio>
+	<audio controls>
+		<source src="songs/Go%20Down.mp3" type="audio/mp3">
+	</audio>
+    <script>
+    $('audio,video').mediaelementplayer({
+		success: function(player,node){
+			$('#'+node.id+'-mode').html('mode: '+player.pluginType);
+		},
+		startLanguage: 'en',
+		translationSelector: true
+	});
+    </script>
 </div>
 
 <!--start footer-->
