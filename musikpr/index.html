@@ -12,8 +12,14 @@
 
     <!-- jQuery v1.11.3 - (c) 2005, 2015 jQuery Foundation, Inc. - jquery.org/license -->
     <script type="text/javascript" src="player/jquery-1.11.3.min.js"></script>
+	
     <script type="text/javascript" src="player/mediaelementplayer-min.js"></script>
     <link rel="stylesheet" type="text/css" href="player/mediaelementplayer.css"/>
+    <script>
+    $(document).ready(function(){
+	$('audio,video').mediaelementplayer();
+	});
+    </script>
 </head>
 <body>
 <!--start header-->
@@ -58,18 +64,9 @@
     <h2>Guestbook</h2>
     <p>test paragraph text two letters long lines big words broad letters short terms wide audiences big chunks of code two letters long lines big words broad letters short terms wide audiences big chunks of code</p>
     <p>test paragraph text two letters long lines big words broad letters short terms wide audiences big chunks of code two letters long lines big words broad letters short terms wide audiences big chunks of code</p>
-
-    <div class="audio-player">
-	    <h2>Go Down - Alexander Brandon</h2>
-	    <audio id="audio-player" src="songs/Go%20Down.mp3" type="audio/mp3" controls></audio>
-    </div>
-    <script>
-    $('audio,video').mediaelementplayer({
-	    startVolume:1.0,
-	    features:['playpause','progress','current','seeking','duration','volume'],
-	    alwaysShowControls:true
-    });
-    </script>
+	<p id="demo"></p>
+    <h2>Go Down - Alexander Brandon</h2>
+	<audio id="player" src="songs/Go%20Down.mp3" type="audio/mp3" controls="controls"></audio>
 </div>
 
 <!--start footer-->
