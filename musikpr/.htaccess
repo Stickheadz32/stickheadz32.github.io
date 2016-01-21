@@ -1,1 +1,2 @@
-ErrorDocument 404 404.html
+ErrorDocument 404 http://stickheadz32.github.io/musikpr/404.html
+ErrorDocument 403 http://stickheadz32.github.io/musikpr/404.html
