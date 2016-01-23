@@ -15,8 +15,8 @@ var _ = new Date(),
 	l = b%100;
 
 	/* 0:00:00 time format */
-	if (m < 10) m = "0"+m;
-	if (s < 10) s = "0"+s;
+	m = m < 10 ? "0"+m : m;
+	s = s < 10 ? "0"+s : s;
 
 	/* Later browsers subtract getYear by 1900. */
 	if (y < 1900) y += 1900;

@@ -9,23 +9,26 @@ html.lte8{display:block;background:#000;}
 .lte8 body{display:block;padding:20px;background:#013;}
 
 header{display:block;background:#BCF;-webkit-box-shadow:0 0 120px #08F;-moz-box-shadow:0 0 120px #08F;box-shadow:0 0 120px #08F;margin:0 0 10px 0;padding:10px;}
-.lte8 header{display:block;background:#BCF;padding:10px;margin:0;}
+.lte8 header{display:block;background-color:#BCF;padding:10px;margin:0 0 10px 0;}
 header a{color:#015;text-decoration:none;}
-.lte8 header a:link,.lte8 header a:visited{background:#BCF;color:#015;text-decoration:none;}
+.lte8 header a{background:#BCF;color:#015;text-decoration:none;}
 
 /*Left side of header*/
 header .leftTab{display:inline-block;max-width:40%;margin:0;padding:5px;}
-.lte8 header .leftTab{display:block;float:left;background:#BCF;max-width:40%;margin:0;padding:5px;}
+.lte8 header .leftTab{display:block;float:left;background:#BCF;width:40%;max-width:40%;margin:0;padding:5px;}
 
 /*Right side of header*/
 header .rightTab{display:inline-block;margin:0px;padding:5px;}
-header .rightTab .searchTab{margin: 0px;padding: 5px;display: inline-block;}
+.lte8 header .rightTab{display:block;float:left;background:#BCF;}
+header .rightTab .searchTab{margin:0;padding:5px;display:inline-block;}
+.lte8 header .rightTab .searchTab{display:block;float:left;margin:0;padding:5px;}
 header .rightTab .searchTab input{display:inline-block;font-family: "MavenPro Regular";font-size: 15px;margin:1px;padding: 5px;border:solid 1px rgba(0,0,0,0.3);}
 header .rightTab .searchTab button{display:inline-block;position:relative;background:#FFF;border:solid 1px rgba(0,0,0,0.4);font-family:"MavenPro Regular";font-size:15px;margin:1px;padding:5px;}
 
 /*Current date and time*/
-header .dateNow{display:block;float:right;min-width:100px;}
-header #dateNow_clock{display:block;text-align:right; font-size:16px;}
+header .dateNow,
+.lte8 header .dateNow{display:block;float:right;min-width:100px;}
+header #dateNow_clock{display:block;text-align:right;font-size:16px;}
 header #dateNow_dayMonth{display:block;text-align:right;font-size:14px;}
 header #dateNow_year{display:block;text-align:right;font-size:20px;}
 
@@ -43,6 +46,7 @@ ul.startMenu li.sM_selectedLink{display: inline-block;background: #FFF;padding: 
 
 /*Page content*/
 .pageContent{display:block;background:#FFF;margin:0 0 20px 0;padding:10px;-webkit-box-shadow:0 0 80px #04F;-moz-box-shadow:0 0 80px #04F;box-shadow:0 0 80px #04F;}
+.lte8 .pageContent{display:block;float:left;background:#FFF;margin:0 0 20px 0;padding:10px;}
 .pageContent h2{margin:5px;padding:10px;font-size:30px;border-bottom:solid 1px rgba(0,0,0,0.3);}
 .pageContent p{margin:20px 10px;font-size:18px;line-height:25px;color:#000;}
 
