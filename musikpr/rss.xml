@@ -4,11 +4,11 @@
 <link>http://stickheadz32.github.io/musikpr</link>
 <description></description>
 <item>
-<title>Content Title</title>
-<link>http://stickheadz32.github.io/musikpr/</link>
-<guid>Unique ID for content. Copy the URL again</guid>
-<pubDate>Wed, 27 Nov 2013 15:17:32 GMT+1</pubDate>
-<description>Description for your content.</description>
+	<title>Content Title</title>
+	<link>http://stickheadz32.github.io/musikpr.html</link>
+	<guid>http://stickheadz32.github.io/musikpr/</guid>
+	<pubDate>Wed, 27 Nov 2013 15:17:32 GMT+1</pubDate>
+	<description>Description for your content.</description>
 </item>
 </channel>
 </rss>

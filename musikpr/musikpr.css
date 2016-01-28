@@ -38,7 +38,7 @@ header noscript{display:block;background:#8AF;color:#000;box-shadow:0 0 10px #01
 /*Start menu*/
 ul.startMenu{display:block;padding:0;margin:10px 10px 0 10px;font-size:19px;list-style:none;}
 ul.startMenu li.sM_Link{display: inline-block;background: #8BF;transition: ease-in-out background 300ms;padding:0;margin:0 2px 0 2px;}
-ul.startMenu li.sM_Link a{color:#004;background:#8BF;text-decoration:none;padding:10px;margin:0;}
+ul.startMenu li.sM_Link a{color:#004;background:#8BF;text-decoration:none;padding:10px;margin:0;box-shadow:inset 0 -15px 15px -15px rgba(0,64,255,.7);-moz-box-shadow:inset 0 -15px 15px -15px rgba(0,64,255,.7);-webkit-box-shadow:inset 0 -15px 15px -15px rgba(0,64,255,.7);}
 ul.startMenu li.sM_Link a:hover{transition:ease-out background 100ms;background:#CDF;}
 ul.startMenu li.sM_Link a:active{background:#69F;}
 ul.startMenu li.sM_selectedLink{display: inline-block;background: #FFF;padding: 10px;margin: 0 2px 0 2px;}
