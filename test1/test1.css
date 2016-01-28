@@ -29,15 +29,21 @@ display:inline-block;
 margin:5px;
 padding-left:10px;
 }
-.selectColortheme p{
-display:block;
-font-size:12px;
-}
 .sCt_item{
 width:12px;height:12px;
 margin:2px;
 display:inline-block;
 cursor:pointer;
+}
+.sct_item p{
+display:none;
+position:fixed;
+font-size:12px;
+}
+.sCt_item:hover p{
+display:inherit;
+position:relative;
+visibility:1;
 }
 @media all and (min-width:1001px){
 	.leftPanel{
