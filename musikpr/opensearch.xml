@@ -5,7 +5,7 @@
    <Tags>example web</Tags>
    <Contact>admin@example.com</Contact>
    <Url type="text/html" 
-        template="http://stickheadz32.github.io/musikpr/?query={searchTerms}&amp;pw={startPage?}"/>
+        template="http://stickheadz32.github.io/musikpr/search?query={searchTerms}&amp;pw={startPage?}"/>
    <LongName>Search results - The Works of Stickheadz32</LongName>
    <Query role="example" searchTerms="windows xp" />
    <Developer>Stickheadz32</Developer>
