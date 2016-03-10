@@ -14,11 +14,11 @@ header a{color:#015;text-decoration:none;}
 .lte8 header a{background:#BCF;color:#015;text-decoration:none;}
 
 /*Left side of header*/
-header .leftTab{display:inline-block;max-width:40%;margin:0;padding:5px;}
-.lte8 header .leftTab{display:block;float:left;background:#BCF;width:40%;max-width:40%;margin:0;padding:5px;}
+header .leftTab{display:inline-block;max-width:50%;margin:0;padding:5px;}
+.lte8 header .leftTab{display:block;float:left;background:#BCF;max-width:50%;margin:0;padding:5px;}
 
 /*Right side of header*/
-header .rightTab{display:inline-block;margin:0px;padding:5px;}
+header .rightTab{display:block;margin:0px;padding:5px;float:right;}
 .lte8 header .rightTab{display:block;float:left;background:#BCF;}
 header .rightTab .searchTab{margin:0;padding:5px;display:inline-block;}
 .lte8 header .rightTab .searchTab{display:block;float:left;margin:0;padding:5px;}
@@ -50,7 +50,9 @@ ul.startMenu li.sM_selectedLink{display: inline-block;background: #FFF;padding: 
 .pageContent{display:block;background:#FFF;margin:0 0 20px 0;padding:10px;-webkit-box-shadow:0 0 80px #04F;-moz-box-shadow:0 0 80px #04F;box-shadow:0 0 80px #04F;}
 .lte8 .pageContent{display:block;float:none;clear:both;background:#FFF;margin:0 0 20px 0;padding:10px;}
 .pageContent h2{margin:5px;padding:10px;font-size:30px;border-bottom:solid 1px rgba(0,0,0,0.3);}
-.pageContent p{margin:20px 10px;font-size:18px;line-height:25px;color:#000;}
+.pageContent p{margin:20px 10px;font-size:125%;line-height:25px;color:#222;}
+.pageContent a{color:#00F;text-decoration:none;}
+.pageContent a:hover{color:#33F;text-decoration:none;}
 
 abbr{border:solid 1px rgba(0,0,0,0.1);}
 abbr:hover{text-shadow:0 0 20px rgba(0,128,255,0.6);}

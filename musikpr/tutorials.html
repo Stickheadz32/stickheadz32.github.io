@@ -1,5 +1,7 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <!--Structured by Stickheadz32 (c) 2015-->
+<!--[if lte IE 8]><html lang="en" class="lte8"><![endif]-->
+<!--[if (gt IE 8)|!(IE)]><html lang="en"><![endif]-->
 
 <html lang="en">
 
@@ -26,7 +28,7 @@
 	
 	<!--right side of header-->
 	<div class="rightTab">
-		<form class="searchTab" method="get" name="search" action="">
+		<form class="searchTab" method="get" name="search" action="http://www.google.com">
 			<input type="text" placeholder="Search in The Works of Stickheadz32..." onChange="n=0;">
 			<button type="submit" value="Search">Search</button>
 		</form>
@@ -53,21 +55,22 @@
 
 <h2>test</h2>
 <p>test</p>
-<!--
-<div class="audio-player">
-	<h2>Go Down - Alexander Brandon</h2>
-	<audio id="audio-player" src="songs/Go%20Down.mp3" type="audio/mp3" controls></audio>
-</div>
-<script>
-$('audio,video').mediaelementplayer({
-	startVolume:1.0,
-	features:['playpause','progress','current','seeking','duration','volume'],
-	alwaysShowControls:true
-});
-</script>
--->
+
 </div>
 <footer>
 Website structured and designed by Stickheadz32. 
 </footer>
-</body></html>
+
+<!--MediaElement.js Player bootup-->
+	<script>
+	$('audio,video').mediaelementplayer({
+		startVolume:1.,
+		defaultVideoWidth:720,
+		defaultVideoHeight:480,
+	});
+	</script>
+	
+</body>
+<!--[if lte IE 8]></html><![endif]-->
+<!--[if (gt IE 8)|(!IE)]></html><![endif]-->
+</html>
