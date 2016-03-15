@@ -2,6 +2,13 @@
  <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
    <ShortName>Search results</ShortName>
    <Description>Welcome to The Works of Stickheadz32, where all my production of music, videos and other forms of art belongs.</Description>
+     <openSearch:totalResults>30</openSearch:totalResults>
+     <openSearch:startIndex>1</openSearch:startIndex>
+     <openSearch:itemsPerPage>15</openSearch:itemsPerPage>
+	 <item>
+	 <title>Error</title>
+	 <description>hodfiarlbnal</description>
+	 </item>
    <Tags>example web</Tags>
    <Contact>admin@example.com</Contact>
    <Url type="text/html" 
