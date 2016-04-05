@@ -35,7 +35,7 @@
 	<div class="rightTab">
 
 		<form class="searchTab" method="GET" name="search" action="http://stickheadz32.github.io/musikpr/search">
-			<input type="text" name="query" placeholder="Search in The Works of Stickheadz32...">
+			<input type="text" name="query" title="Enter search word(s) here" placeholder="Search in The Works of Stickheadz32...">
 			<button type="submit" value="Search">Search</button>
 		</form>
 		
@@ -74,15 +74,17 @@
 	
     <h2>Testing out the MediaElement.js plugin</h2>
 	<p>HTML5 <b>&lt;audio&gt;</b> and <b>&lt;video&gt;</b> was supposed to be awesome, powerful and fun.</p>
-	<p>But browser vendors couldn't agree on a codec. Thus, older browsers (specifically those with no HTML5 support), don't support <b>&lt;audio&gt;</b> or <b>&lt;video&gt;</b> at all, which means that <b>&lt;audio src="myfile.mp3" /&gt;</b> doesn't work, nor does <b>&lt;video src="myfile.mp4 /&gt;</b>.</p>
+	<p>But browser vendors couldn't agree on a codec. Thus, older browsers (specifically those with no HTML5 support), don't support <b>&lt;audio&gt;</b> or <b>&lt;video&gt;</b> at all, which means that <b>&lt;audio src="myfile.mp3" /&gt;</b> doesn't work, nor does <b>&lt;video src="myfile.mp4" /&gt;</b>.</p>
 	
 	<p>This plugin, however, - <a href="http://mediaelementjs.com/" title="MediaElement.js">MediaElement.js, made by John Dyer</a> - is a Javascript plugin that replaces <b>&lt;audio&gt;</b> and <b>&lt;video&gt;</b> tags with a native HTML+CSS player that looks and works the same in every browser.</p>
 	
 	<p>&lt;audio&gt; tag in action with the plugin. Example song: "Go Down" by Alexander Brandon, featured in <i>Unreal Tournament</i> (1999).</p>
-	<audio src="./songs/GoDown.mp3" controls="controls"></audio>
+	<audio src="http://download1249.mediafire.com/bsdgxwono6xg/3a6p2qn3vrueerf/GoDown.mp3" controls="controls"></audio>
 	
 	<p>&lt;video&gt; tag in action. This video is a replica of the audio message user interface from the video game <i>Deus Ex</i> (2000).</p>
-	<video width="640" height="360" src="./videos/deusexmessagereplica.mp4" controls="controls"></video>
+	<video width="640" height="360" src="http://download1653.mediafire.com/wilcr452hu7g/3cfgb5dqc24whu7/deusexmessagereplica.mp4" controls="controls" preload="none">
+		<track srclang="en" type="text/srt" src="./videos/track/deusexmessagereplica.srt"/>
+	</video>
 </div>
 
 <!--start footer-->
@@ -97,6 +99,7 @@ Website structured and designed by Stickheadz32.
 		startVolume:1.,
 		defaultVideoWidth:640,
 		defaultVideoHeight:360,
+		features: ['playpause','progress','current','duration','volume','fullscreen']
 	});
 	</script>
 	

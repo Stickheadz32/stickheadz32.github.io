@@ -1,0 +1,17 @@
+[
+{
+	"Title":"ChipTest1",
+	"Author":"Stickheadz32",
+	"Description":"A quick techno chiptune I made with ModPlug Tracker in 20-30 minutes while at the  RealLan 2016 computer festival in Realgymnasiet during the first hours (GMT+1) of March 26th 2016. Inspiration from Skaven, Alexander Brandon, FantomenK, Michiel Van Den Bos, Kraftwerk, among other artists I forgot to mention."
+},
+{
+	"Title":"Go Down",
+	"Author":"Alexander Brandon",
+	"Description":"Disclaimer: I used this song as an example to test the Mediaelement.js plugin by John Dyer. All rights reserved."
+},
+{
+	"Title":"ISV-Kran",
+	"Author":"Michiel van den Bos",
+	"Description":"Disclaimer: I used this song as an example to test the Mediaelement.js plugin by John Dyer. All rights reserved."
+}
+]

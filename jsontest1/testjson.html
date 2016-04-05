@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Customers</h1>
+<div id="id01"></div>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "jsondb.txt";
+
+xmlhttp.onreadystatechange = function() {
+if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    var myArr = JSON.parse(xmlhttp.responseText);
+    myFunction(myArr);
+    }
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+function myFunction(arr) {
+    var out = '<div class="prodContent">',i;
+    for(i = 0; i < arr.length; i++) {
+        out += "<div><td>" + arr[i].Title +
+        "</td><td>" + arr[i].Author +
+        "</td><td>" + arr[i].Description +
+        "</td></div>";
+    }
+    out += "</div>";
+    document.getElementById("id01").innerHTML = out;
+}
+</script>
+
+</body>
+</html>
