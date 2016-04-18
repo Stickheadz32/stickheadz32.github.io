@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+<head><style>
+#id01{margin:0;padding:0;}
+ul{margin:10px;padding:10px;background:#EEE;display:block;list-style-type:none;}
+li{background:#FFF;border:solid 1px #777;margin:6px;padding:6px;display:block;}
+li h3{margin:0;padding:5px;}
+#auth{color:#555;font-size:14px;margin:0 20px 0 20px;display:block;}
+</style></head>
 <body>
 
 <h1>Customers</h1>
@@ -19,14 +26,14 @@ if (a.readyState == 4 && a.status == 200) {
 a.open("GET", url, true);
 a.send();
 function myFunction(arr) {
-    var out = '<div class="prodContent">',i;
+    var out = '<ul class="prodContent">',i;
     for(i = 0; i < arr.length; i++) {
-        out += "<div><td>" + arr[i].Title +
-        "</td><td>" + arr[i].Author +
-        "</td><td>" + arr[i].Description +
-        "</td></div>";
+        out += "<li><h3>" + arr[i].Title +
+        "</h3><span id=\"auth\">" + arr[i].Author +
+        "</span><p>" + arr[i].Description +
+        "</p></li>";
     }
-    out += "</div>";
+    out += "</ul>";
     document.getElementById("id01").innerHTML = out;
 }
 </script>
