@@ -1,37 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head><style>
+<head><style><!--
+.prodContent{display:block;}
+h1{margin:5px;padding:5px;}
 #id01{margin:0;padding:0;}
 ul{margin:10px;padding:10px;background:#EEE;display:block;list-style-type:none;}
 li{background:#FFF;border:solid 1px #777;margin:6px;padding:6px;display:block;}
-li h3{margin:0;padding:5px;}
+li h3,li p{margin:0;padding:5px;display:block;}
+li span{margin:5px;padding:4px;display:block;}
 #auth{color:#555;font-size:14px;margin:0 20px 0 20px;display:block;}
-</style></head>
+li span p{display:block;margin:0 10px 0 0;padding:5px;border-left:solid 1px rgba(0,0,0,.5);}
+li span p a{margin:5px;padding:5px;border-bottom:solid 1px rgba(0,0,0,.2);}
+.filePlace{display:block;margin:4px;padding:3px;}
+--></style></head>
 <body>
-
-<h1>Customers</h1>
-<div id="id01"></div>
+<h1>Released production</h1>
+<div id="id01">
+</div>
 
 <script>
-var a = new XMLHttpRequest();
-var url = "jsondb.txt";
-
-a.onreadystatechange = function() {
-if (a.readyState == 4 && a.status == 200) {
-    var b = JSON.parse(a.responseText);
-    myFunction(b);
-    }
-};
-
+var a=new XMLHttpRequest(),url="jsondb.txt";
+a.onreadystatechange=function(){
+if(a.readyState==4&&a.status==200){
+    var b=JSON.parse(a.responseText);
+    myFunction(b);}}
 a.open("GET", url, true);
 a.send();
-function myFunction(arr) {
-    var out = '<ul class="prodContent">',i;
-    for(i = 0; i < arr.length; i++) {
-        out += "<li><h3>" + arr[i].Title +
-        "</h3><span id=\"auth\">" + arr[i].Author +
-        "</span><p>" + arr[i].Description +
-        "</p></li>";
+function myFunction(a) {
+    var out = '<ul class="prodContent">',b,c=a.length;
+    for(b = 0; b < c; b++) {
+		var d=a[b];
+        out += "<li><h3>" + d.Title +
+        '</h3><span id="auth">' + d.By +"</span>";
+		
+		if(d.Description.constructor === Array){
+			var e=d.Description,f=e.length,g;
+			for(g = 0; g < f; g++){
+				out += "<p>" + e[g] + "</p>";
+			}
+		}else out += "<p>" + d.Description + "</p>";
+		
+        if(d.Media=="Music")
+        out+='<audio src="'+d.Download[0].url+'"/>';
+        else if(d.Media=="Video")
+            out+='<video src="'+d.Download[0].url+'"></video>';
+
+		out+="<span><h4>Download:</h4>";
+		
+		if(d.Download){
+			var e=d.Download,f=e.length,g,h;
+			for(g = 0; g < f; g++){
+                var i=e[g];
+                if(i.source!=h){
+                    h=i.source;
+                    out+='<div class="filePlace">'+h+"</div>";
+                }
+                out+='<p><a href="'+i.url+'">'+i.type+"</a></p>";
+            }
+		}
+		
+		out+= "</span></li>";
+
     }
     out += "</ul>";
     document.getElementById("id01").innerHTML = out;

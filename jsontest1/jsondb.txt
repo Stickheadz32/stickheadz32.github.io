@@ -1,17 +1,42 @@
-[
-{
+[{
 	"Title":"ChipTest1",
-	"Author":"Stickheadz32",
-	"Description":"A quick techno chiptune I made with ModPlug Tracker in 20-30 minutes while at the  RealLan 2016 computer festival in Realgymnasiet during the first hours (GMT+1) of March 26th 2016. Inspiration from Skaven, Alexander Brandon, FantomenK, Michiel Van Den Bos, Kraftwerk, among other artists I forgot to mention."
-},
-{
-	"Title":"Go Down",
-	"Author":"Alexander Brandon",
-	"Description":"Disclaimer: I used this song as an example to test the Mediaelement.js plugin by John Dyer. All rights reserved."
-},
-{
-	"Title":"ISV-Kran",
-	"Author":"Michiel van den Bos",
-	"Description":"Disclaimer: I used this song as an example to test the Mediaelement.js plugin by John Dyer. All rights reserved."
-}
-]
+	"By":"Stickheadz32",
+	"Description":"A quick techno chiptune I made with ModPlug Tracker in 20-30 minutes while at the  RealLan 2016 computer festival in Realgymnasiet during the first hours (GMT+1) of March 26th 2016. Inspiration from Skaven, Alexander Brandon, FantomenK, Michiel Van Den Bos, Kraftwerk, among other artists I forgot to mention.",
+	"Download":[
+	{
+		"source":"local",
+		"type":".mp3",
+		"url":"released/chiptest1.mp3"
+	},
+	{
+		"source":"local",
+		"type":".it",
+		"url":"released/chiptest1.it"
+	},
+	{
+		"source":"mediafire",
+		"type":".mp3",
+		"url":"http://www.mediafire.com/download/rweqqddb9l29xb5/chiptest1.mp3"
+	},
+	{
+		"source":"mediafire",
+		"type":".it",
+		"url":"http://www.mediafire.com/download/w4wpdz9bmk65n6l/chiptest1.it"
+	}],
+	"Media":"Music",
+	"Genre":"Techno,Electro,House"
+},{
+	"Title":"Deus Ex Infolink Replica",
+	"By":"Stickheadz32",
+	"Description":[
+		"A replica I made for the infolink in <i>Deus Ex</i>. Graphics made with MS Paint. Edited with Vegas Pro. Why Paint and not Photoshop? Because I didn't have Photoshop on the computer I made this on at the time. Yay.",
+		"The background color of the graphics is black, and I removed the black color with Chroma Keyer on Vegas Pro (similar to greenscreen, but this lets you choose which color to remove)."
+	],
+	"Media":"Video",
+	"Download":[
+	{
+		"source":"local",
+		"type":".mp4",
+		"url":"released/deusexmessagereplica.mp4"
+	}]
+}]
