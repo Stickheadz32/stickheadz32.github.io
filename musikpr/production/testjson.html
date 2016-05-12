@@ -27,11 +27,14 @@ if(a.readyState==4&&a.status==200){
 a.open("GET", url, true);
 a.send();
 function myFunction(a) {
-    var out = '<ul class="prodContent">',b,c=a.length;
+    var out = '<ul class="prodContent">',b,c=a.length,da=["January","February","March","April","May","June","July","August","September","October","November","December"];
     for(b = 0; b < c; b++) {
-		var d=a[b];
+		var d=a[b],de=d.Date;
         out += "<li><h3>" + d.Title +
-        '</h3><span id="auth">' + d.By +"</span>";
+        '</h3><span id="auth">' + d.By +"</span>"+"<span>"+de[0].day
+        +" "+da[de[0].month]+
+        " " +de[0].year+"</span>"
+        ;
 		
 		if(d.Description.constructor === Array){
 			var e=d.Description,f=e.length,g;

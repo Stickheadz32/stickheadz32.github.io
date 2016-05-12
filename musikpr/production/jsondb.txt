@@ -2,6 +2,11 @@
 	"Title":"ChipTest1",
 	"By":"Stickheadz32",
 	"Description":"A quick techno chiptune I made with ModPlug Tracker in 20-30 minutes while at the  RealLan 2016 computer festival in Realgymnasiet during the first hours (GMT+1) of March 26th 2016. Inspiration from Skaven, Alexander Brandon, FantomenK, Michiel Van Den Bos, Kraftwerk, among other artists I forgot to mention.",
+	"Date":[{
+		"year":"2016",
+		"month":"4",
+		"day":"20"
+	}],
 	"Download":[{
 		"source":"local",
 		"type":".mp3",
@@ -28,6 +33,11 @@
 		"A replica I made for the infolink in <i>Deus Ex</i>. Graphics made with MS Paint. Edited with Vegas Pro. Why Paint and not Photoshop? Because I didn't have Photoshop on the computer I made this on at the time. Yay.",
 		"The background color of the graphics is black, and I removed the black color with Chroma Keyer on Vegas Pro (similar to greenscreen, but this lets you choose which color to remove)."
 	],
+	"Date":[{
+		"year":"2015",
+		"month":"10",
+		"day":"20"
+	}],
 	"Media":"Video",
 	"Download":[{
 		"source":"local",
