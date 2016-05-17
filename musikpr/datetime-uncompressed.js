@@ -1,6 +1,6 @@
 ﻿function uT(){
 
-	var a = new Date(),
+	var a=new Date;
 	
 		b = a.getMinutes(),
 		c = a.getSeconds(),
