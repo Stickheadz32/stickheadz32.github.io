@@ -26,7 +26,7 @@ if(h1=="")h1="A title that concisely describes the feed's content.";
 var pub=new Date(),ye=pub.getFullYear(),mo=pub.getMonth()+1,da=pub.getDate();
 document.getElementById("pubdate").innerHTML=ye+"/"+mo+"/"+da;
 document.getElementById("result").textContent="<!DOCTYPE html>\r\n<html>\r\n  <head>\r\n    <meta name=\"generator\" content=\"FeedGen v0.1\"\/>\r\n    <meta name=\"author\" content=\""+author+"\"\/>\r\n    <meta http-equiv=\"Content-Type\" content=\"text\/html;charset=utf-8\"\/>\r\n  <\/head>\r\n  <body>\r\n";
-var _=document.getElementById("result").innerHTML.replace(/</g,'&lt;');
+var _=document.getElementById("result").innerHTML.replace(/\r\n/g,'<br/>');
 document.getElementById("result").textContent=_.
 document.getElementById("content").value+"\n  <\/body>\n<\/html>";
 }
