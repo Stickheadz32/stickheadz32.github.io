@@ -13,6 +13,10 @@
 		"url":"released/chiptest1.mp3"
 	},{
 		"source":"local",
+		"type":".wav",
+		"url":"released/chiptest.wav"
+	},{
+		"source":"local",
 		"type":".it",
 		"url":"released/chiptest1.it"
 	},{
@@ -25,7 +29,7 @@
 		"url":"http://www.mediafire.com/download/w4wpdz9bmk65n6l/chiptest1.it"
 	}],
 	"Media":"Music",
-	"Genre":"Techno,Electro,House"
+	"Tags":"Techno,Electro,House,chiptest,reallan,"
 },{
 	"Title":"Deus Ex Infolink Replica",
 	"By":"Stickheadz32",
