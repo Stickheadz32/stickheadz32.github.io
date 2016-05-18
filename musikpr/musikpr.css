@@ -166,19 +166,37 @@ ul.catMenu .cM_Link{
 	color:#33F;
 	text-decoration:none;
 }
-
+.pageContent ul.catMenu{
+	display:block;
+	background:#FFF;
+	padding:0;
+	margin:0 -10px;
+	box-shadow:0 5px 10px rgba(0,0,0,.3);
+}
+.pageContent .catContent{
+	display: block;
+	box-shadow:0 0 40px 10px #08C;
+}
+.pageContent ul.prodContent li{
+	display:block;
+	margin:5px;
+	padding:10px;
+	background: rgba(0,128,255,.2);
+}
+.pageContent ul.prodContent li h3{
+	display:block;
+}
+.pageContent ul.prodContent li h4{
+	display:block;
+}
+.pageContent ul.prodContent li p{
+	display:block;
+}
 abbr{
 	border:solid 1px rgba(0,0,0,0.1);
 }
 abbr:hover{
 	text-shadow:0 0 20px rgba(0,128,255,0.6);
-}
-.pageContent ul.catMenu{
-	display:block;
-	background:#CCF;
-	padding:0;
-	margin:0 -10px;
-	box-shadow:0 5px 10px rgba(0,0,0,.3);
 }
 footer{
 	margin:30px;

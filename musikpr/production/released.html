@@ -8,7 +8,7 @@
     <meta name="description" content="Welcome to The Works of Stickheadz32, where all production of music, videos and art belongs." />
     <meta name="keywords" content="the works of stickheadz32, music, video, Windows XP remix" />
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <link rel="canonical" href="http://stickheadz32.github.io/musikpr/production/released/" />
+    <link rel="canonical" href="http://stickheadz32.github.io/musikpr/production/released/"/>
     <link href="../musikpr.css" rel="stylesheet" type="text/css"/>
 	<!--[if lt IE 9]><link href="../musikpr-lte8.css" rel="stylesheet" type="text/css"/><![endif]-->
 	<link href="../opensearch.xml" rel="search" type="application/opensearchdescription+xml" title="Search - The Works of Stickheadz32"/>
@@ -58,57 +58,60 @@
 		<li class="cM_selectedLink">Released, complete works</li>
 		<li class="cM_Link">Previews</li>
 	</ul>
-	<h3>Music tunes</h3>
-	<h3>Videos</h3>
-	<h3>Art</h3>
-	<h3>Other forms</h3>
-	<div id="id01"><div/>
+	<div class="catContent">
+		<h3>Music tunes</h3>
+		<div id="music"></div>
+		<h3>Videos</h3>
+		<h3>Art</h3>
+		<h3>Other forms</h3>
+		<div id="id01"></div>
+	</div>
 </div>
 <script>
-var a=new XMLHttpRequest(),url="jsondb.txt";
+var a=new XMLHttpRequest(),url="released.txt";
 a.onreadystatechange=function(){
-if(a.readyState==4&&a.status==200){
-    var b=JSON.parse(a.responseText);
-    myFunction(b);}}
+	if(a.readyState==4&&a.status==200){
+	    var s=JSON.parse(a.responseText),
+	    res=[],out='<ul class="prodContent">',b,c=s.length;
+	    for(b = 0; b < c; b++) {
+			var d=s[b];
+	        out += "<li><h3>" + d.Title +
+	        '</h3><span id="auth">' + d.By +"</span>";
+			
+			if(d.Description.constructor === Array){
+				var e=d.Description,f=e.length,g;
+				for(g = 0; g < f; g++){
+					out += "<p>" + e[g] + "</p>";
+				}
+			}else out += "<p>" + d.Description + "</p>";
+			
+			if(d.Media=="Music")
+	       		out+='<audio src="./'+d.Download[0].url+'" controls></audio>';
+			else if(d.Media="Video")
+	        	out+='<video width=640 height=360 src="./'+d.Download[0].url+'" controls></video>';
+			
+			out+="<span><h4>Download:</h4>";
+			
+			if(d.Download){
+				var e=d.Download,f=e.length,g,h;
+				for(g = 0; g < f; g++){
+	                var i=e[g];
+	                if(i.source!=h){
+	                    h=i.source;
+	                    out+='<div class="filePlace">'+h+"</div>";
+	                }
+	                out+='<p><a href="'+i.url+'">'+i.type+"</a></p>";
+	            }
+			}
+			out+= "</span></li>";
+	    }
+	    out += "</ul>";
+	    document.getElementById("id01").innerHTML = out;
+	}
+}
 a.open("GET", url, true);
 a.send();
-function myFunction(a) {
-    var out = '<ul class="prodContent">',b,c=a.length;
-    for(b = 0; b < c; b++) {
-		var d=a[b];
-        out += "<li><h3>" + d.Title +
-        '</h3><span id="auth">' + d.By +"</span>";
-		
-		if(d.Description.constructor === Array){
-			var e=d.Description,f=e.length,g;
-			for(g = 0; g < f; g++){
-				out += "<p>" + e[g] + "</p>";
-			}
-		}else out += "<p>" + d.Description + "</p>";
-		
-		if(d.Media=="Music")
-        out+='<audio src="./'+d.Download[0].url+'" controls></audio>';
-		else if(d.Media="Video")
-        out+='<video width=640 height=360 src="./'+d.Download[0].url+'" controls></video>';
-		
-		out+="<span><h4>Download:</h4>";
-		
-		if(d.Download){
-			var e=d.Download,f=e.length,g,h;
-			for(g = 0; g < f; g++){
-                var i=e[g];
-                if(i.source!=h){
-                    h=i.source;
-                    out+='<div class="filePlace">'+h+"</div>";
-                }
-                out+='<p><a href="'+i.url+'">'+i.type+"</a></p>";
-            }
-		}
-		out+= "</span></li>";
-    }
-    out += "</ul>";
-    document.getElementById("id01").innerHTML = out;
-}
+
 </script>
 <footer>
 Website structured and designed by Stickheadz32. 
