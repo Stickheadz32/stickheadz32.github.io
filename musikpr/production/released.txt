@@ -7,6 +7,8 @@
 		"month":"4",
 		"day":"20"
 	}],
+	"Media":"Audio",
+	"PreviewUrl":"released/chiptest1.mp3",
 	"Download":[{
 		"source":"local",
 		"type":".mp3",
@@ -28,7 +30,6 @@
 		"type":".it",
 		"url":"http://www.mediafire.com/download/w4wpdz9bmk65n6l/chiptest1.it"
 	}],
-	"Media":"Music",
 	"Tags":"Techno,Electro,House,chiptest,reallan,"
 },{
 	"Title":"Deus Ex Infolink Replica",
@@ -43,6 +44,7 @@
 		"day":"20"
 	}],
 	"Media":"Video",
+	"PreviewUrl":"released/deusexmessagereplica.mp4",
 	"Download":[{
 		"source":"local",
 		"type":".mp4",

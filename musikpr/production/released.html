@@ -16,7 +16,7 @@
 
     <!-- jQuery v1.11.3 - (c) 2005, 2015 jQuery Foundation, Inc. - jquery.org/license -->
     <script type="text/javascript" src="../player/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../player/mediaelementplayer-min.js"></script>
+    <script type="text/javascript" src="../player/mediaelement.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../player/mediaelementplayer.css" />
 </head>
 <body>
@@ -47,11 +47,11 @@
 <!--end header-->
 
 <ul class="startMenu">
-<li class="sM_Link"><a href="index.html">Start</a>
-</li><li class="sM_Link"><a href="about.html">About me</a>
+<li class="sM_Link"><a href="..">Start</a>
+</li><li class="sM_Link"><a href="../about.html">About me</a>
 </li><li class="sM_selectedLink">Production
-</li><li class="sM_Link"><a href="tutorials.html">Tutorials</a>
-</li><li class="sM_Link"><a href="contact.html">Contact</a>
+</li><li class="sM_Link"><a href="../tutorials.html">Tutorials</a>
+</li><li class="sM_Link"><a href="../contact.html">Contact</a>
 </li></ul>
 
 <div class="pageContent">
@@ -66,65 +66,66 @@
 		<h3>Art</h3>
 		<h3>Other forms</h3>
 		<div id="id01"></div>
+	<script>
+	var a=new XMLHttpRequest(),url="released.txt";
+	a.onreadystatechange=function(){
+		if(a.readyState==4&&a.status==200){
+		    var s=JSON.parse(a.responseText),
+		    res=[],out='<ul class="prodContent">',b,c=s.length;
+		    for(b = 0; b < c; b++) {
+				var d=s[b];
+		        out += "<li><h3>" + d.Title +
+		        '</h3><span id="auth">' + d.By +"</span>";
+				
+				if(d.Description.constructor === Array){
+					var e=d.Description,f=e.length,g;
+					for(g = 0; g < f; g++){
+						out += "<p>" + e[g] + "</p>";
+					}
+				}else out += "<p>" + d.Description + "</p>";
+				
+				if(d.Media=="Audio")
+		       		out+='<audio src="./'+d.PreviewUrl+'" controls></audio>';
+				else if(d.Media="Video")
+		        	out+='<video width=640 height=360 src="./'+d.PreviewUrl+'" controls="controls"></video>';
+				
+				out+="<span><h4>Download:</h4>";
+				
+				if(d.Download){
+					var e=d.Download,f=e.length,g,h;
+					for(g = 0; g < f; g++){
+		                var i=e[g];
+		                if(i.source!=h){
+		                    h=i.source;
+		                    out+='<div class="filePlace">'+h+"</div>";
+		                }
+		                out+='<p><a href="'+i.url+'">'+i.type+"</a></p>";
+		            }
+				}
+				out+= "</span></li>";
+		    }
+		    out += "</ul>";
+		    document.getElementById("id01").innerHTML = out;
+		}
+	}
+	a.open("GET", url, true);
+	a.send();
+	
+	</script>
 	</div>
 </div>
-<script>
-var a=new XMLHttpRequest(),url="released.txt";
-a.onreadystatechange=function(){
-	if(a.readyState==4&&a.status==200){
-	    var s=JSON.parse(a.responseText),
-	    res=[],out='<ul class="prodContent">',b,c=s.length;
-	    for(b = 0; b < c; b++) {
-			var d=s[b];
-	        out += "<li><h3>" + d.Title +
-	        '</h3><span id="auth">' + d.By +"</span>";
-			
-			if(d.Description.constructor === Array){
-				var e=d.Description,f=e.length,g;
-				for(g = 0; g < f; g++){
-					out += "<p>" + e[g] + "</p>";
-				}
-			}else out += "<p>" + d.Description + "</p>";
-			
-			if(d.Media=="Music")
-	       		out+='<audio src="./'+d.Download[0].url+'" controls></audio>';
-			else if(d.Media="Video")
-	        	out+='<video width=640 height=360 src="./'+d.Download[0].url+'" controls></video>';
-			
-			out+="<span><h4>Download:</h4>";
-			
-			if(d.Download){
-				var e=d.Download,f=e.length,g,h;
-				for(g = 0; g < f; g++){
-	                var i=e[g];
-	                if(i.source!=h){
-	                    h=i.source;
-	                    out+='<div class="filePlace">'+h+"</div>";
-	                }
-	                out+='<p><a href="'+i.url+'">'+i.type+"</a></p>";
-	            }
-			}
-			out+= "</span></li>";
-	    }
-	    out += "</ul>";
-	    document.getElementById("id01").innerHTML = out;
-	}
-}
-a.open("GET", url, true);
-a.send();
-
-</script>
 <footer>
 Website structured and designed by Stickheadz32. 
 </footer>
 
 <!--MediaElement.js Player bootup-->
 	<script>
+	function valMed(){
 	$('audio,video').mediaelementplayer({
 		startVolume:1.,
 		defaultVideoWidth:720,
 		defaultVideoHeight:480,
-	});
+	});}if(!$('audio,video'))setInterval(valMed,100);
 	</script>
 	
 </body>
