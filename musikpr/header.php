@@ -1,5 +1,0 @@
-<?php
-function startPageHeader($title,$description,$tags,$link){
-$n="\r\n",$m="\t";
-$a='<head>$n$m<title>$title</title>$m<meta name="description" content="$description"/>$n$m<meta name="keywords" content="$tags"/>$n$m<meta http-equiv="content-type" content="text/html;charset=utf-8"/>$n$m<link rel="canonical" href="$link"/>$n$m<link href="musikpr.css" rel="stylesheet" type="text/css"/>$n$m<!--[if lt IE 9]><link href="musikpr-lte8.css" rel="stylesheet" type="text/css"/><![endif]-->$n$m<link href="opensearch.xml" rel="search" type="application/opensearchdescription.xml" title="Search - The Works of Stickheadz32"/>$n$m$m<!-- jQuery v1.11.3 - (c) 2005, 2015 jQuery Foundation, Inc. - jquery.org/license -->$n$m<script type="text/javascript" src="player/jquery-1.11.3.min.js"></script>$n$n$m<!-- Mediaelement.js - (c) John Dyer -->$n$m<script type="text/javascript" src="player/mediaelement-and-player.js"></script>$n$m<link rel="stylesheet" type="text/css" href="player/mediaelementplayer.css"/>$n$m<link rel="stylesheet" type="text/css" href="player/mejs-skins.css"/>$n</head>$n';}
-?>

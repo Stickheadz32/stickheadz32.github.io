@@ -16,7 +16,7 @@
 
     <!-- jQuery v1.11.3 - (c) 2005, 2015 jQuery Foundation, Inc. - jquery.org/license -->
     <script type="text/javascript" src="../player/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../player/mediaelement.min.js"></script>
+    <script type="text/javascript" src="../player/mediaelement-and-player.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../player/mediaelementplayer.css" />
 </head>
 <body>
@@ -122,6 +122,9 @@ Website structured and designed by Stickheadz32.
 	<script>
 	function valMed(){
 	$('audio,video').mediaelementplayer({
+			success: function(player, node) {
+				$('#' + node.id + '-mode').html('mode: ' + player.pluginType);
+			},
 		startVolume:1.,
 		defaultVideoWidth:720,
 		defaultVideoHeight:480,
