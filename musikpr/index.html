@@ -71,7 +71,7 @@
 	<p>This plugin, however, - <a href="http://mediaelementjs.com/" title="MediaElement.js">MediaElement.js, made by John Dyer</a> - is a Javascript plugin that replaces <b>&lt;audio&gt;</b> and <b>&lt;video&gt;</b> tags with a native HTML+CSS player that looks and works the same in every browser.</p>
 	
 	<p>&lt;audio&gt; tag in action with the plugin. Example song: "chiptest1" by Stickheadz32.</p>
-	<audio src="./production/released/chiptest1.mp3" controls="controls"></audio>
+	<audio width=100% src="./production/released/chiptest1.mp3" controls="controls"></audio>
 	
 	<p>&lt;video&gt; tag in action. This video is a replica of the audio message user interface from the video game <i>Deus Ex</i> (2000).</p>
 	<video width="640" height="360" src="./production/released/deusexmessagereplica.mp4" controls="controls" preload="none">
@@ -89,8 +89,7 @@ Website structured and designed by Stickheadz32.
 	<script>
 	$('audio,video').mediaelementplayer({
 		startVolume:1.,
-		defaultVideoWidth:640,
-		defaultVideoHeight:360,
+		defaultVideoHeight:9/16*this.width,
 		features: ['playpause','progress','current','duration','volume','fullscreen']
 	});
 	</script>

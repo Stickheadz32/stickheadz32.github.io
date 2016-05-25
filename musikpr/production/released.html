@@ -73,9 +73,21 @@
 		    var s=JSON.parse(a.responseText),
 		    res=[],out='<ul class="prodContent">',b,c=s.length;
 		    for(b = 0; b < c; b++) {
-				var d=s[b];
+				var d=s[b],
+					da=d.Date[0],
+					db=da.day%10,
+					dc=da.day%100,
+					ti=["January","February","March","April","May","June","July","August","September","October","November","December"];
+					
 		        out += "<li><h3>" + d.Title +
-		        '</h3><span id="auth">' + d.By +"</span>";
+		        '</h3><span class="auth">' + d.By +"</span>";
+				
+				out+='<span class="publishDate">'+ti[da.month-1]+' '+da.day+
+				/* 1st 2nd 3rd 4th... 11th 12th 13th 14th... 21st 22nd 23rd 24th...	*/
+					(db === 1 && dc !== 11 ? "st" :
+					 db === 2 && dc !== 12 ? "nd" :
+					 db === 3 && dc !== 13 ? "rd" :
+						"th")+', '+da.year+'</span>';
 				
 				if(d.Description.constructor === Array){
 					var e=d.Description,f=e.length,g;
@@ -83,11 +95,16 @@
 						out += "<p>" + e[g] + "</p>";
 					}
 				}else out += "<p>" + d.Description + "</p>";
-				
-				if(d.Media=="Audio")
-		       		out+='<audio src="./'+d.PreviewUrl+'" controls></audio>';
-				else if(d.Media="Video")
-		        	out+='<video width=640 height=360 src="./'+d.PreviewUrl+'" controls="controls"></video>';
+				switch(d.Media){
+					case "Audio":
+						out+='<audio src="./'+d.PreviewUrl+'" controls></audio>';
+						break;
+					case "Video":
+						out+='<video width=640 height=360 src="./'+d.PreviewUrl+'" controls="controls"></video>';
+						break;
+					case "Art":
+						out+='<img src="'+d.PreviewUrl+'">';
+				}
 				
 				out+="<span><h4>Download:</h4>";
 				
@@ -99,7 +116,7 @@
 		                    h=i.source;
 		                    out+='<div class="filePlace">'+h+"</div>";
 		                }
-		                out+='<p><a href="'+i.url+'">'+i.type+"</a></p>";
+		                out+='<p><a href="'+i.url+'" target="_blank">'+i.type+"</a></p>";
 		            }
 				}
 				out+= "</span></li>";

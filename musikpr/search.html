@@ -57,7 +57,7 @@
 
 <!--start menu-->
 <ul class="startMenu">
-  <li class="sM_selectedLink">Start
+  <li class="sM_selectedLink"><a href="">Start</a>
   </li><li class="sM_Link"><a href="about.html" title="About me">About me</a>
   </li><li class="sM_Link"><a href="production.html" title="Production">Production</a>
   </li><li class="sM_Link"><a href="tutorials.html" title="Tutorials">Tutorials</a>
@@ -66,9 +66,38 @@
 <!--end start menu-->
 
 <div class="pageContent">
+<div id="id01"></div>
+	<script>
+	var a=new XMLHttpRequest(),url="production/released.txt";
+	a.onreadystatechange=function(){
+		if(a.readyState==4&&a.status==200){
+		    var s=JSON.parse(a.responseText),
+		    res=[],out='<ul class="prodContent">',b,c=s.length;
+		    for(b = 0; b < c; b++) {
+				var d=s[b],e=d.Description,h="";
+		        out += "<li><h3>" + d.Title +
+		        '</h3><span id="auth">' + d.By +"</span>";
+				
+				if(d.Description.constructor === Array){
+					var f=e.length,g;
+					for(g = 0; g < f; g++){
+						h+=e[g]+" ";
+					}
+					h=h.length>140?h.substring(0,137)+"...":h;
+				}
+				else h+=(e.length>140 ? e.substring(0,137)+"..." : e);
+				out += "<p>" + h + "</p>";
+				out+= "</li>";
+		    }
+		    out += "</ul>";
+		    document.getElementById("id01").innerHTML = out;
+		}
+	}
+	a.open("GET", url, true);
+	a.send();
+	</script>
 	
-	
-</div>
+</div><!--.pageContent-->
 
 <!--start footer-->
 <footer>

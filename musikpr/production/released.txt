@@ -30,7 +30,7 @@
 		"type":".it",
 		"url":"http://www.mediafire.com/download/w4wpdz9bmk65n6l/chiptest1.it"
 	}],
-	"Tags":"Techno,Electro,House,chiptest,reallan,"
+	"Tags":"techno,electro,House,chiptest,reallan,"
 },{
 	"Title":"Deus Ex Infolink Replica",
 	"By":"Stickheadz32",
@@ -50,4 +50,21 @@
 		"type":".mp4",
 		"url":"released/deusexmessagereplica.mp4"
 	}]
+},{
+	"Title":"Supermoon test",
+	"By":"Stickheadz32",
+	"Description":"Made with Photoshop. Positively inspired by the one minute spray art. Mine took 20 minutes to make. Pity me.",
+	"Date":[{
+		"year":"2016",
+		"month":"3",
+		"day":"5"
+	}],
+	"Media":"Art",
+	"PreviewUrl":"released/supermoon.jpg",
+	"Download":[{
+		"source":"local",
+		"type":".jpg",
+		"url":"released/supermoon.jpg"
+	}],
+	"Tags":"supermoon,solar,eclipse"
 }]

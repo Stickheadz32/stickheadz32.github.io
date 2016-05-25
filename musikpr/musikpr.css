@@ -2,7 +2,6 @@
 
 /*Font by Vissol Ltd. Free for commercial use.*/
 @import url("fonts/mavenpro_regular.css");
-
 html{
 	display:block;
 	background:#000;
@@ -10,6 +9,7 @@ html{
 	height:100%;
 	font-family:"Lucida Grande","Lucida Sans Unicode","Lucida Sans","DejaVu Sans",Verdana,sans-serif;
 }
+
 body{
 	margin:0px auto 100px;
 	padding:50px 50px 0px;
@@ -47,18 +47,25 @@ header .rightTab .searchTab input{
 	margin:1px;
 	padding: 5px;
 	border:solid 1px rgba(0,0,0,0.3);
+	min-width:265px;
 }
 header .rightTab .searchTab button{
 	display:inline-block;
 	position:relative;
-	background:#FFF;
+	background:rgba(255,255,255,.7);
+	color:#000;
 	border:solid 1px rgba(0,0,0,0.4);
 	font-family:"MavenPro Regular";
 	font-size:15px;
 	margin:1px;
 	padding:5px;
+	cursor:pointer;
 }
-
+header .rightTab .searchTab button:hover{
+	color:#444;
+	box-shadow:0 0 10px #FFF;
+	background:#FFF;
+}
 /*Current date and time*/
 header .dateNow{
 	display:block;
@@ -130,6 +137,14 @@ ul.startMenu li.sM_selectedLink{
 	padding: 10px;
 	margin: 0 2px 0 2px;
 }
+ul.startMenu li.sM_selectedLink a{
+	text-decoration: none;
+	padding: 10px;
+	margin:-10px;
+	background:#FFF;
+	color:#000;
+	display:block;
+}
 /*Page content*/
 .pageContent{
 	display:block;
@@ -177,6 +192,12 @@ ul.catMenu .cM_Link{
 	display: block;
 	box-shadow:0 0 40px 10px #08C;
 }
+.prodContent{
+	display:block;
+	padding:0;
+	margin:10px;
+	list-style-type:none;
+}
 .pageContent ul.prodContent li{
 	display:block;
 	margin:5px;
@@ -190,6 +211,12 @@ ul.catMenu .cM_Link{
 	display:block;
 }
 .pageContent ul.prodContent li p{
+	display:block;
+}
+.pageContent .auth{
+	display:block;
+}
+.pageContent .publishDate{
 	display:block;
 }
 abbr{

@@ -54,17 +54,48 @@
 </li></ul>
 
 <div class="pageContent">
+<div id="id01"></div>
+<div id="id01"></div>
+<div id="id01"></div>
+<div id="id01"></div>
+	<script>
+	var a=new XMLHttpRequest(),url="production/released.txt";
+	a.onreadystatechange=function(){
+		if(a.readyState==4&&a.status==200){
+		    var s=JSON.parse(a.responseText),
+		    res=[],out='<ul class="prodContent">',b,c=s.length;
+		    for(b = 0; b < c; b++) {
+				var d=s[b],e=d.Description,h="";
+		        out += "<li><h3>" + d.Title +
+		        '</h3><span id="auth">' + d.By +"</span>";
+				
+				if(d.Description.constructor === Array){
+					var f=e.length,g;
+					for(g = 0; g < f; g++){
+						h+=e[g]+" ";
+					}
+					h=h.length>140?h.substring(0,137)+"...":h;
+				}
+				else h+=(e.length>140 ? e.substring(0,137)+"..." : e);
+				out += "<p>" + h + "</p>";
+				out+= "</li>";
+		    }
+		    out += "</ul>";
+		    switch(s[b].Media){
+		    	case "Audio": res[0]+=out;break;
+		    	case "Video": res[1]+=out;break;
+		    	case "Art": res[2]+=out;break;
+		    	case "Other": res[3]+=out;break;
+		    }
+		    document.getElementById("id01").innerHTML = out;
+		}
+	}
+	a.open("GET", url, true);
+	a.send();
+	</script>
+	
 
-<h2>Music</h2>
-<div id="id01"></div>
-<h2>Videos</h2>
-<div id="id01"></div>
-<h2>Art</h2>
-<div id="id01"></div>
-<h2>Other media</h2>
-<div id="id01"></div>
-
-</div>
+</div><!--.pageContent-->
 <footer>
 Website structured and designed by Stickheadz32. 
 </footer>
