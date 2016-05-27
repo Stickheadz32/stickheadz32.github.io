@@ -8,15 +8,15 @@
     <meta name="keywords" content="the works of stickheadz32, music, video, Windows XP remix"/>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="canonical" href="http://stickheadz32.github.io/musikpr/production/"/>
-    <link href="musikpr.css" rel="stylesheet" type="text/css"/>
-	<!--[if lt IE 9]><link href="musikpr-lte8.css" rel="stylesheet" type="text/css"/><![endif]-->
-	<link href="opensearch.xml" rel="search" type="application/opensearchdescription+xml" title="Search - The Works of Stickheadz32"/>
+    <link rel="canonical" href="/production/"/>
+    <link href="../musikpr.css" rel="stylesheet" type="text/css"/>
+	<!--[if lt IE 9]><link href="../musikpr-lte8.css" rel="stylesheet" type="text/css"/><![endif]-->
+	<link href="../opensearch.xml" rel="search" type="application/opensearchdescription+xml" title="Search - The Works of Stickheadz32"/>
     <!-- jQuery v1.11.3 - (c) 2005, 2015 jQuery Foundation, Inc. - jquery.org/license -->
-    <script type="text/javascript" src="player/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../player/jquery-1.11.3.min.js"></script>
 	<!-- Mediaelement.js - (c) John Dyer -->
-    <script type="text/javascript" src="player/mediaelement-and-player.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="player/mediaelementplayer.css"/>
+    <script type="text/javascript" src="../player/mediaelement-and-player.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../player/mediaelementplayer.css"/>
 </head>
 <body>
 
@@ -59,7 +59,7 @@
 <div id="id01"></div>
 <div id="id01"></div>
 	<script>
-	var a=new XMLHttpRequest(),url="production/released.txt";
+	var a=new XMLHttpRequest(),url="released.txt";
 	a.onreadystatechange=function(){
 		if(a.readyState==4&&a.status==200){
 		    var s=JSON.parse(a.responseText),
@@ -79,14 +79,14 @@
 				else h+=(e.length>140 ? e.substring(0,137)+"..." : e);
 				out += "<p>" + h + "</p>";
 				out+= "</li>";
+			    switch(d.Media){
+			    	case "Audio": res[0]+=out;break;
+			    	case "Video": res[1]+=out;break;
+			    	case "Art": res[2]+=out;break;
+			    	case "Other": res[3]+=out;break;
+			    }
 		    }
 		    out += "</ul>";
-		    switch(s[b].Media){
-		    	case "Audio": res[0]+=out;break;
-		    	case "Video": res[1]+=out;break;
-		    	case "Art": res[2]+=out;break;
-		    	case "Other": res[3]+=out;break;
-		    }
 		    document.getElementById("id01").innerHTML = out;
 		}
 	}
