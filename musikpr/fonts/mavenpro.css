@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'MavenPro Regular';
+	src: url('MavenPro-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'MavenPro Bold';
+	src: url('MavenPro-Bold.ttf') format('truetype');
+	font-weight: bold;
+}

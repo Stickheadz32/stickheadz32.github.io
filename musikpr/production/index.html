@@ -9,8 +9,8 @@
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="canonical" href="/production/"/>
-    <link href="../musikpr.css" rel="stylesheet" type="text/css"/>
-	<!--[if lt IE 9]><link href="../musikpr-lte8.css" rel="stylesheet" type="text/css"/><![endif]-->
+    <link href="../css/musikpr.css" rel="stylesheet" type="text/css"/>
+	<!--[if lt IE 9]><link href="../css/musikpr-lte8.css" rel="stylesheet" type="text/css"/><![endif]-->
 	<link href="../opensearch.xml" rel="search" type="application/opensearchdescription+xml" title="Search - The Works of Stickheadz32"/>
     <!-- jQuery v1.11.3 - (c) 2005, 2015 jQuery Foundation, Inc. - jquery.org/license -->
     <script type="text/javascript" src="../player/jquery-1.11.3.min.js"></script>
@@ -30,8 +30,9 @@
 	<!--right side of header-->
 	<div class="rightTab">
 
-		<form class="searchTab" method="GET" name="search" action="http://stickheadz32.github.io/musikpr/search">
-			<input type="text" name="query" title="Enter search word(s) here" placeholder="Search in The Works of Stickheadz32...">
+		<form class="searchTab" method="GET" name="search" action="../search">
+			<label for="search">Search:</label>
+			<input type="text" name="query" title="Enter search word(s) here" placeholder="in The Works of Stickheadz32...">
 			<button type="submit" value="Search">Search</button>
 		</form>
 		
@@ -46,24 +47,24 @@
 <!--end header-->
 
 <ul class="startMenu">
-<li class="sM_Link"><a href="index.html">Start</a>
-</li><li class="sM_Link"><a href="about.html">About me</a>
+<li class="sM_Link"><a href="../">Start</a>
+</li><li class="sM_Link"><a href="../about">About me</a>
 </li><li class="sM_selectedLink">Production
-</li><li class="sM_Link"><a href="tutorials.html">Tutorials</a>
-</li><li class="sM_Link"><a href="contact.html">Contact</a>
+</li><li class="sM_Link"><a href="../tutorials">Tutorials</a>
+</li><li class="sM_Link"><a href="../contact">Contact</a>
 </li></ul>
 
 <div class="pageContent">
-<div id="id01"></div>
-<div id="id01"></div>
-<div id="id01"></div>
-<div id="id01"></div>
+<div id="prodReleased">
+	<h2><a href="released">Released</a></h2>
+</div>
 	<script>
 	var a=new XMLHttpRequest(),url="released.txt";
 	a.onreadystatechange=function(){
 		if(a.readyState==4&&a.status==200){
 		    var s=JSON.parse(a.responseText),
 		    res=[],out='<ul class="prodContent">',b,c=s.length;
+
 		    for(b = 0; b < c; b++) {
 				var d=s[b],e=d.Description,h="";
 		        out += "<li><h3>" + d.Title +
@@ -79,15 +80,8 @@
 				else h+=(e.length>140 ? e.substring(0,137)+"..." : e);
 				out += "<p>" + h + "</p>";
 				out+= "</li>";
-			    switch(d.Media){
-			    	case "Audio": res[0]+=out;break;
-			    	case "Video": res[1]+=out;break;
-			    	case "Art": res[2]+=out;break;
-			    	case "Other": res[3]+=out;break;
-			    }
 		    }
-		    out += "</ul>";
-		    document.getElementById("id01").innerHTML = out;
+		    document.getElementById("prodReleased").innerHTML += out;
 		}
 	}
 	a.open("GET", url, true);

@@ -8,19 +8,19 @@
 		"day":"20"
 	}],
 	"Media":"Audio",
-	"PreviewUrl":"released/chiptest1.mp3",
+	"PreviewUrl":"audio/chiptest1.mp3",
 	"Download":[{
 		"source":"local",
 		"type":".mp3",
-		"url":"released/chiptest1.mp3"
+		"url":"audio/chiptest1.mp3"
 	},{
 		"source":"local",
 		"type":".wav",
-		"url":"released/chiptest.wav"
+		"url":"audio/chiptest.wav"
 	},{
 		"source":"local",
 		"type":".it",
-		"url":"released/chiptest1.it"
+		"url":"audio/chiptest1.it"
 	},{
 		"source":"mediafire",
 		"type":".mp3",
@@ -44,11 +44,11 @@
 		"day":"20"
 	}],
 	"Media":"Video",
-	"PreviewUrl":"released/deusexmessagereplica.mp4",
+	"PreviewUrl":"video/deusexmessagereplica.mp4",
 	"Download":[{
 		"source":"local",
 		"type":".mp4",
-		"url":"released/deusexmessagereplica.mp4"
+		"url":"video/deusexmessagereplica.mp4"
 	}]
 },{
 	"Title":"Supermoon test",
@@ -60,11 +60,11 @@
 		"day":"5"
 	}],
 	"Media":"Art",
-	"PreviewUrl":"released/supermoon.jpg",
+	"PreviewUrl":"art/supermoon.jpg",
 	"Download":[{
 		"source":"local",
 		"type":".jpg",
-		"url":"released/supermoon.jpg"
+		"url":"art/supermoon.jpg"
 	}],
 	"Tags":"supermoon,solar,eclipse"
 }]

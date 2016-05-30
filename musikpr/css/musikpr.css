@@ -1,7 +1,7 @@
 /*Designed by Stickheadz32*/
 
 /*Font by Vissol Ltd. Free for commercial use.*/
-@import url("fonts/mavenpro_regular.css");
+@import url("../fonts/mavenpro.css");
 html{
 	display:block;
 	background:#000;
@@ -40,6 +40,11 @@ header .rightTab .searchTab{
 	padding:5px;
 	display:block;
 }
+header .rightTab .searchTab label{
+	text-align:right;
+	margin:2px;
+	font-size:15px;
+}
 header .rightTab .searchTab input{
 	display:inline-block;
 	font-family: "MavenPro Regular";
@@ -47,7 +52,7 @@ header .rightTab .searchTab input{
 	margin:1px;
 	padding: 5px;
 	border:solid 1px rgba(0,0,0,0.3);
-	min-width:265px;
+	min-width:220px;
 }
 header .rightTab .searchTab button{
 	display:inline-block;
@@ -111,7 +116,7 @@ ul.startMenu li.sM_Link{
 	display: inline-block;
 	background:transparent;
 	transition: ease-in-out background 300ms;
-	padding:0;
+	padding:10px;
 	margin:0 2px 0 2px;
 }
 ul.startMenu li.sM_Link a{
@@ -119,7 +124,7 @@ ul.startMenu li.sM_Link a{
 	background:#8BF;
 	text-decoration:none;
 	padding:10px;
-	margin:0;
+	margin:-10px;
 	box-shadow:inset 0 -15px 15px -15px rgba(0,64,255,.7);
 	-moz-box-shadow:inset 0 -15px 15px -15px rgba(0,64,255,.7);
 	-webkit-box-shadow:inset 0 -15px 15px -15px rgba(0,64,255,.7);
@@ -166,6 +171,9 @@ ul.catMenu .cM_Link{
 	padding:10px;
 	font-size:30px;
 	border-bottom:solid 1px rgba(0,0,0,0.3);
+}
+.pageContent h2 b{
+	font-family:"MavenPro Bold";
 }
 .pageContent p{
 	margin:20px 10px;
