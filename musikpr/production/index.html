@@ -41,7 +41,7 @@
 			<div id="dateNow_dayMonth"></div>
 			<div id="dateNow_year"></div>
 		</div>
-	<script type="text/javascript" src="datetime.js"></script>
+	<script type="text/javascript" src="../datetime.js"></script>
 	</div>
 </header>
 <!--end header-->
@@ -56,19 +56,29 @@
 
 <div class="pageContent">
 <div id="prodReleased">
-	<h2><a href="released">Released</a></h2>
+	<h2><a href="released">Released</a></h2><p>Latest 10 released works</p>
 </div>
 	<script>
-	var a=new XMLHttpRequest(),url="released.txt";
+	var a=new XMLHttpRequest(),url="released/released.txt";
 	a.onreadystatechange=function(){
 		if(a.readyState==4&&a.status==200){
 		    var s=JSON.parse(a.responseText),
-		    res=[],out='<ul class="prodContent">',b,c=s.length;
+		    res=[],out='<ul class="prodList">',b,c=s.length;
 
-		    for(b = 0; b < c; b++) {
-				var d=s[b],e=d.Description,h="";
+		    for(b = 0; b < c && c < 10 ; b++) {
+				var d=s[b],e=d.Description,h="",
+					da=d.Date[0],
+					db=da.day%10,
+					dc=da.day%100,
+					ti=["January","February","March","April","May","June","July","August","September","October","November","December"];
 		        out += "<li><h3>" + d.Title +
-		        '</h3><span id="auth">' + d.By +"</span>";
+		        '</h3><span class="auth">' + d.By +"</span>";
+		        out+='<span class="publishDate">'+ti[da.month-1]+' '+da.day+
+				/* 1st 2nd 3rd 4th... 11th 12th 13th 14th... 21st 22nd 23rd 24th...	*/
+					(db === 1 && dc !== 11 ? "st" :
+					 db === 2 && dc !== 12 ? "nd" :
+					 db === 3 && dc !== 13 ? "rd" :
+						"th")+', '+da.year+'</span>';
 				
 				if(d.Description.constructor === Array){
 					var f=e.length,g;
@@ -77,7 +87,7 @@
 					}
 					h=h.length>140?h.substring(0,137)+"...":h;
 				}
-				else h+=(e.length>140 ? e.substring(0,137)+"..." : e);
+				else h+=e.length>140 ? e.substring(0,137)+"...":e;
 				out += "<p>" + h + "</p>";
 				out+= "</li>";
 		    }
@@ -91,7 +101,8 @@
 
 </div><!--.pageContent-->
 <footer>
-Website structured and designed by Stickheadz32. 
+<p>Website structured and designed by Stickheadz32.</p>
+<p>Mediaelement.js (c) John Dyer.</p>
 </footer>
 
 <!--MediaElement.js Player bootup-->
