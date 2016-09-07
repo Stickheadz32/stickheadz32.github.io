@@ -1,7 +1,56 @@
 html{
-background:url("img/beach_highres.jpg") fixed center no-repeat;
+background:fixed center no-repeat;
 background-size: cover;
+margin:0;
+padding:0;
 }
-.menu li,.content{
+#beach0{background-image:url("img/beach_4K.jpg");}
+#beach1{background-image:url("img/beach_2K.jpg");}
+#beach2{background-image:url("img/beach_1080p.jpg");}
+#beach3{background-image:url("img/beach_720p.jpg");}
+#beach4{background-image:url("img/beach_480p.jpg");}
+
+#coast0{background-image:url("img/coastline_4K.jpg");}
+#coast1{background-image:url("img/coastline_2K.jpg");}
+#coast2{background-image:url("img/coastline_1080p.jpg");}
+#coast3{background-image:url("img/coastline_720p.jpg");}
+#coast4{background-image:url("img/coastline_480p.jpg");}
+
+#stone0{background-image:url("img/stone_4K.jpg");}
+#stone1{background-image:url("img/stone_2K.jpg");}
+#stone2{background-image:url("img/stone_1080p.jpg");}
+#stone3{background-image:url("img/stone_720p.jpg");}
+#stone4{background-image:url("img/stone_480p.jpg");}
+body{
+margin:0;
+padding:200px;
+}
+.menu{
+color:#FFF;
+margin:0 -10px 0 0;
+padding:0;
+display:block;
+}
+.menu li{
+list-style-image:url("img/.svg");
+display:inline-block;
+}
+.menu a{
+color:#FFF;
 background:rgba(0,0,0,.4);
+text-shadow:0 0 25px rgba(0,0,0,.4);
+text-decoration:none;
+padding:25px;
+margin:0 10px 0 0;
+font-size:20px;
+display:block;
+}
+.content{
+color:#FFF;
+min-width:80%;
+min-height:80%;
+background:rgba(0,0,0,.4);
+margin:0;
+padding:15px;
+display:block;
 }
