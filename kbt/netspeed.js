@@ -1,6 +1,6 @@
 //Code by Shadow Wizard @ stackoverflow
-var imageAddr = "img/coastline_2K.jpg"; 
-var downloadSize = 904615; //bytes
+var imageAddr = "img/arrow.svg.jpg"; 
+var downloadSize = 263; //bytes
 
 function ShowProgressMessage(msg) {
     if (console) {
