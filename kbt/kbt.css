@@ -44,10 +44,16 @@ margin:0 10px 0 0;
 font-size:20px;
 display:block;
 }
+<<<<<<< HEAD
 .menu a:hover{
 text-indent:25px;
 
 background:url("img/arrow.svg") 25px rgba(0,0,0,.4) no-repeat;
+=======
+.menu li::before{
+width:20px:height:20px;
+background-image:url(img/svg/arrow.svg);
+>>>>>>> origin/master
 }
 .content{
 color:#FFF;
