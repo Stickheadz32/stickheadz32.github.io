@@ -1,3 +1,4 @@
+/*Designed by Stickheadz32*/
 html{
 background:fixed center no-repeat;
 background-size: cover;
@@ -23,7 +24,8 @@ padding:0;
 #stone4{background-image:url("img/stone_480p.jpg");}
 body{
 margin:0;
-padding:200px;
+padding:10%;
+height:100%;
 }
 .menu{
 color:#FFF;
@@ -43,6 +45,7 @@ padding:25px;
 margin:0 10px 0 0;
 font-size:20px;
 display:block;
+transition:ease-in-out .5s text-indent background;
 }
 .menu a:hover{
 text-indent:25px;
@@ -54,10 +57,10 @@ background-image:url(img/svg/arrow.svg);
 }
 .content{
 color:#FFF;
-min-width:80%;
-min-height:80%;
 background:rgba(0,0,0,.4);
+height:100%;
 margin:0;
 padding:15px;
 display:block;
+box-sizing: border-box;
 }
