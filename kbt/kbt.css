@@ -40,13 +40,13 @@ display:inline-block;
 .menu a{
 color:#FFF;
 background:none 25px rgba(0,0,0,.4) no-repeat;
-text-shadow:0 0 25px rgba(0,0,0,.4);
+text-shadow:0 0 25px rgba(0,0,0,.6);
 text-decoration:none;
 padding:25px;
 margin:0 10px 0 0;
 font-size:20px;
 display:block;
-transition:ease-in-out .3s text-indent;
+transition:ease-in-out .3s text-indent,ease-in-out .1s background;
 }
 .menu a:hover{
 text-indent:25px;
@@ -66,5 +66,4 @@ margin:0;
 padding:15px;
 display:block;
 box-sizing: border-box;
-transition:ease-in-out .3s background;
 }

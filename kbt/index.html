@@ -33,9 +33,7 @@
 	        	r=v.id,
 	        	img=["beach","coast","stone"],
 	        	s=r.length>0?r.slice(0,-1):img[2];
-	        	r=(!r||s==img[2])?img[0]+a:
-	        	(s==img[0]?img[1]+a:
-	        		img[2]+a);
+	        	r=(!r||s==img[2])?img[0]+a:(s==img[0]?img[1]+a:img[2]+a);
         		v.id=r;
         }
         htmlPic();
