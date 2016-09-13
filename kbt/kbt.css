@@ -32,7 +32,6 @@ padding:0;
 display:block;
 }
 .menu li{
-list-style-image:url("img/.svg");
 display:inline-block;
 }
 .menu a{
@@ -44,6 +43,11 @@ padding:25px;
 margin:0 10px 0 0;
 font-size:20px;
 display:block;
+}
+.menu a:hover{
+text-indent:25px;
+
+background:url("img/arrow.svg") 25px rgba(0,0,0,.4) no-repeat;
 }
 .content{
 color:#FFF;
