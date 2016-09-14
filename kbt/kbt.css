@@ -4,7 +4,7 @@ background:#000 fixed center no-repeat;
 background-size: cover;
 margin:0;
 padding:0;
-transition:ease-in-out 2s background,backgorund-image;
+transition:ease-in-out 2s background,ease-in-out 2s background-image;
 }
 #beach0{background-image:url("img/beach_4K.jpg");}
 #beach1{background-image:url("img/beach_2K.jpg");}
