@@ -1,10 +1,39 @@
-/*Designed by Stickheadz32*/
+﻿/*Designed by Stickheadz32*/
+*{
+	font-family:Verdana,"Geneva",sans-serif;
+}
+h1{
+	margin:0 10px;
+	padding:10px 15px;
+	font-size:44px;
+	font-weight:400;
+}
+h2{
+	margin:0 10px;
+	padding:5px 10px;
+	font-size:20px;
+	line-height:26px;
+}
+p{
+	margin:0 10px;
+	padding:12px 0;
+	font-size:20px;
+	line-height:26px;
+}
+li{
+	margin:0 10px;
+	padding:12px 0;
+	font-size:20px;
+	line-height:26px;
+}
 html{
-background:#000 fixed center no-repeat;
+background:#FFF fixed center no-repeat;
 background-size: cover;
 margin:0;
 padding:0;
 transition:ease-in-out 2s background,ease-in-out 2s background-image;
+height:100%;
+display:block;
 }
 #beach0{background-image:url("img/beach_4K.jpg");}
 #beach1{background-image:url("img/beach_2K.jpg");}
@@ -26,8 +55,9 @@ transition:ease-in-out 2s background,ease-in-out 2s background-image;
 body{
 margin:0;
 padding:10%;
-height:100%;
-opacity:1;
+opacity:1 !important;
+height:90%;
+box-sizing: border-box;
 }
 .menu{
 color:#FFF;
@@ -35,28 +65,40 @@ margin:0;
 padding:0;
 display:block;
 /*Test för låg upplösning*/
-overflow-x:scroll;
+overflow-x:auto;
 overflow-y:hidden;
 white-space:nowrap;
 }
 .menu li{
 display:inline-block;
+font-size:200%;
+margin:0;
+padding:0;
 }
 .menu a{
 color:#FFF;
-background:none 25px rgba(0,0,0,.4) no-repeat;
-text-shadow:0 0 25px rgba(0,0,0,.6);
+background:url("img/arrow.svg") 25px rgba(0,0,0,.3) no-repeat;
+text-shadow: 0 0 10px rgba(0,0,0,.6);
 text-decoration:none;
-padding:25px;
+text-indent:25px;
+padding: 20px;
 margin:0 10px 0 0;
-font-size:20px;
 display:block;
-transition:ease-in-out .3s text-indent,ease-in-out .1s background;
+transition:ease-in-out .3s background;
+}
+.menu #menuSelected{
+	padding:20px;
+	background-color:rgba(0,0,0,.6);
+	box-shadow: 0 10px 20px 0px rgba(0,0,0,.3);
+	margin:0 10px 0 0;
+}
+.menu #menuSelected:before{
+	background:none !important;
+	width:0;
 }
 .menu a:hover{
-text-indent:25px;
-background:url("img/arrow.svg") 25px rgba(0,0,0,.6) no-repeat;
-box-shadow: 0 10px 20px rgba(0,0,0,.3);
+background-color:rgba(0,0,0,.6);
+box-shadow: 0 10px 20px 0px rgba(0,0,0,.3);
 transition:ease-in-out .3s;
 }
 .menu li:before{
@@ -65,9 +107,45 @@ background-image:url("img/svg/arrow.svg");
 }
 .content{
 color:#FFF;
-background:rgba(0,0,0,.4);
-min-height:100%;
+background:rgba(0,0,0,.6);
 margin:0;
-padding:15px;
+padding:20px;
 display:block;
+overflow-y:scroll;
+overflow-x:auto;
+height:100%;
+}
+#welcome{
+	position:absolute;
+	left:0;
+	top:0;
+	height:100%;
+	animation:welcome 4s 1;
+	opacity:0;
+	pointer-events:none;
+	margin:0;
+	padding:0;
+}
+#welcome h1{
+	padding:20%;
+	margin:auto;
+	font-size:72px;
+}
+@keyframes welcome{
+	0%{
+		background:rgba(0,0,0,1);
+		color:rgba(0,0,0,1);
+		opacity:1;
+		width:100%;
+		animation-timing-function:ease-in;}
+	40%{
+		opacity:.7;
+		color:rgba(255,255,255,1);
+		background:rgba(0,0,0,1);animation-timing-function:ease-out;
+	}
+	100%{
+		color:rgba(255,255,255,0);
+		opacity:0;
+		width:100%;
+	}
 }

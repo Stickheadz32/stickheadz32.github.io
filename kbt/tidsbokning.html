@@ -5,17 +5,17 @@
 <title>Start - KBT-tjänst</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="kbt.css"/>
-<meta name="canonical" content="http://stickheadz32.github.io/kbt/"/>
+<meta name="canonical" content="http://stickheadz32.github.io/kbt/tidsbokning/"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 </head>
 <body>
 <header></header>
 <ul class="menu">
-	<li><a href="">Start</a>
-	</li><li><a href="">KBT/DBT</a>
-	</li><li><a href="">Om terapeuten</a>
-	</li><li><a href="">Tidsbokning</a>
-	</li><li><a href="">Kontakt</a>
+    <li><a href=".">Start</a>
+    </li><li><a href="omkbt.html">KBT/DBT</a>
+    </li><li id="menuSelected">Om terapeuten
+    </li><li><a href="tidsbokning.html">Tidsbokning</a>
+    </li><li><a href="kontakt.html">Kontakt</a>
 </li></ul>
 <div class="content">
 <h1>Välkommen till KBT</h1>
@@ -24,23 +24,6 @@
 </div>
 <footer>
 </footer>
-<script>
-var autoHTML=1;
-function htmlPic(){
-        var a=window.screen.height;
-        a=a>719?4:
-        (a>1079?3:
-        (a>2169?2:
-        (a>4351?1:0)));
-        var v=document.getElementsByTagName("html")[0],
-    	r=v.id,
-    	img=["beach","coast","stone"],
-    	s=r.length>0?r.slice(0,-1):img[2];
-    	r=(!r||s==img[2])?img[0]+a:(s==img[0]?img[1]+a:img[2]+a);
-		v.id=r;
-}
-htmlPic();
-if(autoHTML)setInterval(htmlPic,5e3);
-</script>
+<script src="js/htmlPicTransition.js"></script>
 </body>
 </html>
