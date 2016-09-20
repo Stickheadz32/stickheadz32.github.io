@@ -24,5 +24,5 @@ function htmlPic(){
 		v.id=r+b;
 	}
 }
-htmlPic();
+for(var i=0;i<4;i++)htmlPic();
 setInterval(htmlPic,5e3);
