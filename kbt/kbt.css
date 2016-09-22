@@ -1,31 +1,48 @@
-﻿/*Designed by Stickheadz32*/
+/*Designed by Stickheadz32*/
 *{
 	font-family:Verdana,"Geneva",sans-serif;
 }
-@media screen and (max-aspect-ratio:3/2){
+#beach0{background-image:url("img/beach_4K.jpg");}
+#beach1{background-image:url("img/beach_2K.jpg");}
+#beach2{background-image:url("img/beach_1080p.jpg");}
+#beach3{background-image:url("img/beach_720p.jpg");}
+#beach4{background-image:url("img/beach_480p.jpg");}
+
+#coast0{background-image:url("img/coastline_4K.jpg");}
+#coast1{background-image:url("img/coastline_2K.jpg");}
+#coast2{background-image:url("img/coastline_1080p.jpg");}
+#coast3{background-image:url("img/coastline_720p.jpg");}
+#coast4{background-image:url("img/coastline_480p.jpg");}
+
+#stone0{background-image:url("img/stone_4K.jpg");}
+#stone1{background-image:url("img/stone_2K.jpg");}
+#stone2{background-image:url("img/stone_1080p.jpg");}
+#stone3{background-image:url("img/stone_720p.jpg");}
+#stone4{background-image:url("img/stone_480p.jpg");}
+@media screen, (max-aspect-ratio:1/1) and (max-width:768px){
 	h1{
 		margin:0 10px;
 		padding:10px 15px;
-		font-size:44px;
+		font-size:25px;
 		font-weight:400;
 	}
 	h2{
 		margin:0 10px;
 		padding:5px 10px;
-		font-size:20px;
+		font-size:18px;
 		line-height:26px;
 	}
 	p{
 		margin:0 10px;
 		padding:12px 0;
-		font-size:20px;
-		line-height:26px;
+		font-size:15px;
+		line-height:22px;
 	}
 	li{
 		margin:0 10px;
 		padding:12px 0;
-		font-size:20px;
-		line-height:26px;
+		font-size:12px;
+		line-height:18px;
 	}
 	html{
 	background:#FFF fixed center no-repeat;
@@ -48,18 +65,31 @@
 	.menu{
 		color:#FFF;
 		display:block;
+		position:fixed;
+		top:0;
 		margin:0;
 		padding:0;
+		overflow-y: auto;
 	}
-	.menu li{
-	display:inline-block;
-	font-size:200%;
-	margin:0;
-	padding:0;
+	.menu:before{
+		content:"";
+		background:url("img/arrow-left.svg") 25px rgba(0,0,0,.6) no-repeat;
+		position:fixed;
+		display:block;
+		top:0;
+		left:0;
+		width:100px;
+		height:100px;
+	}
+	.menu:hover ~ .menu:before{
+		background:url("img/arrow-left.svg") 25px #000 no-repeat;
+	}
+	.menu:hover a{
+		width:auto;
 	}
 	.menu a{
 	color:#FFF;
-	background:url("img/arrow-right.svg") 25px rgba(0,0,0,.3) no-repeat;
+	background:url("img/arrow-right.svg") 25px #000 no-repeat;
 	text-shadow: 0 0 10px rgba(0,0,0,.6);
 	text-decoration:none;
 	text-indent:25px;
@@ -68,26 +98,50 @@
 	display:block;
 	transition:ease-in-out .3s background;
 	}
-	.menu #menuSelected{
-		padding:20px;
-		background-color:rgba(0,0,0,.6);
-		margin:0 10px 0 0;
-	}
-	.menu #menuSelected:before{
-		background:none !important;
-		width:0;
-	}
 	.menu a:hover{
 	background-color:rgba(0,0,0,.45);
 	box-shadow:inset 0 -10px 20px -10px rgba(255,255,255,.1);
 	transition:ease-in-out .3s;
 	}
+	.menu li{
+	position:relative;
+	display:none;
+	font-size:200%;
+	margin:0;
+	display:none;
+	}
+	.menu:hover li{
+		display:block;
+	}
 	.menu li:before{
+		content:"";
 	width:20px:height:20px;
-	background-image:url("img/svg/arrow.svg");
+	background-image:url("img/svg/arrow-right.svg");
+	}
+	.menu #menuSelected{
+		padding:20px;
+		background-color:rgba(0,0,0,.6);
+		margin:0 10px 0 0;
+		width:0;
+	}
+	.menu #menuSelected:before{
+		content:"";
+		background:none !important;
+		width:0;
+	}
+	.content{
+	color:#FFF;
+	background:rgba(0,0,0,.6);
+	margin:0;
+	padding:20px;
+	display:block;
+	overflow-y:scroll;
+	overflow-x:auto;
+	height:100%;
+	width:auto;
 	}
 }
-@media screen, (min-aspect-ratio:3/2) and (max-aspect-ratio:21/9){
+@media screen, (min-width:769px), (min-aspect-ratio:1/1) and (max-aspect-ratio:21/9){
 	h1{
 		margin:0 10px;
 		padding:10px 15px;
@@ -122,23 +176,6 @@
 	width:100%;
 	display:block;
 	}
-	#beach0{background-image:url("img/beach_4K.jpg");}
-	#beach1{background-image:url("img/beach_2K.jpg");}
-	#beach2{background-image:url("img/beach_1080p.jpg");}
-	#beach3{background-image:url("img/beach_720p.jpg");}
-	#beach4{background-image:url("img/beach_480p.jpg");}
-
-	#coast0{background-image:url("img/coastline_4K.jpg");}
-	#coast1{background-image:url("img/coastline_2K.jpg");}
-	#coast2{background-image:url("img/coastline_1080p.jpg");}
-	#coast3{background-image:url("img/coastline_720p.jpg");}
-	#coast4{background-image:url("img/coastline_480p.jpg");}
-
-	#stone0{background-image:url("img/stone_4K.jpg");}
-	#stone1{background-image:url("img/stone_2K.jpg");}
-	#stone2{background-image:url("img/stone_1080p.jpg");}
-	#stone3{background-image:url("img/stone_720p.jpg");}
-	#stone4{background-image:url("img/stone_480p.jpg");}
 	body{
 	margin:0;
 	padding:10%;
@@ -147,20 +184,19 @@
 	width:100%;
 	box-sizing: border-box;
 	}
+	.menu{
+	color:#FFF;
+	padding:0;
+	display:block;
+	}
 	@media (min-width:1404px){
 		.menu{
-		color:#FFF;
 		margin:0 -10px 0 0;
-		padding:0;
-		display:block;
 		}
 	}
-	@media (min-width:1024px) and (max-width:1403px){
+	@media (max-width:1403px){
 		.menu{
-		color:#FFF;
 		margin:0;
-		padding:0;
-		display:block;
 		/*Test för låg upplösning*/
 		overflow-x:auto;
 		overflow-y:hidden;
@@ -211,7 +247,7 @@
 	overflow-y:scroll;
 	overflow-x:auto;
 	height:100%;
-	width:100%;
+	width:95%;
 	}
 	#welcome{
 		position:absolute;
@@ -266,23 +302,6 @@
 	overflow-y:hidden;
 	display:block;
 	}
-	#beach0{background-image:url("img/beach_4K.jpg");}
-	#beach1{background-image:url("img/beach_2K.jpg");}
-	#beach2{background-image:url("img/beach_1080p.jpg");}
-	#beach3{background-image:url("img/beach_720p.jpg");}
-	#beach4{background-image:url("img/beach_480p.jpg");}
-
-	#coast0{background-image:url("img/coastline_4K.jpg");}
-	#coast1{background-image:url("img/coastline_2K.jpg");}
-	#coast2{background-image:url("img/coastline_1080p.jpg");}
-	#coast3{background-image:url("img/coastline_720p.jpg");}
-	#coast4{background-image:url("img/coastline_480p.jpg");}
-
-	#stone0{background-image:url("img/stone_4K.jpg");}
-	#stone1{background-image:url("img/stone_2K.jpg");}
-	#stone2{background-image:url("img/stone_1080p.jpg");}
-	#stone3{background-image:url("img/stone_720p.jpg");}
-	#stone4{background-image:url("img/stone_480p.jpg");}
 	body{
 	margin:0;
 	padding:5%;
@@ -365,6 +384,23 @@
 		margin:auto;
 		font-size:72px;
 	}
+}
+footer{
+	display: block;
+	position:fixed;
+	left:0;
+	top:95%;
+	height:5%;
+	width:100%;
+	margin:0;
+	padding:0 10%;
+	background:rgba(0,0,0,.6);
+	color:#FFF;
+}
+footer p{
+	padding:0;
+	margin:auto 0;
+	font-size: 100%;
 }
 @keyframes welcome{
 	0%{
