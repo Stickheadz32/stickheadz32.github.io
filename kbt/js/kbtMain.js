@@ -26,6 +26,7 @@ function htmlPic(){
 }
 for(var i=0;i<4;i++)htmlPic();
 setInterval(htmlPic,5e3);
-var menu = document.getElementsByClassName("menu")[0];menu.addEventListener("click",function(){
+var menu = document.getElementsByClassName("menu")[0];
+menu.addEventListener("click",function(){
 	menu.id=menu.id==""?"openMenu":"";
 });
