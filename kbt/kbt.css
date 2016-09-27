@@ -404,11 +404,18 @@ footer{
 	padding:0 10%;
 	background:rgba(0,0,0,.6);
 	color:#FFF;
+	transition:ease-out .2s;
 }
 footer p{
 	padding:0;
 	margin:auto 0;
 	font-size: 100%;
+}
+footer:hover{
+	height:15%;
+	top:85%;
+	background:rgba(32,32,32,.8);
+	transition:ease-out .2s;
 }
 @keyframes welcome{
 	0%{

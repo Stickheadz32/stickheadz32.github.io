@@ -1,0 +1,12 @@
+.bokning,.bokning div{
+    border:solid 1px rgba(255,255,255,.5);
+    margin:5px;
+    padding:5px;
+}
+.calWeek{
+	display:block;
+}
+.calDay{
+	display:inline-block;
+	
+}
