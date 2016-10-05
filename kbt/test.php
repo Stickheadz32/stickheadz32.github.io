@@ -2,30 +2,28 @@
 <html><head><style>
 </style></head><body>
 <?php
-
-/* connect to the db */
-$connection = mysql_connect('localhost','username','password');
-mysql_select_db('my_db',$connection);
-
-/* show tables */
-$result = mysql_query('SHOW TABLES',$connection) or die('cannot show tables');
-while($tableName = mysql_fetch_row($result)) {
-
-	$table = $tableName[0];
-	
-	echo '<h3>',$table,'</h3>';
-	$result2 = mysql_query('SHOW COLUMNS FROM '.$table) or die('cannot show columns from '.$table);
-	if(mysql_num_rows($result2)) {
-		echo '<table cellpadding="0" cellspacing="0" class="db-table">';
-		echo '<tr><th>Field</th><th>Type</th><th>Null</th><th>Key</th><th>Default<th>Extra</th></tr>';
-		while($row2 = mysql_fetch_row($result2)) {
-			echo '<tr>';
-			foreach($row2 as $key=>$value) {
-				echo '<td>',$value,'</td>';
-			}
-			echo '</tr>';
+$conn = mysqli_connect('localhost','kbt','invicibility1A','kbtkund') or die("Connection failed: " . mysqli_error());
+if($conn->connect_errno){
+	echo 'Connect failed: '.$conn->connect_error;
+}
+$patients = $conn->query('SELECT * FROM patient');
+if ($patients->num_rows > 0){
+	while($row = $patients->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Namn: " . $row["fnamn"]. " " . $row["enamn"]. "<br>";
+    }
+    $terapeuts = $conn->query('SELECT * FROM terapeut');
+	if ($terapeuts->num_rows > 0){
+		while($row1 = $terapeuts->fetch_assoc()) {
+	        echo "id: " . $row1["id"]. " - Namn: " . $row1["namn"]."<br>";
+	    }
+   		$boknings = $conn->query('SELECT * FROM bokning');
+	    if ($boknings->num_rows > 0){
+			while($row2 = $boknings->fetch_assoc()) {
+				$bok=$row2["bokning_id"];
+		        echo "Bokningsnummer: #" . $bok. " - Patient: " . $row[$row2["patient_id"]]." - Terapeut: ".$row2["terapeut_id"]."<br>";
+		    }
 		}
-		echo '</table><br />';
 	}
 }
+$conn->close();
 ?></body></html>
