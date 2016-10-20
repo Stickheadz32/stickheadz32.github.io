@@ -1,7 +1,18 @@
 /* Designed by Stickheadz32 */
+
+/*If you want to document everything about an element, do it outside the tags and curly braces, not inside.
+
+For very short description of an element style, you may write next to it.
+
+Describe the following:
+-What does the tag mean? What's the tag's initial preferences? What symbol between the tags - if any - represent what tag(s)?
+
+Folk ska se vad som är klickbart*/
+
+/*Import av Archer och Lato*/
 @import url("fonts/fonts.css");
 *{
-    box-shadow: 0 0 1px; /*debug style*/
+   /* box-shadow: 0 0 1px; /*debug style*/
 }
 html{
     margin:0;
@@ -16,47 +27,66 @@ body{
     display:block;
     font-family: "Lato",sans-serif;
 }
-p,li{
-    font:16px/1.5 "Lato",sans-serif;
+p,li,u{
     padding:0;
-    margin:0 0 10px 0;
+}
+p,li{
+    font:16px/24px "Lato",sans-serif;
+    margin:0 0 10px;
+}
+li{
+    margin:0;
+    line-height:20px;
 }
 ul{
-    margin:0px 10px;
-    padding:5px;
+    margin:0 0 10px 30px;
 }
 h1,h2,h3,h4,h5,h6{
     font-family:"Archer";
     line-height:1.5;
-    padding:0 0 10px 0;
+    padding:0 0 10px;
     margin:0;
     color:#333;
 }
+/*mindre kod ifall man har flera preferenser för flera element och sedan några preferenser för var och en av elementen*/
 h1{
     font:38px/46px "archer-bold";
 }
 h2{
     font:28px/27px "archer-semibold";
 }
-
+h3{
+    font:18px/19px "archer-semibold";
+    text-transform:uppercase;
+    margin:34px 0 21px;
+    padding:0;
+    color:#333;
+    border-bottom:solid 1px #333;
+}
+#realmap{
+    width:400px;
+    height:300px;
+    border:0;
+    margin:20px;
+}
 header{
     height:90px;
     display:block;
-    background:rgba(190,208,0,.9);
+    background:rgba(190,208,0,.9);/*real-grön med transparans för slidern*/
     color:#000;
     margin:0;
     padding:0;
 }
 footer{
     margin:0;
-    padding:18px 15px 16px 15px;
+    padding:18px 15px 16px;
     display:block;
     background:#282A2B;
     color:#FFF;
-    font:14px "Lato",sans-serif;
+    font:14px/20px "Lato",sans-serif;
 }
-footer>div,
-header>div{
+
+header>div,footer>div{
     display:block;
     max-width:1100px;
     margin:0 auto;
@@ -64,7 +94,7 @@ header>div{
 }
 section{
     max-width:1100px;
-    margin:0 auto 20px auto;
+    margin:0 auto 20px;
     padding:20px;
 }
 .mainLogo{
@@ -76,8 +106,12 @@ section{
     width:150px;
     margin:0 0 0 -19px;
     padding:19px;
+    color:transparent;
 }
-.mainMenu{
+#mainExpand{
+    display:none;/*visas istället i mobil och tablet*/
+}
+#mainMenu{
     display:block;
     float:left;
     margin:0 34px;
@@ -86,33 +120,66 @@ section{
     width:auto;
     list-style-type:none;
 }
-.mainMenu li{
+#mainMenu li{
     display:inline-block;
     padding:0;
     margin:33px 0;
 }
-.mainMenu li a{
+#mainMenu li a{
     font:20px/16px "archer-bold";
     text-decoration: none;
     color:#000;
     padding:33px 5px;
     margin:0 6px;
 }
-.mainMenu li a:hover,.mainMenu>#selected{
+#mainMenu li a:hover,.mainMenu>#selected{
     color:#FFF;
 }
+/*z-index till 1 för att ställa slidern bakom headern*/
+/*z-index till 1 för att ställa slidern bakom headern*/
 #slider{
     position:relative;
     max-width:100%;
     height:600px;
     background:#DDD;
-    margin:-90px 0 0 0;
+    margin:-90px 0 0;
     padding:0;
     z-index: -1;
 }
+/*"Anmäl intresse!"-bubblan i CSS-form*/
+.flash{
+    display:block;
+    position:absolute;
+    right:15px;
+    top:60px;
+    width:0;
+    height:0;
+    margin:0;
+    padding:50px;
+    background:#E5005A;
+    color:#FFF;
+    border-radius:100%;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+    z-index:1;
+    overflow:hidden;
+}
+.flash>*{
+    position:absolute;
+    display:block;
+    top:26%;
+    left:0;
+    text-align:center;
+    align-content: center;
+    margin:auto;
+    font:22px/.9 "Archer";
+}
 .ort{
     list-style-type:none;
-    margin:0;
+    margin:0 0 34px;
     padding:0;
 }
 .ort li{
@@ -122,24 +189,52 @@ section{
 }
 .ort li a{
     display:block;
-    font:17px/1 "Archer-bold";
+    font:17px/1 "archer-bold";
     text-transform: uppercase;
     padding:15px;
     margin:2px;
     background:#BED000;
-    color:#FFF;
+    color:#000;
     text-decoration:none;
 }
 .ort li a:hover{
     background:#E5005A;
+    color:#FFF;
 }
 .links{
     background:#EDEDED;
-    padding:0;margin:0 15px 0 0;
+    padding:17px 0 10px 45px;
+    margin:0 15px 95px 0;
+    display:block;
+}
+.links h2{
+    margin:0 0 10px;
+}
+.links h2:before{
+    content:"";
+    width:20px;
+    height:20px;
+    display: block;
+    position:relative;
+    top:26px;
+    left:-34px;
+    margin:-20px 0 0 0;
+    background:url("img/links_h2.svg") no-repeat;
+
+}
+.links p,.links a{
+    color:#000;
+    font:16px/24px "Lato",sans-serif;
+    display: block;
+    margin:0 0 10px 0;
+    padding:0;
+}
+.links p{
+    color:#333;
 }
 .breadcrumbs{
     display:block;
-    padding:0;
+    padding:12px 0 28px;
     margin:0;
     list-style-type:none;
     clear:both;
@@ -150,36 +245,114 @@ header~.breadcrumbs{
 }
 section>.breadcrumbs{
     max-width: 1100px;
-    margin:-20px auto 0 auto;
+    margin:-20px auto 0;
 }
 .breadcrumbs li{
     display:inline-block;
-    margin:10px 5px 0 0;
-    padding:0 5px 0 0;
-    border-right:solid 1px #CCC;
-    font-size:14px;
+    margin:0;
+    padding:0;
+    font:14px/20px "Lato",sans-serif;
 }
 .breadcrumbs li a{
     color:#000;
-    padding:3px 0;
-    margin:0;
+    padding:0 10px 0 0;
+    margin:0 7px 0 0;
     text-decoration:none;
+    border-right:solid 2px #CCC;
+}
+details{
+    margin:20px 0;
+    padding:10px 0;
+    font:16px/22px "Lato",sans-serif;
+    border-bottom:solid 1px #EEE;
+    display:block;
+}
+details>*{
+    display:none;
+}
+details[open]>*,details.open>*,details>summary{
+    display:block;
+}
+details[open]>summary,details.open>summary{
+    padding:0 0 25px;
+}
+summary::-webkit-details-marker{
+  display:none;
+}
+summary:before{
+    content:"+";
+    width:25px;
+    height:25px;
+    margin:0 18px 0 0;
+    padding:0;
+    display:block;
+    float:left;
+    text-align:center;
+    vertical-align:middle;
+    border-radius: 100%;
+    color:#FFF;
+    background:#E5005A;
+    line-height:26px;
+}
+details[open] summary:before,details.open summary:before{
+    content:"\2013";
+    line-height:25px;
+}
+summary:focus{
+    outline:0;
+}
+form,form>*{
+    font:16px "Lato",sans-serif;
+    display:block;
 }
 form{
-    display:block;
-    font:16px "Lato";
-}
-form>*{
-    font:16px "Lato";
+    padding:0;
+    margin:16px 0;
 }
 form>label{
+    padding:7px 0 5px;
+    margin:29px 16px 0 0;
+    font:18px/1.3 "Lato",sans-serif;
     display:block;
 }
-form>li{
+form>select,form>input{
+    margin:6px 0 0;
+    padding:5px 4px;
+    width:49.5%;
+}
+select option{
+    padding:2px;
     display:block;
 }
-form>button{
+input[type="checkbox"]{
+    width:auto;
+    display:inline-block;
+    margin:3px 6px 3px 0px;
+}
+.terms+label{
+    font-size:14px;
+    color:#333;
+}
+form textarea{
+    margin:8px 0;
+    padding:8px;
+    height:160px;
+    width:calc(100% - 18px);
+    border:solid 1px #D2D2D2;
+    box-shadow:inset 0 1px 5px rgba(0,0,0,.1);
+    resize:none;
+    line-height:1.5;
+}
+button{
     display:block;
+    background:#ddd;
+    margin:32px 0 16px;
+    padding:2px 6px;
+    border:0;
+    border-radius:0;
+    font:16px "Lato",sans-serif;
+    font-weight: bold;
+    text-shadow:0 1px 0 #FFF;
 }
 blockquote{
     background:#E5005A;
@@ -194,29 +367,40 @@ blockquote>q{
     margin:0;
     font:28px/27px "archer-semibold";
 }
+blockquote:after{
+    content:"";
+    position:absolute;
+    top:100%;
+    left:35px;
+    border:solid 10px;
+    border-color:#E5005A transparent transparent;
+}
 blockquote~.quoted-by{
     display:block;
-    margin:10px 0;
-    padding:0;
+    font:16px/20px "Lato",sans-serif;
+    font-weight:bold;
+    margin:12px 0;
+    padding:0
+
 }
 footer>div>aside{
     display:inline-block;
-    width:33%;
+    width:30%;
     vertical-align:top;
-    margin:60px 0 50px 0;
-    padding:0;
+    margin:60px 0 50px;
+    padding:0 3% 0 0;
 }
 footer h4{
     font:20px "archer-bold";
-    padding:20px 0;
+    padding:0 0 20px;
     text-transform: uppercase;
     color:#FFF;
 }
-footer aside>a{
+footer aside>a,footer aside>p{
     color:#FFF;
     display:block;
     text-decoration:none;
-    line-height: 1.5;
+    font:16px/20px "Lato",sans-serif;
 }
 footer aside>a:hover{
     text-decoration:underline;
@@ -224,10 +408,113 @@ footer aside>a:hover{
 .copyright{
     border-top:solid 1px #FFF;
     margin:0;
-    padding:5px 0 3px 0;
+    padding:4px 0 0;
+    font-size:14px;
 }
 footer div>a{
     color:#BFBFBF;
     display:block;
     text-decoration:none;
+    font:14px/17px "Lato",sans-serif;
+}
+@media all and (max-width:768px){
+    header{
+        background:#BED000;
+        height:auto;
+    }
+    header>div,footer>div{
+        margin:0;
+        padding:0;
+    }
+    footer{
+        padding:18px 10px 16px;
+    }
+    footer>div{
+        text-align: center;
+    }
+    .mainLogo{
+        background-size:110px;
+        background-position:10px 20px;
+        padding:11px 11px 12px;
+        margin:0;
+        float:none;
+        display:inline-block;
+    }
+    #mainExpand{
+        display:inline-block;
+        width:75px;
+        height:75px;
+        float:right;
+        padding:0;
+        margin:0;
+        outline:0;
+        background:rgba(0,0,0,0);
+    }
+    #mainExpand:active{
+        background:rgba(0,0,0,.2);
+    }
+    #mainExpand:before{
+        content:"";
+        display: block;
+        position:relative;
+        margin:24px 0 0 32px;
+        padding:0;
+        background:url("img/links_h2.svg") -20px 0 no-repeat;
+        width:30px;
+        height:20px;
+    }
+    #mainMenu{
+        display:none;
+        float:none;
+        margin:0;
+        /*padding är redan 0*/
+    }
+    #mainOn #mainMenu{
+        display:block;
+    }
+    #mainMenu li,#mainMenu li a{
+        display:block;
+        padding:10px;
+        margin:0;
+        font:18px/1 "archer-semibold";
+    }
+    #mainMenu li{
+        border-bottom:solid 1px #DBDBDB;
+        padding:0;
+        background:#FFF;
+    }
+    #mainMenu .selected{
+        background:#EEE;
+    }
+    #slider{
+        margin:0;
+        height:250px;
+    }
+    #realmap{
+        width:100%;
+        height:300px;
+        border:0;
+        margin:20px auto;
+        padding:0;
+    }
+    form>select,form>input{
+        width:100%;
+    }
+    footer>div>aside{
+        width:auto;
+        padding:0;
+        display:block;
+    }
+    footer aside>a,footer aside>p{
+        color:#FFF;
+        display:block;
+        text-decoration:none;
+        font:20px/28px "Lato",sans-serif;
+    }
+    footer aside>a{
+        text-decoration: underline;
+    }
+    .copyright{
+        padding-top:15px;
+    }
 }
