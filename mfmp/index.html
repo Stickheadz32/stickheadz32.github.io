@@ -5,6 +5,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="mfmp.css"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
 </head>
 <body>
 <header><!--tagg 
@@ -152,19 +153,20 @@ för att täcka hela bredden-->
 var doc=document;
 function byId(a){return doc.getElementById(a);}
 function byTag(a){return doc.getElementsByTagName(a);}
-function toggleClass(a,b){this.className=this.className==a?b:a;}
 function event(a,b){a.addEventListener?a.addEventListener("click",b):a.attachEvent&&a.attachEvent("onclick",b)}
-byId("mainExpand").addEventListener("click",function(){
+event(byId("mainExpand"),function(){
     /*hämtar headern*/
     var a=byTag("header")[0];
     /*växlar id beroende på responsiv menyöppningsknapp*/
     a.id=a.id=="mainOn"?"":"mainOn";
 });
-var dc=byTag("details"),i;
+var dc=byTag("details");
 /*mer än en "details"-tagg*/
-for(i=0;i<dc.length;i++){
-    event("click",toggleClass(dc[i],"open"));
-}
+var detail = document.querySelector('details');
+detail.addEventListener("click",function(){
+    /*växlar klass mellan "" och "open"*/
+    detail.classList.toggle('open');
+});
 </script>
 </body>
 </html>
