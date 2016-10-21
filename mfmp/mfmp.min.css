@@ -1,0 +1,57 @@
+html,header,#mainMenu li a,.ort li a,.links p,.links a,.breadcrumbs li a {
+color:#000
+}
+
+h1,h2,h3,h4,h5,h6,.links p,.terms+label {
+color:#333
+}
+
+html,#mainMenu li {
+background:#333
+}
+
+footer,#mainMenu li a:hover,.mainMenu>#selected,.flash,.ort li a:hover,summary:before,blockquote,footer h4,footer aside>a,footer aside>p {
+color:#FFF
+}
+
+.flash,.ort li a:hover,summary:before,blockquote {
+background:#E5005A
+}
+
+html,body,header,footer,header>div,footer>div,.mainLogo,#mainMenu,.flash,.flash>*,.ort li a,.links,.links h2:before,.links p,.links a,.breadcrumbs,details,details[open]>*,details.open>*,details>summary,summary:before,form,form>*,form>label,select option,button,blockquote,blockquote~.quoted-by,footer aside>a,footer aside>p,footer div>a {
+display:block
+}
+
+#mainExpand,details>*,summary::-webkit-details-marker {
+display:none
+}
+
+#mainMenu li,.ort li,.breadcrumbs li,input[type="checkbox"],footer>div>aside {
+display:inline-block
+}
+
+html,li,h1,h2,h3,h4,h5,h6,header,footer,.flash,.ort li,.breadcrumbs,.breadcrumbs li,blockquote,blockquote>q,.copyright {
+margin:0
+}
+
+html,body,p,li,u,h3,header,header>div,footer>div,#mainMenu,#mainMenu li,#slider,.ort,.ort li,.links p,.links a,.breadcrumbs li,summary:before,form,blockquote>q {
+padding:0
+}
+
+@media all and (max-width:768px) {
+#mainExpand:before,#mainOn #mainMenu,#mainMenu li,#mainMenu li a,footer>div>a,footer aside>a,footer aside>p {
+display:block
+}
+
+.mainLogo {
+display:inline-block
+}
+
+header>div,footer>div,.mainLogo,#mainExpand,#mainMenu,#mainMenu li,#mainMenu li a,#slider {
+margin:0
+}
+
+header>div,footer>div,#mainExpand,#mainExpand:before,#mainMenu li,#realmap,footer>div>aside {
+padding:0
+}
+}

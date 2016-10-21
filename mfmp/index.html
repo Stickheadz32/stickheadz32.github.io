@@ -119,9 +119,9 @@ för att täcka hela bredden-->
     <blockquote>
         <q>These tests are too crude to be used.</q>
     </blockquote>
-    <div class="quoted-by">
+    <p class="quoted-by">
         Frederick J. Kelly, the inventor of standardized testing
-    </div>
+    </p>
 </section>
 <footer>
     <div>
@@ -153,19 +153,20 @@ för att täcka hela bredden-->
 var doc=document;
 function byId(a){return doc.getElementById(a);}
 function byTag(a){return doc.getElementsByTagName(a);}
+function query(a){return doc.querySelector(a);}
 function event(a,b){a.addEventListener?a.addEventListener("click",b):a.attachEvent&&a.attachEvent("onclick",b)}
+function target(e){return e.target?e.target:e.srcElement;}
 event(byId("mainExpand"),function(){
     /*hämtar headern*/
-    var a=byTag("header")[0];
+    var a=query("header");
     /*växlar id beroende på responsiv menyöppningsknapp*/
     a.id=a.id=="mainOn"?"":"mainOn";
 });
-var dc=byTag("details");
 /*mer än en "details"-tagg*/
-var detail = document.querySelector('details');
-detail.addEventListener("click",function(){
-    /*växlar klass mellan "" och "open"*/
-    detail.classList.toggle('open');
+var detail = doc.querySelectorAll('details'),i;
+for(i=0;i<detail.length;i++)
+event(detail[i].querySelector("summary"),function(e){
+    target(e).parentNode.classList.toggle('open');
 });
 </script>
 </body>
