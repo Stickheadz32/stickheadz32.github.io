@@ -2,19 +2,24 @@
 
 /*If you want to document everything about an element, do it outside the tags and curly braces, not inside.
 
-For very short description of an element style, you may write next to it.
+For very short description of an element style, you may write just above it.
 
 Describe the following:
 -What does the tag mean? What's the tag's initial preferences? What symbol between the tags - if any - represent what tag(s)?
 
 Folk ska se vad som är klickbart*/
 
-/*Import av Archer och Lato*/
+/*Import av typsnitten Archer och Lato*/
 @import url("fonts/fonts.css");
 *{
-   /* box-shadow: 0 0 1px; /*debug style*/
+    /*Buggtest för layout.*/
+    /*box-shadow: 0 0 1px;*/
 }
-/*mindre kod ifall man har flera deklarationer för en grupp selektorer, och sedan några unika deklarationer för var och en av elementen*/
+/*ändrar färg på markerad innehåll*/
+::selection{
+    background:#BED000;
+    color:#000;
+}
 html{
     margin:0;
     padding:0;
@@ -28,9 +33,11 @@ body{
     display:block;
     font-family: "Lato",sans-serif;
 }
+/*mindre kod ifall man har flera deklarationer för en grupp selektorer, och sedan några unika deklarationer för var och en av dem*/
 p,li,u{
     padding:0;
 }
+/*även om stilreglerna*/
 p,li{
     font:16px/24px "Lato",sans-serif;
     margin:0 0 10px;
@@ -62,6 +69,7 @@ h3{
     padding:0;
     border-bottom:solid 1px #333;
 }
+/*Karta över Realgymnasiet Norrköping*/
 #realmap{
     width:400px;
     height:300px;
@@ -71,7 +79,8 @@ h3{
 header{
     height:90px;
     display:block;
-    background:rgba(190,208,0,.9);/*real-grön med transparans för slidern*/
+    /*real-grön med transparans för slidern*/
+    background:rgba(190,208,0,.9);
     color:#000;
     margin:0;
     padding:0;
@@ -84,12 +93,14 @@ footer{
     color:#FFF;
     font:14px/20px "Lato",sans-serif;
 }
-
-header>div,footer>div{
+header>nav,footer>nav{
     display:block;
     max-width:1100px;
     margin:0 auto;
     padding:0;
+}
+header>nav{
+    padding:0 20px;
 }
 section{
     max-width:1100px;
@@ -105,7 +116,9 @@ section{
     width:150px;
     margin:0 0 0 -19px;
     padding:19px;
-    color:transparent;
+}
+.mainLogo>*{
+    display: none;
 }
 #mainExpand{
     display:none;/*visas istället i mobil och tablet*/
@@ -131,18 +144,34 @@ section{
     padding:33px 5px;
     margin:0 6px;
 }
+
+/*fluid layout i header*/
+@media all and (max-width:1159px){
+    #mainMenu{
+        /*1vw = 1% av viewport-width*/
+        /*34px * 2 = 68px*/
+        /*68px / 1160px = 9.4%*/
+        margin:0 calc(9.4% - 68px);
+    }
+    #mainMenu li a{
+        /*16px på 768px device-width*/
+        /*20px på 1160px device-width*/
+        /* y=kx+m */
+        font-size:calc(.98vw + 8px);
+    }
+}
 #mainMenu li a:hover,.mainMenu>#selected{
     color:#FFF;
 }
-/*z-index till 1 för att ställa slidern bakom headern*/
-/*z-index till 1 för att ställa slidern bakom headern*/
 #slider{
     position:relative;
     max-width:100%;
     height:600px;
     background:#DDD;
+    /*placera på samma höjd som headern*/
     margin:-90px 0 0;
     padding:0;
+    /*z-index till 1 för att ställa slidern bakom headern*/
     z-index: -1;
 }
 /*"Anmäl intresse!"-bubblan i CSS-form*/
@@ -156,7 +185,6 @@ section{
     margin:0;
     padding:50px;
     background:#E5005A;
-    color:#FFF;
     border-radius:100%;
     -webkit-transform: rotate(10deg);
     -moz-transform: rotate(10deg);
@@ -175,6 +203,8 @@ section{
     align-content: center;
     margin:auto;
     font:22px/.9 "Archer";
+    color:#FFF;
+    text-decoration: none;
 }
 .ort{
     list-style-type:none;
@@ -227,6 +257,7 @@ section{
     display:block;
     margin:0 0 10px 0;
     padding:0;
+    width:auto;
 }
 .links p{
     color:#333;
@@ -236,18 +267,19 @@ section{
     padding:12px 0 28px;
     margin:0;
     list-style-type:none;
-    clear:both;
 }
+/*ifall man har .breadcrumbs utanför section*/
 header~.breadcrumbs{
     max-width: 1100px;
     margin:0 auto;
 }
+/*ifall man har .breadcrumbs inom section*/
 section>.breadcrumbs{
     max-width: 1100px;
     margin:-20px auto 0;
 }
 .breadcrumbs li{
-    display:inline-block;
+    display:inline;
     margin:0;
     padding:0;
     font:14px/20px "Lato",sans-serif;
@@ -261,7 +293,7 @@ section>.breadcrumbs{
 }
 details{
     margin:20px 0;
-    padding:10px 0;
+    padding:0;
     font:16px/22px "Lato",sans-serif;
     border-bottom:solid 1px #EEE;
     display:block;
@@ -271,13 +303,20 @@ details>*{
 }
 details[open]>*,details.open>*,details>summary{
     display:block;
+    padding:10px 0 20px;
+    cursor:pointer;
 }
 details[open]>summary,details.open>summary{
-    padding:0 0 25px;
+    padding:10px 0 25px;
 }
+/*ta bort navigeringspilen i details*/
 summary::-webkit-details-marker{
-  display:none;
+    display:none;
 }
+summary:hover{
+    color:#E5005A;
+}
+/*ikon för ihopfälld details-tagg*/
 summary:before{
     content:"+";
     width:25px;
@@ -293,10 +332,13 @@ summary:before{
     background:#E5005A;
     line-height:26px;
 }
+/*ikon för öppnad details-tagg*/
 details[open] summary:before,details.open summary:before{
+    /*lång bindestreck*/
     content:"\2013";
     line-height:25px;
 }
+/*tar bort outline*/
 summary:focus{
     outline:0;
 }
@@ -308,29 +350,41 @@ form{
     padding:0;
     margin:16px 0;
 }
-form>label{
+form label,form legend{
     padding:7px 0 5px;
     margin:29px 16px 0 0;
     font:18px/1.3 "Lato",sans-serif;
     display:block;
 }
-form>select,form>input{
+form select,form input{
     margin:6px 0 0;
     padding:5px 4px;
     width:49.5%;
+}
+form fieldset{
+    border:0;
+    margin:0;
+    padding:0;
+}
+fieldset label{
+    margin:0 0 8px;
 }
 select option{
     padding:2px;
     display:block;
 }
-input[type="checkbox"]{
+input[type="checkbox"],input[type="radio"]{
     width:auto;
     display:inline-block;
     margin:3px 6px 3px 0px;
 }
-.terms+label{
+label.terms{
     font-size:14px;
     color:#333;
+    padding:7px 0;
+}
+form .required:after{
+    content:" *";
 }
 form textarea{
     margin:8px 0;
@@ -339,6 +393,7 @@ form textarea{
     width:calc(100% - 18px);
     border:solid 1px #D2D2D2;
     box-shadow:inset 0 1px 5px rgba(0,0,0,.1);
+    /*förhindra från att ändra storlek*/
     resize:none;
     line-height:1.5;
 }
@@ -366,6 +421,10 @@ blockquote>q{
     margin:0;
     font:28px/27px "archer-semibold";
 }
+/*Pil av pratbubbla
+Width och height måste vara 0 för att forma en pil. Border-width blir längden av pilen, 
+
+*/
 blockquote:after{
     content:"";
     position:absolute;
@@ -382,14 +441,14 @@ blockquote~.quoted-by{
     padding:0
 
 }
-footer>div>aside{
+footer>nav>aside{
     display:inline-block;
     width:30%;
     vertical-align:top;
     margin:60px 0 50px;
     padding:0 3% 0 0;
 }
-footer h4{
+footer h2{
     font:20px "archer-bold";
     padding:0 0 20px;
     text-transform: uppercase;
@@ -410,7 +469,7 @@ footer aside>a:hover{
     padding:4px 0 0;
     font-size:14px;
 }
-footer div>a{
+footer>nav>a{
     color:#BFBFBF;
     display:block;
     text-decoration:none;
@@ -421,14 +480,14 @@ footer div>a{
         background:#BED000;
         height:auto;
     }
-    header>div,footer>div{
+    header>nav,footer>nav{
         margin:0;
         padding:0;
     }
     footer{
         padding:18px 10px 16px;
     }
-    footer>div{
+    footer>nav{
         text-align: center;
     }
     .mainLogo{
@@ -499,7 +558,7 @@ footer div>a{
     form>select,form>input{
         width:100%;
     }
-    footer>div>aside{
+    footer>nav>aside{
         width:auto;
         padding:0;
         display:block;
