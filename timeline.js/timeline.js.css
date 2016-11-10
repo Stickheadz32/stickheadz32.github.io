@@ -1,0 +1,73 @@
+html,body{
+	display:block;
+	background:#FFF;
+	margin:0;
+	padding:0;
+}
+body{
+	margin:auto;
+	vertical-align:middle;
+	width:100%;
+	height:100%;
+}
+header{
+	/*position:fixed;*/
+	width:100%;
+	min-height:30px;
+	padding:10px;
+	margin:0;
+	background:#E7E7E7;
+	border-bottom:solid 1px rgba(0,0,0,.5);
+	box-shadow:0 2px 4px rgba(0,0,0,.3);
+}
+header ul{
+	display:block;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+header ul li{
+	display:inline-block;
+	padding:10px;
+	font-size:20px;
+}
+#timeline-content{
+	margin:20px;
+	position:relative;
+}
+#timeline-content h1{
+	text-align: center;
+	font-size:40px;
+	font-weight: normal;
+	border-bottom: solid 1px;
+}
+.tL-layer{
+	display:block;
+	position:relative;
+	background:#DEF;
+	border:solid 1px #88F;
+	border-right-color:#CCF;
+	box-shadow:inset -10px 0 20px #FFF;
+	margin:3px;
+	padding:0;
+	overflow:visible;
+}
+.tL-layer p{
+	margin:0;
+	padding:5px;
+}
+.tL-marker{
+	display:block;
+	position:absolute;
+	top:0;
+	height:100%;
+	margin:0;
+	padding:0;
+	border-left:solid 2px rgba(0,0,0,.2);
+}
+.tL-marker p{
+	position::relative;
+	padding:10px;
+	margin:0;
+	width:auto;
+}

@@ -1,0 +1,141 @@
+@import "fonts/fonts.css";
+::-moz-selection{background:#BED000;color:#000}
+::selection,.ort li a{background:#BED000}
+::selection,html,header,#mainMenu li a,.ort li a,.links a,.links h2:before,.breadcrumbs li a{color:#000}
+html{background:#FFF}
+h1,h2,h4,h5,h6,.copyright{margin:0}
+p,u,h3,#mainMenu li,#slider,.ort{padding:0}
+#mainExpand,details[open]>*,details.open>*,details>summary{cursor:pointer}
+#mainMenu li a,#slider .sliderinfo a,.flash>*,.ort li a,.breadcrumbs li a,footer aside>a,footer aside>p,footer>nav>a{text-decoration:none}
+#mainMenu li a{padding:33px 5px;margin:0 6px;font:20px/.75 archer-bold}
+#mainMenu li,#slider,.slide,#slider .sliderinfo a,.ort li,input[type="checkbox"],input[type="radio"],footer>nav>aside{display:inline-block}
+#mainMenu li{margin:33px 0}
+#mainMenu,.links p,.links a,details,form{padding:0;display:block}
+#mainMenu,.links p,.links a,input[type="checkbox"],input[type="radio"]{width:auto}
+#mainMenu,.ort,.breadcrumbs{list-style:none}
+#mainMenu{margin:0 34px;height:100%}
+#realmap,form fieldset,button{border:0}
+#realmap{width:400px;height:300px;margin:20px}
+#slider .sliderinfo a{border:solid 1px #FFF;padding:9px 10px 5px;font:18px Lato,sans-serif;clear:both}
+#slider .sliderinfo h1{font:60px/1 archer-semibold;border-bottom:solid 2px #FFF}
+#slider .sliderinfo h2{padding:5px;font:28px/34px archer-semibold}
+#slider .sliderinfo p{padding:5px;font:20px/1 archer-semibold;margin:7px 0}
+#slider .sliderinfo,.flash,.flash>*,blockquote:after{position:absolute}
+#slider .sliderinfo{text-align:center;top:239px;background:rgba(0,0,0,.5);padding:25px}
+#slider,.slide{width:100%}
+#slider{height:600px;clear:both;margin:-90px 0 0;overflow-y:hidden;overflow-x:scroll;white-space:nowrap}
+.breadcrumbs li a{padding:0 10px 0 0;margin:0 7px 0 0;border-right:solid 2px #CCC}
+.breadcrumbs li{display:inline}
+.breadcrumbs{padding:12px 0 28px}
+.copyright{border-top:solid 1px #FFF;padding:4px 0 0;line-height:24px}
+.flash,.ort li a:hover,summary:before,blockquote{background:#E5005A}
+.flash,summary:before{border-radius:100%}
+.flash>*,summary:before{text-align:center}
+.flash>*{top:26%;left:0;margin:auto;font:22px/.9 Archer}
+.flash{right:15px;top:60px;width:0;height:0;padding:50px;-webkit-transform:rotate(10deg);-moz-transform:rotate(10deg);-ms-transform:rotate(10deg);-o-transform:rotate(10deg);transform:rotate(10deg);overflow:hidden}
+.links h2:before{content:"";width:20px;height:20px;top:26px;left:-34px;margin:-20px 0 0;background:url(img/links_h2.svg) no-repeat}
+.links{background:#EDEDED;padding:17px 0 10px 45px;margin:0 15px 95px 0}
+.mainLogo,#mainMenu,summary:before{float:left}
+.mainLogo,.slide>div,#slider .sliderinfo,.flash>*,.links,.links h2:before,details[open]>*,details.open>*,details>summary,summary:before,form>*,form label,form legend,select option,button,blockquote~.quoted-by,footer aside>a,footer aside>p,footer>nav>a{display:block}
+.mainLogo>*,#mainExpand,details>*,details:,summary::-webkit-details-marker{display:none}
+.mainLogo{background:url(img/realgymnasiet_svart_logo.png) 19px no-repeat;background-size:150px;height:52px;width:150px;margin:0 0 0 -19px;padding:19px}
+.ort li a{font:17px/1 archer-bold;padding:15px;margin:2px}
+.ort{margin:0 0 34px}
+.slide,.slide>div{height:inherit}
+.slide,button{background:#DDD}
+.slide>div{max-width:738px}
+.slide{background:center no-repeat;background-size:cover;white-space:normal}
+blockquote:after,#mainExpand{content:""}
+footer,.flash,.ort li a,.breadcrumbs,blockquote{margin:0;display:block}
+html,body,header,footer>nav{margin:0;padding:0;display:block}
+li,.ort li,.breadcrumbs li,form fieldset,blockquote>q{margin:0;padding:0}
+blockquote:after{top:100%;left:35px;border:solid 10px;border-color:#E5005A transparent transparent}
+blockquote>q{font:28px/27px archer-semibold}
+blockquote~.quoted-by{font:700 16px/1.25 Lato,sans-serif;margin:12px 0}
+body{font-family:Lato,sans-serif}
+button,form>p{font:16px/1 Lato,sans-serif}
+button{font-weight:700;margin:32px 0 16px;padding:2px 6px;border-radius:0;text-shadow:0 1px 0 #FFF}
+details>summary,details[open]>*,details.open>*{padding:10px 0 20px}
+details[open] summary:before,details.open summary:before{content:"\2013";line-height:25px}
+details{margin:20px 0;border-bottom:solid 1px #EEE;font:16px/22px Lato,sans-serif;}
+footer aside>a,footer aside>p,li{font:16px/1.25 Lato,sans-serif}
+footer aside>a:hover{text-decoration:underline}
+footer h2{padding:0 0 20px;font:20px archer-bold}
+footer,#mainMenu li a:hover,#mainMenu>#selected,#slider .sliderinfo,#slider .sliderinfo h1,#slider .sliderinfo h2,#slider .sliderinfo p,#slider .sliderinfo a,.flash>*,.ort li a:hover,summary:before,blockquote,footer h2,footer aside>a,footer aside>p{color:#FFF}
+footer,.breadcrumbs li{font:14px/20px Lato,sans-serif}
+footer>nav>aside{width:30%;vertical-align:top;margin:60px 0 50px;padding:0 3.33% 0 0}
+footer>nav>a{color:#BFBFBF;font:14px/17px Lato,sans-serif}
+footer{padding:18px 15px 16px;background:#282A2B}
+form .required:after{content:" *"}
+form label,form legend{font:18px/1.3 Lato,sans-serif;padding:7px 0 5px;margin:29px 16px 0 0}
+form select,form input{margin:6px 0 0;padding:5px 4px;width:49.5%}
+form textarea{margin:8px 0;padding:8px;height:160px;width:calc(100% - 18px);border:solid 1px #D2D2D2;box-shadow:inset 0 1px 5px rgba(0,0,0,.1);resize:none}
+form>fieldset label{margin:0 0 8px}
+form{margin:16px 0;font:16px Lato,sans-serif}
+h1,h2,h4,h5,h6{color:#333;padding:0 0 10px}
+h1{font:38px/46px archer-bold}
+h2{font:28px/27px archer-semibold}
+h3{font:18px/19px archer-semibold;margin:34px 0 21px;border-bottom:solid 1px #333}
+h3,.links p,label.terms{color:#333}
+h4,h5,h6{font:18px/1.5 Archer}
+h4{font-size:archer-bold}
+h5{font-size:archer-semibold}
+form textarea,form textarea{line-height:1.5}
+h3,.ort li a,footer h2{text-transform:uppercase}
+header,.flash{z-index:1}
+header,.slide,.slide>div,.links h2:before,blockquote{position:relative}
+header>nav,footer>nav,.slide>div,#slider .sliderinfo,header~.breadcrumbs{margin:0 auto}
+header>nav,footer>nav,section,header~.breadcrumbs,section~.breadcrumbs{max-width:1100px}
+header>nav{padding:0 20px}
+header{height:90px;background:rgba(190,208,0,.9)}
+input[type="checkbox"],input[type="radio"]{margin:3px 6px 3px 0}
+label.terms,.copyright{font-size:14px}
+label.terms{padding:7px 0}
+p,.links h2,.links p,.links a{margin:0 0 10px}
+p,.links p,.links a{font:16px/1.5 Lato,sans-serif}
+section,blockquote{padding:20px}
+section>.breadcrumbs{margin:-20px auto 0}
+section{margin:0 auto 20px}
+select option{padding:2px}
+summary:before{content:"+";width:25px;height:25px;margin:0 18px 0 0;vertical-align:middle;line-height:26px}
+summary:focus{outline:0}
+summary:hover{color:#E5005A}
+ul{margin:0 0 10px 30px}
+@media all and (max-width:1159px){
+	#mainMenu{margin:0 calc(9.4% - 68px)}
+	#slider{height:calc(66vw - 168px)}
+	#mainMenu li a{font-size:calc(.98vw + 8px)}
+	#slider .sliderinfo h1{font:calc(6vw - 9px)/1 archer-semibold}
+	#slider .sliderinfo{top:calc(16.5vw + 48px)}
+}
+@media all and (max-width:768px){
+	header{background:#BED000;height:auto}
+	.mainLogo,#mainMenu,#slider{margin:0}
+	#realmap{padding:0}
+	#mainOn #mainMenu,footer aside>a,footer aside>p{display:block}
+	header>nav,footer>nav{margin:0;padding:0}
+	#mainMenu li a{margin:0;display:block}
+	#mainExpand:before,footer>nav>aside{padding:0;display:block}
+	#mainExpand,#mainMenu li{margin:0;padding:0;display:block}
+	#mainExpand:active{background:rgba(0,0,0,.2)}
+	#mainExpand:before{content:"";position:relative;margin:24px 0 0 32px;background:url(img/links_h2.svg) -20px 0 no-repeat;width:30px;height:20px}
+	#mainExpand{width:75px;height:75px;float:right;outline:0;background:transparent}
+	#mainMenu li a:hover{background:#DDD;color:#000}
+	#mainMenu li a{padding:10px}
+	#mainMenu li,#mainMenu li a{font:18px/1 archer-semibold}
+	#mainMenu li{border-bottom:solid 1px #DBDBDB;background:#FFF}
+	#mainMenu,.mainLogo>*{display:none}
+	#realmap,form>select,form>input{width:100%}
+	#realmap{margin:20px auto}
+	#slider .sliderinfo{top:8.25vw}
+	#slider{height:250px}
+	.slide>div{max-width:calc(100% - 10vw)}
+	.copyright{padding-top:15px}
+	.mainLogo,#mainMenu{float:none}
+	.mainLogo{background-size:110px;width:115px;background-position:10px 20px;padding:10px 11px;display:inline-block}
+	footer aside>a,footer aside>p{font:20px/1.4 Lato,sans-serif}
+	footer aside>a{text-decoration:underline}
+	footer>nav>aside{width:auto}
+	footer>nav{text-align:center}
+	footer{padding:18px 10px 16px}
+}

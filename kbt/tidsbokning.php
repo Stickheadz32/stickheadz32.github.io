@@ -26,10 +26,8 @@
     BOKNING
     <div id="bkCalendar">
         <?php
-        $conn = mysqli_connect('localhost','root','','kbtkund') or die("Connection failed: " . mysqli_error());
-        if($conn->connect_errno){
-            echo 'Connect failed: '.$conn->connect_error;
-        }
+        $conn = fopen("kbt_db.sql","r") or die("Unable to open file!");
+        fclose($conn);
         /* draws a calendar */
 function draw_calendar($month,$year){
 

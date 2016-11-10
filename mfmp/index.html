@@ -15,6 +15,7 @@
     <!--inre tagg för att sätta max-width på innehållet-->
     <nav>
         <!--Logo-->
+        <!--En länk med href="" uppdaterar sidan.-->
         <a href="" class="mainLogo">
             <!--Texten i H1-taggen visas bara om CSS-filen antingen saknas, kan inte hämtas, eller är korrupt.-->
             <h1>Realgymnasiet</h1>
@@ -34,8 +35,34 @@
         </ul>
     </nav>
 </header>
+<!--Slider-->
 <div id="slider">
-
+    <!--slide-->
+    <!--Bild läggs upp genom style-elementet för att täcka hela slide-området-->
+    <div class="slide" style="background-image:url(img/bildbank/car-mechanics-compressed.jpg)">
+        <!--tom div för att centrera sliderinfo-->
+        <div>
+            <div class="sliderinfo">
+                <h1>Fjärde tekniska året</h1>
+                <p>INFORMATIONSTEKNIK INRIKTNING MJUKVARUDESIGN</p>
+                <a href="#">Läs mer</a>
+            </div>
+        </div>
+    </div><div class="slide" style="background-image:url(img/bildbank/ar-close-compressed.jpg)">
+        <div>
+            <div class="sliderinfo">
+                <h2>Vi ger dig en utvecklande och rolig utbildning som grundar sig i ditt personliga intresse.</h2>
+                <a href="#">Läs mer</a>
+            </div>
+        </div>
+    </div><div class="slide" style="background-image:url(img/bildbank/desktops-compressed.jpg)">
+        <div>
+            <div class="sliderinfo">
+                <h2>Vi ger dig en utvecklande och rolig utbildning som grundar sig i ditt personliga intresse.</h2>
+                <a href="#">Läs mer</a>
+            </div>
+        </div>
+    </div>
 </div>
 <!--innehåll-->
 <section>
@@ -183,6 +210,7 @@
     </p>
 </section>
 <footer>
+    <!--inre tagg för att sätta max-width på innehållet-->
     <nav>
         <!--tredjedelsspalter på datorskärm-->
         <aside>
@@ -190,14 +218,12 @@
             <a href="#">Gymnasieingenjör</a>
             <a href="#">IT</a>
             <a href="#">Teknik</a>
-        </aside>
-        <aside>
+        </aside><aside><!--aside har display:inline-block-->
             <h2>Skolor</h2>
             <a href="#">Stockholm</a>
             <a href="#">Norrköping</a>
             <a href="#">Linköping</a>
-        </aside>
-        <aside>
+        </aside><aside>
             <h2 id="p4">Kontakt</h2>
             <a href="#">Linköping</a>
             <p>Linköping</p>
@@ -207,32 +233,7 @@
         <a href="http://realgymnasiet.se/om-cookies-och-personuppgifter">Om cookies och personuppgifter</a>
     </nav>
 </footer>
-<!--skript för utbredbarhet av responsiv meny-->
-<script type="text/javascript">
-/*Tar upp mindre kod att deklarera variabel för ett DOM-objekt eller funktion som används mer än en gång; drar mindre prestanda på så sätt*/
-var doc=document;
-function byId(a){return doc.getElementById(a);}
-function byTag(a){return doc.getElementsByTagName(a);}
-function query(a){return doc.querySelector(a);}
-/*attachEvent för tillgänglighet i IE5-IE8*/
-function event(a,b){a.addEventListener?a.addEventListener("click",b):a.attachEvent&&a.attachEvent("onclick",b);}
-/*attachEvent för tillgänglighet i IE5-IE8*/
-function target(e){return e.target?e.target:e.srcElement;}
-event(byId("mainExpand"),function(){
-    /*hämtar headern*/
-    var a=query("header");
-    /*växlar id beroende på responsiv menyöppningsknapp*/
-    a.id=a.id=="mainOn"?"":"mainOn";
-});
-/*hämtar alla details-taggar*/
-var detail = doc.querySelectorAll('details'),i;
-/*lägger till funktion för alla details-taggar*/
-for(i=0;i<detail.length;i++)
-    /*häntar summary-tagg per details-tagg*/
-    event(detail[i].querySelector("summary"),function(e){
-        /*byt class-attribut mellan "open" och "", detta menas öppnad och stängd/ihopfälld details-tagg*/
-        target(e).parentNode.classList.toggle('open');
-    });
-</script>
+<!--skript för responsiv meny och slider-->
+<script type="text/javascript" src="mfmp.js"></script>
 </body>
 </html>
