@@ -2,238 +2,250 @@
 <html lang="sv">
 <head>
     <title>Fjärde tekniska året - Realgymnasiet</title>
+    <!--Formatidentifiering och teckenkodning-->
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <!--CSS-fil för design-->
-    <link rel="stylesheet" type="text/css" href="mfmp.css"/>
+    <link rel="stylesheet" type="text/css" href="mfmp.min1.css"/>
     <!--viewport-deklaration för responsiv läge-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 </head>
 <body>
-<!--tagg för att täcka hela bredden-->
-<!--Det krävs en inre tagg med max-width för att justera innehåll till center-->
-<header>
-    <!--inre tagg för att sätta max-width på innehållet-->
-    <nav>
-        <!--Logo-->
-        <!--En länk med href="" uppdaterar sidan.-->
-        <a href="" class="mainLogo">
-            <!--Texten i H1-taggen visas bara om CSS-filen antingen saknas, kan inte hämtas, eller är korrupt.-->
-            <h1>Realgymnasiet</h1>
-        </a>
-        <!--Responsiv menyknapp som bara visas i responsiv läge-->
-        <a id="mainExpand"></a>
-        <!--Huvudmenu-->
-        <ul id="mainMenu">
-            <!--Länkar till undersidor-->
-            <!--Här leder länkarna till rubriker ifall dess href är # följt av en unik namn, och att det finns en tagg med id samma som denna href. Detta betraktas som One-Page-design ifall alla betrodda undersidor är i en och samma sida.-->
-            <li><a href="#p1">Om utbildningen</a>
-            </li><li>  <!--inget extrauttrymme utan white space mellan stängd element och öppen element ifall båda av de har display:inline-block i CSS-->
-                <a href="#p2">Var finns utbildningen?</a>
-            </li><li><a href="#p3">CDIO-metoden</a>
-            </li><li><a href="#p4">Kontakt</a>
+    <!--tagg för att täcka hela bredden-->
+    <!--Det krävs en inre tagg med max-width för att justera innehåll till center-->
+    <header>
+        <!--inre tagg för att sätta max-width på innehållet-->
+        <nav>
+            <!--Logo-->
+            <!--En länk med href="" uppdaterar sidan.-->
+            <a href="" class="mainLogo">
+                <!--Texten i H1-taggen visas bara om CSS-filen antingen saknas, kan inte hämtas, eller är korrupt.-->
+                <h1>Realgymnasiet</h1>
+            </a><!--slutet av .mainLogo-->
+            <!--Responsiv menyknapp som bara visas i responsiv läge-->
+            <a id="mainExpand"></a>
+            <!--Huvudmenu-->
+            <ul id="mainMenu">
+                <!--Länkar till undersidor-->
+                <!--Här leder länkarna till rubriker ifall dess href är # följt av en unik namn, och att det finns en tagg med id samma som denna href. Detta betraktas som One-Page-design ifall alla betrodda undersidor är i en och samma sida.-->
+                <li>
+                    <a href="#p1">Om utbildningen</a>
+                </li><li>  <!--inget extrauttrymme utan white space mellan stängd element och öppen element ifall båda av de har display:inline-block i CSS-->
+                    <a href="#p2">Var finns utbildningen?</a>
+                </li><li>
+                    <a href="#p3">CDIO-metoden</a>
+                </li><li>
+                    <a href="#p4">Kontakt</a>
+                </li>
+            </ul><!--slutet av #mainMenu-->
+        </nav>
+    </header>
+    <!--Slider-->
+    <div id="slider">
+        <!--slide-->
+        <!--Bild läggs upp genom style-elementet för att täcka hela slide-området-->
+        <div class="slide" style="background-image:url(img/bildbank/car-mechanics-compressed.jpg)">
+            <!--tom div för att centrera sliderinfo, se .slide>div-->
+            <div>
+                <div class="sliderinfo">
+                    <h1>Fjärde tekniska året</h1>
+                    <p>INFORMATIONSTEKNIK INRIKTNING MJUKVARUDESIGN</p>
+                    <a href="#">Läs mer</a>
+                </div><!--slutet av .sliderinfo-->
+            </div>
+        </div><div class="slide" style="background-image:url(img/bildbank/ar-close-compressed.jpg)">
+            <div>
+                <div class="sliderinfo">
+                    <h2>Vi ger dig en utvecklande och rolig utbildning som grundar sig i ditt personliga intresse.</h2>
+                    <a href="#">Läs mer</a>
+                </div><!--slutet av .sliderinfo-->
+            </div>
+        </div><div class="slide" style="background-image:url(img/bildbank/desktops-compressed.jpg)">
+            <div>
+                <div class="sliderinfo">
+                    <h2>Vi ger dig en utvecklande och rolig utbildning som grundar sig i ditt personliga intresse.</h2>
+                    <a href="#">Läs mer</a>
+                </div><!--slutet av .sliderinfo-->
+            </div>
+        </div><!--slutet av .slide-->
+    </div><!--slutet av #slider-->
+    <!--innehåll-->
+    <section>
+        <!--Anmäl-intresse-bubbla-->
+        <a href="#_intresse" class="flash">
+            <div>Anmäl intresse!</div>
+        </a><!--slutet av .flash-->
+        <!--Lista av strukturella vägar till sidan-->
+        <ul class="breadcrumbs">
+            <li>
+                <a href="#">Hem</a>
+            </li><li>
+                <a href="#">Utbildningar</a>
+            </li><li>
+                Fjärde tekniska året
             </li>
-        </ul>
-    </nav>
-</header>
-<!--Slider-->
-<div id="slider">
-    <!--slide-->
-    <!--Bild läggs upp genom style-elementet för att täcka hela slide-området-->
-    <div class="slide" style="background-image:url(img/bildbank/car-mechanics-compressed.jpg)">
-        <!--tom div för att centrera sliderinfo-->
-        <div>
-            <div class="sliderinfo">
-                <h1>Fjärde tekniska året</h1>
-                <p>INFORMATIONSTEKNIK INRIKTNING MJUKVARUDESIGN</p>
-                <a href="#">Läs mer</a>
-            </div>
-        </div>
-    </div><div class="slide" style="background-image:url(img/bildbank/ar-close-compressed.jpg)">
-        <div>
-            <div class="sliderinfo">
-                <h2>Vi ger dig en utvecklande och rolig utbildning som grundar sig i ditt personliga intresse.</h2>
-                <a href="#">Läs mer</a>
-            </div>
-        </div>
-    </div><div class="slide" style="background-image:url(img/bildbank/desktops-compressed.jpg)">
-        <div>
-            <div class="sliderinfo">
-                <h2>Vi ger dig en utvecklande och rolig utbildning som grundar sig i ditt personliga intresse.</h2>
-                <a href="#">Läs mer</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!--innehåll-->
-<section>
-    <!--Anmäl-intresse-bubbla-->
-    <a href="#_intresse" class="flash">
-        <div>Anmäl intresse!</div>
-    </a>
-    <!--Lista av strukturella vägar till sidan-->
-    <ul class="breadcrumbs">
-        <li><a href="#">Hem</a>
-        </li><li><a href="#">Utbildningar</a>
-        </li><li>Fjärde tekniska året
-    </li></ul>
-    <h1>Förbered dig för ett innovativt yrke!</h1>
-    <p>Nyckelord: ingenjör entreprenör datalagring IT realgymnasiet 4 fjärde tekniska året media adobe dreamweaver photoshop lightroom illustrator html svg css javascript php sql img png jpeg gif bmp</p>
-    <!--Undersida 1-->
-    <h2 id="p1">Om utbildningen</h2>
-    <p>testtestetsetetestsetstset</p>
-    <!--Undersida 2-->
-    <h3 id="p2">Finns på följande orter</h3>
-    <!--lista av orter-->
-    <ul class="ort">
-        <li><a href="#">Norrköping</a>
-        </li><li><a href="#">Norrköping</a>
-        </li><li><a href="#">Norrköping</a>
-    </li></ul>
-    <!--Google Maps-->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2079.3940858138562!2d16.175750316363313!3d58.58888998140593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46593bca9f362d41%3A0x5e80ccf82826b55f!2sRealgymnasiet+Norrk%C3%B6ping!5e0!3m2!1ssv!2sse!4v1476951970877" id="realmap" allowfullscreen></iframe>
-    <!--Undersida 3-->
-    <h2 id="p3">CDIO-metoden</h2>
-    <h3>Tänk ut</h3>
-    <!--details-taggar är ihopfällbara som standard.-->
-    <details>
-        <!--summary-taggarna betraktas som rubrik för details-taggrna-->
-        <summary>Definiera kundbehov</summary>
-        <p>Jag vill ha en hemsida.</p>
-    </details>
-    <details>
-        <summary>Föredra teknik, strategi och reglering</summary>
-        <p>HTML, CSS, Javascript, deadline om en dag, all kod ska dokumenteras</p>
-    </details>
-    <details>
-        <summary>Utveckla koncept, teknik och tjänsteplan</summary>
-        <p>Sublime Text, Brackets, HTML första timman, CSS resten av dagen. Ingen Javascript.</p>
-    </details>
-    <h3>Designa</h3>
-    <details>
-        <summary>Skapa designen</summary>
-        <p>Funktion före form</p>
-    </details>
-    <details>
-        <summary>Planera ritningar och algoritmer</summary>
-        <p>wireframe.cc, Paint, papper och penna, InDesign</p>
-    </details>
-    <details>
-        <summary>Beskriv vad som ska implementeras</summary>
-        <p>Javascript behövs...</p>
-    </details>
-    <h3>Implementera</h3>
-    <details>
-        <summary>Förvandla design till produkt</summary>
-        <p>one.com</p>
-    </details>
-    <details>
-        <summary>Tillverkning och kodning</summary>
-        <p>html { margin: 0; background: #CCC; }</p>
-        <p>body { margin: 0 auto; }</p>
-    </details>
-    <details>
-        <summary>Testkörning och validering</summary>
-        <ul>
-            <li>testt</li>
-            <li>tesst</li>
-            <li>teest</li>
-            <li>ttest</li>
-        </ul>
-    </details>
-    <h3>Förvalta</h3>
-    <details>
-        <summary>Använd den implementerade produkten till att leverera avsedda värdet</summary>
+        </ul><!--slutet av .breadcrumbs-->
+        <h1>Förbered dig för ett innovativt yrke!</h1>
         <p>Nyckelord: ingenjör entreprenör datalagring IT realgymnasiet 4 fjärde tekniska året media adobe dreamweaver photoshop lightroom illustrator html svg css javascript php sql img png jpeg gif bmp</p>
-    </details>
-    <details>
-        <summary>Tillhandahålla, förändra och lägga ner projektet</summary>
-        <p>Hur många år ska jag ha webbsidan uppe?</p>
-    </details>
-    <!--Fält för användbara länkar-->
-    <div class="links">
-        <!--Rubrik för fält för användbara länkar-->
-        <h2>Länkar</h2>
-        <p>Länk 1</p>
-        <p>Länk 2</p>
-        <a href="#">Länk 1</a>
-        <a href="#">Länk 2</a>
-        <a href="#">Länk 3</a>
-    </div>
-    <!--Undersida 4-->
-    <form id="_intresse">
-        <!--Beskrivning-->
-        <p>Detta påstående är falskt</p>
-        <!--fieldset-tagg ifall man har flera radioknappar tillhörande just en frågeställning-->
-        <fieldset>
-            <!--legend-taggar betraktas som rubriker inom fieldset-taggar som standard-->
-            <legend class="required">Vem är redo?</legend>
-            <!--label-taggen blir klickbar om man har dess "for"-attribut i samma namn som den inneliggande input-taggens "id"-attribut-->
-            <label for="q-yes">
-                <!--Om det finns flera radioknappar på samma fråga, då bör input-taggarna ha samma name-variabel.-->
-                <input type="radio" name="q-rad" id="q-yes" value="q-yes">Ja
+        <!--Undersida 1-->
+        <h2 id="p1">Om utbildningen</h2>
+        <p>testtestetsetetestsetstset</p>
+        <!--Undersida 2-->
+        <h3 id="p2">Finns på följande orter</h3>
+        <!--lista av orter-->
+        <ul class="ort">
+            <li>
+                <a href="#">Norrköping</a>
+            </li><li>
+                <a href="#">Norrköping</a>
+            </li><li>
+                <a href="#">Norrköping</a>
+            </li>
+        </ul><!--slutet av .ort-->
+        <!--Google Maps-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2079.3940858138562!2d16.175750316363313!3d58.58888998140593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46593bca9f362d41%3A0x5e80ccf82826b55f!2sRealgymnasiet+Norrk%C3%B6ping!5e0!3m2!1ssv!2sse!4v1476951970877" id="realmap" allowfullscreen></iframe><!--#realmap-->
+        <!--Undersida 3-->
+        <h2 id="p3">CDIO-metoden</h2>
+        <h3>Tänk ut</h3>
+        <!--details-taggar är ihopfällbara som standard.-->
+        <details>
+            <!--summary-taggarna betraktas som rubrik för details-taggrna-->
+            <summary>Definiera kundbehov</summary>
+            <p>Jag vill ha en hemsida.</p>
+        </details>
+        <details>
+            <summary>Föredra teknik, strategi och reglering</summary>
+            <p>HTML, CSS, Javascript, deadline om en dag, all kod ska dokumenteras</p>
+        </details>
+        <details>
+            <summary>Utveckla koncept, teknik och tjänsteplan</summary>
+            <p>Sublime Text, Brackets, HTML första timman, CSS resten av dagen. Ingen Javascript.</p>
+        </details>
+        <h3>Designa</h3>
+        <details>
+            <summary>Skapa designen</summary>
+            <p>Funktion före form</p>
+        </details>
+        <details>
+            <summary>Planera ritningar och algoritmer</summary>
+            <p>wireframe.cc, Paint, papper och penna, InDesign</p>
+        </details>
+        <details>
+            <summary>Beskriv vad som ska implementeras</summary>
+            <p>Javascript behövs...</p>
+        </details>
+        <h3>Implementera</h3>
+        <details>
+            <summary>Förvandla design till produkt</summary>
+            <p>one.com</p>
+        </details>
+        <details>
+            <summary>Tillverkning och kodning</summary>
+            <p>html { margin: 0; background: #CCC; }</p>
+            <p>body { margin: 0 auto; }</p>
+        </details>
+        <details>
+            <summary>Testkörning och validering</summary>
+            <ul>
+                <li>testt</li>
+                <li>tesst</li>
+                <li>teest</li>
+                <li>ttest</li>
+            </ul>
+        </details>
+        <h3>Förvalta</h3>
+        <details>
+            <summary>Använd den implementerade produkten till att leverera avsedda värdet</summary>
+            <p>Nyckelord: ingenjör entreprenör datalagring IT realgymnasiet 4 fjärde tekniska året media adobe dreamweaver photoshop lightroom illustrator html svg css javascript php sql img png jpeg gif bmp</p>
+        </details>
+        <details>
+            <summary>Tillhandahålla, förändra och lägga ner projektet</summary>
+            <p>Hur många år ska jag ha webbsidan uppe?</p>
+        </details>
+        <!--Fält för användbara länkar-->
+        <div class="links">
+            <!--Rubrik för fält för användbara länkar-->
+            <h2>Länkar</h2>
+            <p>Länk 1</p>
+            <p>Länk 2</p>
+            <a href="#">Länk 1</a>
+            <a href="#">Länk 2</a>
+            <a href="#">Länk 3</a>
+        </div><!--slutet av .links-->
+        <!--Undersida 4-->
+        <form id="_intresse">
+            <!--Beskrivning-->
+            <p>Detta påstående är falskt</p>
+            <!--fieldset-tagg ifall man har flera radioknappar tillhörande just en frågeställning-->
+            <fieldset>
+                <!--legend-taggar betraktas som rubriker inom fieldset-taggar som standard-->
+                <legend class="required">Vem är redo?</legend>
+                <!--label-taggen blir klickbar om man har dess "for"-attribut i samma namn som den inneliggande input-taggens "id"-attribut-->
+                <label for="q-yes">
+                    <!--Om det finns flera radioknappar på samma fråga, då bör input-taggarna ha samma name-variabel.-->
+                    <input type="radio" name="q-rad" id="q-yes" value="q-yes">Ja
+                </label>
+                <label for="q-no">
+                    <input type="radio" name="q-rad" id="q-no" value="q-no">Nej
+                </label>
+            </fieldset>
+            <label for="q-test">Stad</label>
+            <!--Ihopfällbar sluten svarsfält-->
+            <select id="q-test">
+                <!--Alternativtaggar-->
+                <option>Norrköping</option>
+                <option>Norrköping</option>
+                <option>Norrköping</option>
+            </select>
+            <!--class="terms" för en avtalsfråga-->
+            <label for="q-box" class="terms">
+                <!--Checkbox-->
+                <input type="checkbox" name="q-box" id="q-box">Strävar efter skarp utbildning
+            </label><!--slutet av .terms-->
+            <label for="q-brx">
+                <input type="checkbox" name="q-brx" id="q-brx">Är teknologiskt intresserad
             </label>
-            <label for="q-no">
-                <input type="radio" name="q-rad" id="q-no" value="q-no">Nej
-            </label>
-        </fieldset>
-        <label for="q-test">Stad</label>
-        <!--Ihopfällbar sluten svarsfält-->
-        <select id="q-test">
-            <!--Alternativtaggar-->
-            <option>Norrköping</option>
-            <option>Norrköping</option>
-            <option>Norrköping</option>
-        </select>
-        <!--class="terms" för en avtalsfråga-->
-        <label for="q-box" class="terms">
-            <!--Checkbox-->
-            <input type="checkbox" name="q-box" id="q-box">Strävar efter skarp utbildning
-        </label>
-        <label for="q-brx">
-            <input type="checkbox" name="q-brx" id="q-brx">Är teknologiskt intresserad
-        </label>
-        <label for="q-txt">Beskrivning</label>
-        <!--Textfält-->
-        <!--maxlength-attribut för att hindra potentiella överflöd av email-lagring-->
-        <textarea name="q-txt" id="q-txt" maxlength="65536"></textarea>
-        <p>* Obligatoriskt</p>
-        <!--Knapp-->
-        <button>Skicka in</button>
-    </form>
-    <!--Citat-->
-    <blockquote>
-        <!--q-tagg istället för p-tagg, för citattecken runt texten-->
-        <q>These tests are too crude to be used.</q>
-    </blockquote>
-    <p class="quoted-by">
-        Frederick J. Kelly, the inventor of standardized testing
-    </p>
-</section>
-<footer>
-    <!--inre tagg för att sätta max-width på innehållet-->
-    <nav>
-        <!--tredjedelsspalter på datorskärm-->
-        <aside>
-            <h2>Utbildningar</h2>
-            <a href="#">Gymnasieingenjör</a>
-            <a href="#">IT</a>
-            <a href="#">Teknik</a>
-        </aside><aside><!--aside har display:inline-block-->
-            <h2>Skolor</h2>
-            <a href="#">Stockholm</a>
-            <a href="#">Norrköping</a>
-            <a href="#">Linköping</a>
-        </aside><aside>
-            <h2 id="p4">Kontakt</h2>
-            <a href="#">Linköping</a>
-            <p>Linköping</p>
-        </aside>
-        <!--copyright-->
-        <p class="copyright">© Copyright 2016 Realgymnasiet Lärande i Sverige AB</p>
-        <a href="http://realgymnasiet.se/om-cookies-och-personuppgifter">Om cookies och personuppgifter</a>
-    </nav>
-</footer>
-<!--skript för responsiv meny och slider-->
-<script type="text/javascript" src="mfmp.js"></script>
+            <label for="q-txt">Beskrivning</label>
+            <!--Textfält-->
+            <!--maxlength-attribut för att hindra potentiella överflöd av email-lagring-->
+            <textarea name="q-txt" id="q-txt" maxlength="4096"></textarea>
+            <p>* Obligatoriskt</p>
+            <!--Knapp-->
+            <button>Skicka in</button>
+        </form>
+        <!--Citat-->
+        <blockquote>
+            <!--q-tagg istället för p-tagg, för citattecken runt texten-->
+            <q>These tests are too crude to be used.</q>
+        </blockquote>
+        <p class="quoted-by">
+            Frederick J. Kelly, the inventor of standardized testing
+        </p><!--slutet av .quoted-by-->
+    </section>
+    <footer>
+        <!--inre tagg för att sätta max-width på innehållet-->
+        <nav>
+            <!--tredjedelsspalter på datorskärm-->
+            <aside>
+                <h2>Utbildningar</h2>
+                <a href="#">Gymnasieingenjör</a>
+                <a href="#">IT</a>
+                <a href="#">Teknik</a>
+            </aside><aside><!--aside har display:inline-block-->
+                <h2>Skolor</h2>
+                <a href="#">Stockholm</a>
+                <a href="#">Norrköping</a>
+                <a href="#">Linköping</a>
+            </aside><aside>
+                <h2 id="p4">Kontakt</h2>
+                <a href="#">Linköping</a>
+                <p>Linköping</p>
+            </aside>
+            <!--copyright-->
+            <p class="copyright">© Copyright 2016 Realgymnasiet Lärande i Sverige AB</p>
+            <a href="http://realgymnasiet.se/om-cookies-och-personuppgifter">Om cookies och personuppgifter</a>
+        </nav>
+    </footer>
+    <!--skript för responsiv meny och slider-->
+    <script type="text/javascript" src="mfmp.js"></script>
 </body>
 </html>
