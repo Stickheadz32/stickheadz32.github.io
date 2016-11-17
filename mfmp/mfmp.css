@@ -522,6 +522,11 @@ footer>nav>a{
     text-decoration:none;
     font:14px/17px "Lato",sans-serif;
 }
+.toTop{
+    text-align: center;
+    padding:20px;
+    font-size:20px;
+}
 /*fluid layout i header*/
 @media all and (max-width:1159px){
     #mainMenu{
