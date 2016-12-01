@@ -1,0 +1,86 @@
+html,body{
+	height:100%;
+	margin:0;
+	padding:0;
+}
+header,footer{height:10%;margin:0;}
+h1{
+	margin:0;
+	padding:30px;
+}
+#conv{
+	display:block;
+	padding:0 3%;
+	margin:0;
+	overflow-y:scroll;
+	height:80%;
+}
+.speech{
+	display:block;
+	padding:10px;
+}
+.person{
+	display:block;
+	opacity:.7;
+	padding:10px 10px 0;
+}
+.speech>p{
+	display:block;
+	margin:5px;
+	padding:10px;
+}
+.choice{
+	display:block;
+	clear:both;
+	padding:20px;
+}
+.choice-option{
+	display:block;
+}
+.choice-option:hover{
+	background:#EEE;
+	cursor:pointer;
+}
+.option-title{
+	display:block;
+	text-transform:uppercase;
+	margin:10px 10px 0;
+	padding:5px;
+}
+.option-title{
+	color:rbga(0,0,0,.5);
+}
+.option-speech{
+	display:block;
+	margin:0;
+	padding:5px;
+	color:rgba(0,0,0,.2);
+}
+.choice-option:hover .option-speech{
+	color:#000;
+}
+.response{
+	display:inline-block;
+	vertical-align:top;
+	width:33%;
+	margin:0;
+}
+.positive{background:rgba(0,255,0,.1);}
+.negative{background:rgba(255,0,0,.1);}
+.button-restart{
+	display:block;
+	border:solid 1px rgba(0,0,0,.3);
+	background:rgba(0,0,0,.1);
+	padding:10px;
+	float:left;
+}
+.button-next{
+	display:block;
+	border:solid 1px rgba(0,0,0,.3);
+	background:rgba(0,0,0,.1);
+	padding:10px;
+	float:right;
+}
+.button-next#disabled{
+	opacity:.5;
+}

@@ -1,0 +1,453 @@
+{
+	"people":["Adam Jensen","David Sarif"],
+	"conditions":["auth","change","blame"],
+	"conversation":
+	[
+		{
+			"type":"speech",
+			"person":0,
+			"line":"Boss, we need to talk."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"line":"Is something wrong?"
+		},
+		{
+			"type":"speech",
+			"person":0,
+			"line":"I'm not sure. Did you set up a private access route to bypass the company's firewall right before you hired me?"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"line":"Did I what!?"
+		},
+		{
+			"type":"speech",
+			"person":0,
+			"line":"Pritchard says someone's been using it to access our systems since before the first attack. The security measures he and I set in place never stopped them, because we didn't even know the loophole existed."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"line":"Oh, I see. Frank's fixed that, though, right?"
+		},
+		{
+			"personality":"-b",
+			"type":"speech",
+			"person":0,
+			"line":"He has now. But he's wondering why you never mentioned it."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"line":"Frank's paranoid, Adam...! You know that? Can't a busy man forget things once in a while?"
+		},
+		{
+			"personality":"-aa",
+			"type":"speech",
+			"person":0,
+			"line":"You streamed an awful lot of data through that portal, boss. Right before you brought me on board. Pritchard may be paranoid, but I gotta admit: I'm wondering what was in it too."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"line":"Yeah, as an ex-cop, I guess you would. But the important thing is, you found the hole and plugged it. We're secure now. And the information you uncovered in that FEMA facility, may actually help us track these guys. So let's just stay focused on what's important."
+		},
+		{
+			"type":"choice",
+			"option":
+			[
+				{
+					"condition":"placate",
+					"line":"Of course, you're right. And maybe Pritchard's paranoia IS rubbing off of me. It's just that the timing seemed so strange - right before you hired me? Don't you think it might be more than a coincidence?"
+				},
+				{
+					"condition":"refocus",
+					"line":"I want to, believe me, I wanna catch these guys as badly as you do. But that breach is responsible for every security crisis we've had, including today's. If you want me to stop these guys, I need to know what kind of access we've had data to."
+				},
+				{
+					"condition":"defend",
+					"line":"You went behind my back on this one, boss. With all due respect, you hired me to keep this place secure. But I can't do that if you're not one hundred percent straight with me."
+				}
+			]
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":">placate",
+				"line":"I guess I can see why you'd think that... given everything you've been through recently."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":">refocus",
+				"line":"You're right, you're right. I'm sorry if I seem evasive."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":">defend",
+				"line":"Why are you getting so defensive? All I'm saying is we should be looking forward, Adam. Not back."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+auth",
+			"line":"But there's something you're not getting here, Adam. Business is war, with no clear battleground and no rules to keep our enemies honest. And in this company, I'M the commander-in-chief. I have to be ready for anything, and I will DO anything to ensure that I am. Now I hired you because I needed a general I can trust. One who knows how to obey orders."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+change",
+			"line":"The truth is... I've had a lot of other things on my mind. I'm trying to secure a future here for all of mankind. I can't se trival concerns get in the way when people like Bill Taggart want to see us fail... No, you're my best warrior, Adam, and-- and I trust you. I know the loyalty you've shown me will continue as we take fight into the future. Because that's what's really important, isn't it? The future?"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+blame",
+			"line":"But you can't expect me to tell you every detail of this company's operations, every single day. We're at war here, and it's your job to protect us from enemies who try to take us down! You should have found that loophole without my having to tell you about it...! You know, Frank wanted me to hire experts - an outside security firm to protect us, but YOU convinced me you could do it! Are you saying you were wrong?"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-auth",
+			"line":"You may not realize this, but there's a war going on out there. A war to control intellectual property rights and cutting-edge science. And as commander-in-chief of this company, I have to be ready for anything. I hired YOU, instead of that private security company Frank wanted, because I needed somebody loyal. Somebody who understands chain-of-command."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-change",
+			"line":"Right now, this company is on the brink of something phenomenal - something that can change mankind forever. And there are a lot of people out there who want to see us fail. I need dedicated warriors to help me win this! I never told you, but Frank wanted me subcontract our physical needs to an outside PMC. I chose you, because I knew how important loyalty is to you."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-defend",
+			"line":"Not telling you about that portal left us open to attack, fine. But to be fair, it was your job to find our weaknesses and protect us from them. I need troops I can rely on, and I thought you were one of them. I hired you, I TRUSTED you - when a lot of other people said that I shouldn't. You know, Frank wanted me to hire a private military outfit like Belltower Associates. Maybe I should've."
+		},
+		{
+			"personality":"-b",
+			"type":"choice",
+			"option":
+			[
+				{
+					"condition":"placate",
+					"line":"Whoa, don't get me wrong, boss; I'm not questioning your leadership. I'm just concerned that the data you streamed might have been compromised - accessed by the hacker who attached us. If so, how do you suggest I handle it?"
+				},
+				{
+					"condition":"refocus",
+					"line":"Boss, I think we're getting sidetracked here. If you want me to win this war for you, I need to know how badly we've been compromised. I need to know what was in that data stream - in case our enemies accessed it."
+				},
+				{
+					"condition":"defend",
+					"line":"I think I proved myself today. And the only reason I'm worried about this loophole right now, is because the data you streamed through it could have been accessed, back-traced and stolen by the men who attacked us. Our enemies might still find a way to hurt us with it."
+				}
+			]
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"auth>placate",
+			"line":"Good question. I guess I should consider every possibility."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"auth>refocus",
+			"line":"No, Adam. I'm not getting sidetracked. I'm trying to give you a message, but apparently you can't take a hint."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"auth>defend",
+			"line":"I wasn't criticizing you, Adam. But I suppose you raised a good point."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"change>placate",
+			"line":"I guess I haven't considered that... but I still don't know that you need to."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"change>refocus",
+			"line":"You think they could've? I...see your point, son. That might be bad."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"change>defend",
+			"line":"First of all, I'm not questioning about your integrity, and don't you think you're being just a little bit paranoid here?"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"blame>placate",
+			"line":"By focusing on what matters right now, instead of dwelling on my past mistakes!"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"blame>refocus",
+			"line":"I see. I suppose they might have tried to do that."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"blame>defend",
+			"line":"What? Well I never considered that, I'm... sorry, son. I guess you have proved yourself today."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+auth",
+			"line":"Look, I'm not going to share every single detail of this data with you. As CEO of this company, there are things I can't release, even to you, Frank or Athene. I consider us all a team here, but we EACH have our roles to fill. I decide who gets trusted with that, and in this case... you're just gonna have to do your job without knowing all the facts. Megan said you can roll with the punches. Prove she was right!"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+change",
+			"line":"Your concerns about the data being compromised... won't really be an issue as long as we stay strong and work together as a team. That's what I ever tried to do here - find the best, most qualified people as I can, and bring them all together so they can compliment each other. Now Megan understood that - that's why she insisted I hired you in the first place. To make this little family of ours survive."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+blame",
+			"line":"I just wonder if you're being a bit paranoid here - fixating on details that aren't critical? I mean, are you so shaken up by what happened six months ago by your failure to make a difference then, that you can't roll with the punches anymore?! Damn it, Adam! I brought you back in here because we have an immediate crisis to deal with! Questioning about things that don't even matter isn't gonna bring Megan back!"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-auth",
+			"line":"I'm sorry to have to break this to you, but frankly, there are a lot of things in this company that I can't share with you. Things that are above your pay grede. I'd like to think of us all as a team, but in the end, I decide who gets trusted with what. This is one of the times where you just have to do your job regardless. Megan told me when she asked me to hire you. Now prove it to me."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-change",
+			"line":"Everything I've done is about securing a future here, for you, me, Frank, and everyone else in this team. I'm constantly looking for strong people to help me do that - the best people I can find. Because if I don't, Sarif Industries will fall. Megan understood that. It's why she insisted I hired you in the first place."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-blame",
+			"line":"You disappoint me, son. What happened six months ago was a tragedy, plain and simple. I realize you lost more than most of us that day, but I can't have you overreacting like this. Questioning me about things that don't matter...? Megan believed in you. Can't you just leave it at that?"
+		},
+		{
+			"personality":"-aaa",
+			"type":"choice",
+			"option":
+			[
+				{
+					"condition":"placate",
+					"line":"Boss, I never meant to imply--... Look. I'll back off, if that's what you mean. But when you start dragging Megan into this... it kinda puts me into defensive."
+				},
+				{
+					"condition":"refocus",
+					"line":"Megan? Boss, what does Megan have to do with any of this? I thought we were discussing a security breach."
+				},
+				{
+					"condition":"defend",
+					"line":"With all due respect, sir, I'm TRYING to do my job. The job you hired me to do. The job that you even brought me back in for, tonight. But it feels like you're getting in the way - especially if you start bringing Megan into this!"
+				},
+				{
+					"type":"pheromones",
+					"condition":"appease",
+					"line":"Boss, I really don't understand why you're giving me the runaround. When you hired me, I said I'd give you the best I could, but I can't protect us if you keep hamstringing my every move. If you won't level with me and tell me whatever it is you're hiding, then I'm outta here. I quit."
+				},
+				{
+					"type":"pheromones",
+					"condition":"charm",
+					"line":"Boss, I like working here. The things you stand for, the way you handle your people - all of it strikes a chord on me. I want to be a part of it; to help me make this company great, but you're backing me into a corner. I'm gonna have to quit."
+				},
+				{
+					"type":"pheromones",
+					"condition":"pressure",
+					"line":"Stop dancing around the issue. You're hiding something, boss. Something about me, or Megan, or the work that goes on inside this company. And unless you want me to walk out that door right now, you'd better come clean with me."
+				}
+			]
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"convinced",
+			"line":"Adam, wait, you can't leave us...! We need you, now, more than ever!"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"pressure",
+			"line":"Or what!? You can't afford to quit right now - not with all those hospital bills racked up behind you...! I know you want to find Megan's killers as badly as I do. How are you gonna do without this company's resources behind you, huh!? We've got bigger fish to fry, so let's focus on them, and forget we've ever had this discussion."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"auth>placate",
+			"line":"I... understand, Adam. And I'm sorry."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"auth>refocus",
+			"line":"No, Adam, YOU were discussing it...! I just told you it's time to move on!"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"auth>defend",
+			"line":"I wasn't trying to--...! Look, I don't want us getting upset over this."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"change>placate",
+			"line":"Hmmm... Well, I guess I can see why it would."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"change>refocus",
+			"line":"She doesn't! I mean, er--... not directly."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"change>defend",
+			"line":"Aw, j--... Calm down, Adam! There's no need to get defensive here; it doesn't do anyone any good!"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"blame>placate",
+			"line":"Then get over it. Shake it off and get back to doing your job!"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"blame>refocus",
+			"line":"We were! She doesn't! I mean--... Adam, you're missing the point...!"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"blame>defend",
+			"line":"I'm not getting in the way, I just--... Okay, look, I-- I'm sorry. Maybe I'm the one overreacting."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+auth","line":"If I'm reluctant to show you the data, it's because there's legal issues involved. Every company has its secrets, son. And Megan's research was a big part of ours - but the data I streamed has nothing to do with her. It wasn't even proprietary in nature, so I don't want you to waste any time harping on it. The shareholders expect me to take care of it, and I will. So leave it to me to deal with from here."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+change","line":"The data I streamed... had nothing to do with Megan or her work. It was just a routine, fact-finding check that sprang from one of our discussions. The kind of check I have to run quite often here, believe it or not. Now if somebody back-traces this transmission and gets a look at it, I very much doubt they'll know what to do with it. Trust me, we're fine."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+blame","line":"The data you're so nervous about is little more than routine, fact-finding reports, the kind of stuff I deal with every day. Megan pointed me in a direction and I followed up on it, that's all...! And now that I've shared this much with you, I have to ask... why your knowing the fine details will keep the rest of us secure...! Can't you trust me to take care of things around here?"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-auth","line":"Megan was a valuable asset, Adam, in more ways than one. If she pointed me in a direction, I followed up on it. Now if the data i streamed goes public, it's likely to get embarrasing, but that's all...! And it's the kind of embarrassment the shareholders pay me to deal with, so I don't need you wasting your time getting sidetracked. You understand?!"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-change","line":"Seriously. The data I streamed is not going to hurt anyone. It was just a routine, background information I need to get familiar with, after a discussion I had with Megan one night. It's the kind of stuff I look at all the time - and if someone did get a hold of it, they wouldn't know what to do with it. I'm telling you, were fine. Trust me."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-blame",
+			"line":"I can understand why the mention of Megan's name gets your hackles up. She did break your heart after all. But the data I streamed was a routine, fact-finding check, carried out after one of our many late night discussions, and I don't see how knowing the content of it will make you better equipped for your job. Honestly, Adam... You're starting to appear as jealous as Frank. Just... trust me with this one."
+		},
+		{
+			"type":"choice",
+			"option":[
+				{
+					"condition":"placate",
+					"line":"Boss, I'm sorry if you think this is a big waste of time. I just don't want to see anyone getting hurt because of information I didn't have. But if you really believe that this data can't hurt us, that it won't come back somehow and bite us in the ass... then I'll trust you."
+				},
+				{
+					"condition":"refocus",
+					"line":"I would like nothing better than to trust you with this one, boss. But trust is a two-way street, and the way you've handled this entire conversation with me makes me think that it's you who isn't trusting me. Why, boss? What is it you're so afraid to tell me?"
+				},
+				{
+					"condition":"defend",
+					"line":"Boss, six months ago, mercenaries knew stuff about this company that I didn't, and used it to get past my security measures. I don't really care what secrets you and Megan were keeping back then, I just want to make sure they don't endanger us again."
+				}
+			]
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+placate",
+			"line":"I can't be a hundred percent sure of something like that, Adam, no-one can...! ...god dammit..."},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+refocus",
+			"line":"Adam...! Of course I'd trust you, son! It's not that I'm afraid to tell you, Adam, it's just... I'm afraid you'll take it the wrong way..."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+defend",
+			"line":"Adam, I didn't mean to imply--... You're right! You're right, I really shouldn't keep this information from you. I just hope you'll understand why I did."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-placate",
+			"line":"I'm glad to hear that, Adam. Because, frankly, I was beginning to wonder. I've told you all you need to know on this subject, so we've got bigger fish to fry, so let's focus on them."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-refocus",
+			"line":"I'm not afraid to tell you anything, Adam! But neither will I be treated like some two-bit suspect you just hauled in off the street. You're not a cop anymore! You work for me; try not to forget that!"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"-defend",
+			"line":"What exactly are you implying, son?! That I would endanger my own staff to cover our indiscretions? I've been willing to give you a bit of leeway here, considering everything you've been through these past months, but let's not forget why it is you're even alive...! Honestly..."
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+",
+			"line":"Alright. Look. The truth is... I set up a confidential data channel for a private investigator - someone who can run covert background checks on people. Potential new recruits... like you."
+		},
+		{
+			"type":"speech",
+			"person":0,
+			"condition":"+",
+			"line":"You what!?"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+",
+			"line":"I had to, Adam! You were a liability, remember? You've just been fired from SWAT, now Megan believed in you, but I had to be sure. Look, I'm not gonns let this come between us, I'll send the files to your computer, you can see yourself what he dug up. But Adam... you'd better be sure."
+		},
+		{
+			"type":"speech",
+			"person":0,
+			"condition":"+",
+			"line":"Why, what do you mean?"
+		},
+		{
+			"type":"speech",
+			"person":1,
+			"condition":"+",
+			"line":"I mean sometimes the past should stay in the past. Once you see that data... you can't un-ring the bell."
+		}
+	]
+}

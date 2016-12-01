@@ -1,0 +1,19 @@
+.img-item{
+	width:120px;
+	height:120px;
+	display:inline-block;
+	padding:10px;
+	margin:10px;
+	color:#000;
+}
+.img-item:hover{
+	background:#EEE;
+}
+.img-item>img,.img-item>p{
+	display:block;
+	margin:0 auto;
+	text-align: center;
+}
+textarea.title{
+	resize:none;
+}
