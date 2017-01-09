@@ -14,6 +14,42 @@
 	margin:0 auto;
 	text-align: center;
 }
+.img-item>h3{
+	margin:5px;
+	white-space:nowrap;
+	overflow-x:hidden;
+}
 textarea.title{
 	resize:none;
+}
+#item-overview{
+	background:center no-repeat;
+	width:400px;
+	height:400px;
+	margin:20px;
+	box-shadow:0 0 10px #000;
+	float:left;
+}
+.listShow{
+	display:block;
+	text-decoration:underline;
+	color:#00F;
+	cursor:pointer;
+}
+.productResult{
+	display:block;
+	padding:10px;
+}
+.productResult#summary .img-item{
+	width:auto;
+	height:60px;
+	display:block;
+}
+.productResult#summary .img-item>img{
+	width:60px;
+	float:left;
+	padding-right:10px;
+}
+.productResult#summary .img-item>p{
+	text-align:left;
 }

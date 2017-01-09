@@ -74,23 +74,27 @@
 			]
 		},
 		{
-			"type":"speech",
-			"person":1,
-			"condition":">placate",
-				"line":"I guess I can see why you'd think that... given everything you've been through recently."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":">refocus",
-				"line":"You're right, you're right. I'm sorry if I seem evasive."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":">defend",
-				"line":"Why are you getting so defensive? All I'm saying is we should be looking forward, Adam. Not back."
-		},
+			"type":"response",
+			"outcomes":[
+				{
+					"type":"speech",
+					"person":1,
+					"condition":">placate",
+						"line":"I guess I can see why you'd think that... given everything you've been through recently."
+				},
+				{
+					"type":"speech",
+					"person":1,
+					"condition":">refocus",
+						"line":"You're right, you're right. I'm sorry if I seem evasive."
+				},
+				{
+					"type":"speech",
+					"person":1,
+					"condition":">defend",
+						"line":"Why are you getting so defensive? All I'm saying is we should be looking forward, Adam. Not back."
+				}]
+			}
 		{
 			"type":"speech",
 			"person":1,

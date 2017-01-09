@@ -6,7 +6,7 @@ function byTag(a){return doc.getElementsByTagName(a);}
 function query(a){return doc.querySelector(a);}
 /*attachEvent för tillgänglighet i IE5-IE8*/
 function event(a,event,b){
-    if(event="click")
+    if(event=="click")
     a.addEventListener?a.addEventListener("click",b):a.attachEvent&&a.attachEvent("onclick",b);
     else a.addEventListener?a.addEventListener(event,b):a.attachEvent&&a.attachEvent(event,b);
 }

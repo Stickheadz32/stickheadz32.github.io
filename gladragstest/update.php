@@ -24,7 +24,14 @@ if(isset($_POST["submit"])) {
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            $sql = "INSERT INTO images (id,text,img) VALUES ('','".$_POST['uploadTitle']."', '".$target_file."',NOW())";
+            $sqldel = "SELECT img FROM images WHERE id=".$_GET['id'].";";
+            $result = $conn->query($sqldel) or die($sqldel->error());
+            $row = mysqli_fetch_array($result);
+            if($result->num_rows>1)
+                if(file_exists("'".$row['img']."'")){
+                    delete($row['img']);
+                }
+            $sql = "UPDATE `images` SET text='".$_POST['uploadTitle']."',img='".$target_file."',deadline=NOW() WHERE id=".$_GET['id'];
             if ($conn->query($sql) === TRUE) {
                 header('Location: index.php');
             } else {
