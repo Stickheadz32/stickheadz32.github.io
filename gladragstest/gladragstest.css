@@ -30,7 +30,7 @@ textarea.title{
 	box-shadow:0 0 10px #000;
 	float:left;
 }
-.listShow{
+a.listShow{
 	display:block;
 	text-decoration:underline;
 	color:#00F;
@@ -39,6 +39,9 @@ textarea.title{
 .productResult{
 	display:block;
 	padding:10px;
+}
+.productResult>a{
+	text-decoration:none;
 }
 .productResult#summary .img-item{
 	width:auto;

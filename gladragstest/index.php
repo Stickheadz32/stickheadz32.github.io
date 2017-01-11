@@ -20,7 +20,7 @@ $row = mysqli_fetch_array($result);
 <?php
 if ($result->num_rows > 0) {
     do{
-    	echo '<a href="edit.php?id='.$row['id'].'"><div class="img-item"><img src="'.$row["img"].'" width="60" height="60"><p>'.$row['text'].'</p><span class="img-time">'.$row["deadline"].'</span></div></a>';
+    	echo '<a href="edit.php?id='.$row['id'].'"><div class="img-item"><img src="'.$row["img"].'" width="60" height="60"><p>'.$row['text'].'</p><span class="img-time">'.$row["date"].'</span></div></a>';
 	}while($row = $result->fetch_assoc());
 } else {
     echo "0 results";

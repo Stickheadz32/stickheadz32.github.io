@@ -17,8 +17,8 @@ $row = mysqli_fetch_array($result);
 <link rel="stylesheet" type="text/css" href="gladragstest.css"/>
 </head>
 <body>
+<a class="listShow">Sammanfattningsvy</a>
 <div class="productResult">
-	<a class="listShow">Sammanfattningsvy</a>
 	<?php
 	if ($result->num_rows > 0) {
 	    do{

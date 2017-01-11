@@ -31,7 +31,7 @@ if(isset($_POST["submit"])) {
                 if(file_exists("'".$row['img']."'")){
                     delete($row['img']);
                 }
-            $sql = "UPDATE `images` SET text='".$_POST['uploadTitle']."',img='".$target_file."',deadline=NOW() WHERE id=".$_GET['id'];
+            $sql = "UPDATE `images` SET text='".$_POST['uploadTitle']."',img='".$target_file."',date=NOW() WHERE id=".$_GET['id'];
             if ($conn->query($sql) === TRUE) {
                 header('Location: index.php');
             } else {
