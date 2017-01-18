@@ -75,61 +75,51 @@
 		},
 		{
 			"type":"response",
-			"outcomes":[
+			"outcomes":
+			[
 				{
-					"type":"speech",
-					"person":1,
 					"condition":">placate",
 						"line":"I guess I can see why you'd think that... given everything you've been through recently."
 				},
 				{
-					"type":"speech",
-					"person":1,
 					"condition":">refocus",
 						"line":"You're right, you're right. I'm sorry if I seem evasive."
 				},
 				{
-					"type":"speech",
-					"person":1,
 					"condition":">defend",
 						"line":"Why are you getting so defensive? All I'm saying is we should be looking forward, Adam. Not back."
-				}]
-			}
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"+auth",
-			"line":"But there's something you're not getting here, Adam. Business is war, with no clear battleground and no rules to keep our enemies honest. And in this company, I'M the commander-in-chief. I have to be ready for anything, and I will DO anything to ensure that I am. Now I hired you because I needed a general I can trust. One who knows how to obey orders."
+				}
+			]
 		},
 		{
-			"type":"speech",
-			"person":1,
-			"condition":"+change",
-			"line":"The truth is... I've had a lot of other things on my mind. I'm trying to secure a future here for all of mankind. I can't se trival concerns get in the way when people like Bill Taggart want to see us fail... No, you're my best warrior, Adam, and-- and I trust you. I know the loyalty you've shown me will continue as we take fight into the future. Because that's what's really important, isn't it? The future?"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"+blame",
-			"line":"But you can't expect me to tell you every detail of this company's operations, every single day. We're at war here, and it's your job to protect us from enemies who try to take us down! You should have found that loophole without my having to tell you about it...! You know, Frank wanted me to hire experts - an outside security firm to protect us, but YOU convinced me you could do it! Are you saying you were wrong?"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-auth",
-			"line":"You may not realize this, but there's a war going on out there. A war to control intellectual property rights and cutting-edge science. And as commander-in-chief of this company, I have to be ready for anything. I hired YOU, instead of that private security company Frank wanted, because I needed somebody loyal. Somebody who understands chain-of-command."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-change",
-			"line":"Right now, this company is on the brink of something phenomenal - something that can change mankind forever. And there are a lot of people out there who want to see us fail. I need dedicated warriors to help me win this! I never told you, but Frank wanted me subcontract our physical needs to an outside PMC. I chose you, because I knew how important loyalty is to you."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-defend",
-			"line":"Not telling you about that portal left us open to attack, fine. But to be fair, it was your job to find our weaknesses and protect us from them. I need troops I can rely on, and I thought you were one of them. I hired you, I TRUSTED you - when a lot of other people said that I shouldn't. You know, Frank wanted me to hire a private military outfit like Belltower Associates. Maybe I should've."
+			"type":"response",
+			"outcomes":
+			[
+				{
+					"condition":"+auth",
+					"line":"But there's something you're not getting here, Adam. Business is war, with no clear battleground and no rules to keep our enemies honest. And in this company, I'M the commander-in-chief. I have to be ready for anything, and I will DO anything to ensure that I am. Now I hired you because I needed a general I can trust. One who knows how to obey orders."
+				},
+				{
+					"condition":"+change",
+					"line":"The truth is... I've had a lot of other things on my mind. I'm trying to secure a future here for all of mankind. I can't se trival concerns get in the way when people like Bill Taggart want to see us fail... No, you're my best warrior, Adam, and-- and I trust you. I know the loyalty you've shown me will continue as we take fight into the future. Because that's what's really important, isn't it? The future?"
+				},
+				{
+					"condition":"+blame",
+					"line":"But you can't expect me to tell you every detail of this company's operations, every single day. We're at war here, and it's your job to protect us from enemies who try to take us down! You should have found that loophole without my having to tell you about it...! You know, Frank wanted me to hire experts - an outside security firm to protect us, but YOU convinced me you could do it! Are you saying you were wrong?"
+				},
+				{
+					"condition":"-auth",
+					"line":"You may not realize this, but there's a war going on out there. A war to control intellectual property rights and cutting-edge science. And as commander-in-chief of this company, I have to be ready for anything. I hired YOU, instead of that private security company Frank wanted, because I needed somebody loyal. Somebody who understands chain-of-command."
+				},
+				{
+					"condition":"-change",
+					"line":"Right now, this company is on the brink of something phenomenal - something that can change mankind forever. And there are a lot of people out there who want to see us fail. I need dedicated warriors to help me win this! I never told you, but Frank wanted me subcontract our physical needs to an outside PMC. I chose you, because I knew how important loyalty is to you."
+				},
+				{
+					"condition":"-defend",
+					"line":"Not telling you about that portal left us open to attack, fine. But to be fair, it was your job to find our weaknesses and protect us from them. I need troops I can rely on, and I thought you were one of them. I hired you, I TRUSTED you - when a lot of other people said that I shouldn't. You know, Frank wanted me to hire a private military outfit like Belltower Associates. Maybe I should've."
+				}
+			]
 		},
 		{
 			"personality":"-b",
@@ -151,94 +141,76 @@
 			]
 		},
 		{
-			"type":"speech",
-			"person":1,
-			"condition":"auth>placate",
-			"line":"Good question. I guess I should consider every possibility."
+			"type":"response",
+			"outcomes":
+			[
+				{
+					"condition":"auth>placate",
+					"line":"Good question. I guess I should consider every possibility."
+				},
+				{
+					"condition":"auth>refocus",
+					"line":"No, Adam. I'm not getting sidetracked. I'm trying to give you a message, but apparently you can't take a hint."
+				},
+				{
+					"condition":"auth>defend",
+					"line":"I wasn't criticizing you, Adam. But I suppose you raised a good point."
+				},
+				{
+					"condition":"change>placate",
+					"line":"I guess I haven't considered that... but I still don't know that you need to."
+				},
+				{
+					"condition":"change>refocus",
+					"line":"You think they could've? I...see your point, son. That might be bad."
+				},
+				{
+					"condition":"change>defend",
+					"line":"First of all, I'm not questioning about your integrity, and don't you think you're being just a little bit paranoid here?"
+				},
+				{
+					"condition":"blame>placate",
+					"line":"By focusing on what matters right now, instead of dwelling on my past mistakes!"
+				},
+				{
+					"condition":"blame>refocus",
+					"line":"I see. I suppose they might have tried to do that."
+				},
+				{
+					"condition":"blame>defend",
+					"line":"What? Well I never considered that, I'm... sorry, son. I guess you have proved yourself today."
+				}
+			]
 		},
 		{
-			"type":"speech",
-			"person":1,
-			"condition":"auth>refocus",
-			"line":"No, Adam. I'm not getting sidetracked. I'm trying to give you a message, but apparently you can't take a hint."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"auth>defend",
-			"line":"I wasn't criticizing you, Adam. But I suppose you raised a good point."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"change>placate",
-			"line":"I guess I haven't considered that... but I still don't know that you need to."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"change>refocus",
-			"line":"You think they could've? I...see your point, son. That might be bad."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"change>defend",
-			"line":"First of all, I'm not questioning about your integrity, and don't you think you're being just a little bit paranoid here?"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"blame>placate",
-			"line":"By focusing on what matters right now, instead of dwelling on my past mistakes!"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"blame>refocus",
-			"line":"I see. I suppose they might have tried to do that."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"blame>defend",
-			"line":"What? Well I never considered that, I'm... sorry, son. I guess you have proved yourself today."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"+auth",
-			"line":"Look, I'm not going to share every single detail of this data with you. As CEO of this company, there are things I can't release, even to you, Frank or Athene. I consider us all a team here, but we EACH have our roles to fill. I decide who gets trusted with that, and in this case... you're just gonna have to do your job without knowing all the facts. Megan said you can roll with the punches. Prove she was right!"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"+change",
-			"line":"Your concerns about the data being compromised... won't really be an issue as long as we stay strong and work together as a team. That's what I ever tried to do here - find the best, most qualified people as I can, and bring them all together so they can compliment each other. Now Megan understood that - that's why she insisted I hired you in the first place. To make this little family of ours survive."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"+blame",
-			"line":"I just wonder if you're being a bit paranoid here - fixating on details that aren't critical? I mean, are you so shaken up by what happened six months ago by your failure to make a difference then, that you can't roll with the punches anymore?! Damn it, Adam! I brought you back in here because we have an immediate crisis to deal with! Questioning about things that don't even matter isn't gonna bring Megan back!"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-auth",
-			"line":"I'm sorry to have to break this to you, but frankly, there are a lot of things in this company that I can't share with you. Things that are above your pay grede. I'd like to think of us all as a team, but in the end, I decide who gets trusted with what. This is one of the times where you just have to do your job regardless. Megan told me when she asked me to hire you. Now prove it to me."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-change",
-			"line":"Everything I've done is about securing a future here, for you, me, Frank, and everyone else in this team. I'm constantly looking for strong people to help me do that - the best people I can find. Because if I don't, Sarif Industries will fall. Megan understood that. It's why she insisted I hired you in the first place."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-blame",
-			"line":"You disappoint me, son. What happened six months ago was a tragedy, plain and simple. I realize you lost more than most of us that day, but I can't have you overreacting like this. Questioning me about things that don't matter...? Megan believed in you. Can't you just leave it at that?"
+			"type":"response",
+			"outcomes":
+			[
+				{
+					"condition":"+auth",
+					"line":"Look, I'm not going to share every single detail of this data with you. As CEO of this company, there are things I can't release, even to you, Frank or Athene. I consider us all a team here, but we EACH have our roles to fill. I decide who gets trusted with that, and in this case... you're just gonna have to do your job without knowing all the facts. Megan said you can roll with the punches. Prove she was right!"
+				},
+				{
+					"condition":"+change",
+					"line":"Your concerns about the data being compromised... won't really be an issue as long as we stay strong and work together as a team. That's what I ever tried to do here - find the best, most qualified people as I can, and bring them all together so they can compliment each other. Now Megan understood that - that's why she insisted I hired you in the first place. To make this little family of ours survive."
+				},
+				{
+					"condition":"+blame",
+					"line":"I just wonder if you're being a bit paranoid here - fixating on details that aren't critical? I mean, are you so shaken up by what happened six months ago by your failure to make a difference then, that you can't roll with the punches anymore?! Damn it, Adam! I brought you back in here because we have an immediate crisis to deal with! Questioning about things that don't even matter isn't gonna bring Megan back!"
+				},
+				{
+					"condition":"-auth",
+					"line":"I'm sorry to have to break this to you, but frankly, there are a lot of things in this company that I can't share with you. Things that are above your pay grede. I'd like to think of us all as a team, but in the end, I decide who gets trusted with what. This is one of the times where you just have to do your job regardless. Megan told me when she asked me to hire you. Now prove it to me."
+				},
+				{
+					"condition":"-change",
+					"line":"Everything I've done is about securing a future here, for you, me, Frank, and everyone else in this team. I'm constantly looking for strong people to help me do that - the best people I can find. Because if I don't, Sarif Industries will fall. Megan understood that. It's why she insisted I hired you in the first place."
+				},
+				{
+					"condition":"-blame",
+					"line":"You disappoint me, son. What happened six months ago was a tragedy, plain and simple. I realize you lost more than most of us that day, but I can't have you overreacting like this. Questioning me about things that don't matter...? Megan believed in you. Can't you just leave it at that?"
+				}
+			]
 		},
 		{
 			"personality":"-aaa",
@@ -275,70 +247,55 @@
 			]
 		},
 		{
-			"type":"speech",
-			"person":1,
-			"condition":"convinced",
-			"line":"Adam, wait, you can't leave us...! We need you, now, more than ever!"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"pressure",
-			"line":"Or what!? You can't afford to quit right now - not with all those hospital bills racked up behind you...! I know you want to find Megan's killers as badly as I do. How are you gonna do without this company's resources behind you, huh!? We've got bigger fish to fry, so let's focus on them, and forget we've ever had this discussion."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"auth>placate",
-			"line":"I... understand, Adam. And I'm sorry."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"auth>refocus",
-			"line":"No, Adam, YOU were discussing it...! I just told you it's time to move on!"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"auth>defend",
-			"line":"I wasn't trying to--...! Look, I don't want us getting upset over this."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"change>placate",
-			"line":"Hmmm... Well, I guess I can see why it would."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"change>refocus",
-			"line":"She doesn't! I mean, er--... not directly."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"change>defend",
-			"line":"Aw, j--... Calm down, Adam! There's no need to get defensive here; it doesn't do anyone any good!"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"blame>placate",
-			"line":"Then get over it. Shake it off and get back to doing your job!"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"blame>refocus",
-			"line":"We were! She doesn't! I mean--... Adam, you're missing the point...!"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"blame>defend",
-			"line":"I'm not getting in the way, I just--... Okay, look, I-- I'm sorry. Maybe I'm the one overreacting."
+			"type":"response",
+			"outcomes":
+			[
+				{
+					"condition":"convinced",
+					"redirect":"+"
+					"line":"Adam, wait, you can't leave us...! We need you, now, more than ever!"
+				},
+				{
+					"condition":"pressure",
+					"line":"Or what!? You can't afford to quit right now - not with all those hospital bills racked up behind you...! I know you want to find Megan's killers as badly as I do. How are you gonna do without this company's resources behind you, huh!? We've got bigger fish to fry, so let's focus on them, and forget we've ever had this discussion."
+				},
+				{
+					"condition":"auth>placate",
+					"line":"I... understand, Adam. And I'm sorry."
+				},
+				{
+					"condition":"auth>refocus",
+					"line":"No, Adam, YOU were discussing it...! I just told you it's time to move on!"
+				},
+				{
+					"condition":"auth>defend",
+					"line":"I wasn't trying to--...! Look, I don't want us getting upset over this."
+				},
+				{
+					"condition":"change>placate",
+					"line":"Hmmm... Well, I guess I can see why it would."
+				},
+				{
+					"condition":"change>refocus",
+					"line":"She doesn't! I mean, er--... not directly."
+				},
+				{
+					"condition":"change>defend",
+					"line":"Aw, j--... Calm down, Adam! There's no need to get defensive here; it doesn't do anyone any good!"
+				},
+				{
+					"condition":"blame>placate",
+					"line":"Then get over it. Shake it off and get back to doing your job!"
+				},
+				{
+					"condition":"blame>refocus",
+					"line":"We were! She doesn't! I mean--... Adam, you're missing the point...!"
+				},
+				{
+					"condition":"blame>defend",
+					"line":"I'm not getting in the way, I just--... Okay, look, I-- I'm sorry. Maybe I'm the one overreacting."
+				}
+			]
 		},
 		{
 			"type":"speech",

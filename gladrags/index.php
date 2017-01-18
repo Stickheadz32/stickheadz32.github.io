@@ -6,7 +6,7 @@ title('Gladrags');
 cdn();
 meta('description','test');
 meta('keywords','glad,rags,gladrags');
-canonical('./');?>
+headlink('canonical','./');?>
 </head>
 <body>
 <h1>VAKTA ORTEN</h1>

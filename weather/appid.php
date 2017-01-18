@@ -1,1 +1,1 @@
-<?php $appid="ac15a03db87914aadb8e7d3ce9ea8388";?>
+<?php $APPID="ac15a03db87914aadb8e7d3ce9ea8388";?>

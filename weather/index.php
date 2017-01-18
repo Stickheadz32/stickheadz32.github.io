@@ -4,13 +4,17 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <title>Weather</title>
 <script type="text/javascript">
-var APPID="<?php include_once 'appid.php';echo $appid;?>",temp,loc,icon,humidity,wind,direction;
+var appid='<?php include_once "appid.php";echo $APPID;?>',temp,loc,icon,humidity,wind,direction;
+function updateByCityName(name){
+	var url="http://api.openweathermap.org/data/2.5/weather?q="+name+"&appid="+appid;
+	sendRequest(url);
+}
 function updateByZip(zip){
-	var url="http://api.openweathermap.org/data/2.5/weather?zip="+zip+"&APPID="+APPID;
+	var url="http://api.openweathermap.org/data/2.5/weather?q="+zip+"&appid="+appid;
 	sendRequest(url);
 }
 function updateByGeo(lat,lon){
-	var url="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&long="+long+"&APPID="+APPID;
+	var url="http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+appid;
 	sendRequest(url);
 }
 function sendRequest(url){
@@ -23,28 +27,29 @@ function sendRequest(url){
 			a.wind=data.wind.speed;
 			a.direction=degreesToDirection(data.wind.deg);
 			a.location=data.name;
-			a.temp=data.main.temp;
+			a.temp=k2c(data.main.temp);
+			console.log(a);
 			update(a);
 		}
 	};
 	x.open("GET",url,true);
 	x.send();
 }
-function degreesToDirection(a){
+function degreesToDirection(deg){
 	var range=360/16,low=360-range/2,high=(low+range)%360,angles=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
 	for(var i in angles){
-		if(degrees>=low&&degrees<high){return angles[i];}
+		if(deg>=low&&deg<high){return angles[i];}
 		low=(low+range)%360;
 		high=(high+range)%360;
 	}
 	return "N";
 }
-function k2c(a){return Math.round(a-273.15);}
-function k2f(a){return Math.round(a*(9/5)-459.67);}
-function byId(a){return document.getElementById(a);}
+function k2c(kelv){return Math.round(kelv-273.15);}
+function k2f(kelv){return Math.round(kelv*(9/5)-459.67);}
+function byId(id){return document.getElementById(id);}
 function update(a){
 	temp.innerHTML=a.temp;
-	loc.innerHTML=a.loc;
+	loc.innerHTML=a.location;
 	icon.innerHTML=a.icon;
 	humidity.innerHTML=a.humidity;
 	wind.innerHTML=a.wind;
@@ -67,7 +72,7 @@ window.onload=function(){
 	weather.loc="Boston";
 	weather.temp="45"
 	weather.icon=200;
-	update(weather);
+	updateByCityName("Norrköping");
 }
 </script>
 </head>
@@ -75,7 +80,7 @@ window.onload=function(){
 <div class="weather-app">
 	<div class="left">
 		<div class="temperature">
-			<span id="temperature">0</span>&deg;
+			<span id="temperature">0</span>&deg;C
 		</div>
 		<div class="location">
 			<span id="location">Unknown</span>
@@ -95,5 +100,12 @@ window.onload=function(){
 		</div>
 	</div>
 </div>
+City <textarea id="insertCityName"></textarea>
+<button type="submit" onclick="updateByCityName(byId('insertCityName').value)">Update city name</button><br>
+Zip <textarea id="insertZip"></textarea>
+<button type="submit" onclick="updateByZip(byId('insertZip').value)">Update zip</button><br>
+Lat <textarea id="insertLat"></textarea><br>
+Long <textarea id="insertLon"></textarea>
+<button type="submit" onclick="updateByGeo(byId('insertLat').value,byId('insertLon').value)">Update geo</button>
 </body>
 </html>
