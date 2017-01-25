@@ -1,0 +1,2 @@
+ErrorDocument 403 http://real-it.se/T4/Marko/gladrags/404
+ErrorDocument 404 http://real-it.se/T4/Marko/gladrags/404

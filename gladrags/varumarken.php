@@ -9,7 +9,7 @@ base('./');
 meta('description','test');
 meta('keywords','glad,rags,gladrags');
 meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
-headlink('canonical','./');
+headlink('canonical','./varumarken/');
 css('css/gladrags-bootstrap.css');
 css('fonts/glyph.css');?>
 </head>
@@ -21,7 +21,48 @@ css('fonts/glyph.css');?>
 		</a>
 		<ul class="mobile">
 			<li class="hasContent">
-				<a href="" title="">Test</a>
+				<a href="" title="">Man</a>
+				<div class="headerDropMenu">
+					<aside>
+						<img alt="">
+						<p>
+							
+						</p>
+					</aside>
+					<ul>
+						<li>
+							<a href="" title="">Typ av kläder</a>
+						</li><li>
+							<a href="" title="">Typ av kläder</a>
+						</li><li>
+							<a href="" title="">Typ av kläder</a>
+						</li><li>
+							<a href="" title="">Typ av kläder</a>
+						</li>
+					</ul><ul>
+						<li>
+							<a href="" title="">Typ av kläder</a>
+						</li><li>
+							<a href="" title="">Typ av kläder</a>
+						</li><li>
+							<a href="" title="">Typ av kläder</a>
+						</li>
+					</ul><ul>
+						<li>
+							<a href="" title="">Typ av kläder</a>
+						</li><li>
+							<a href="" title="">Typ av kläder</a>
+						</li><li>
+							<a href="" title="">Typ av kläder</a>
+						</li><li>
+							<a href="" title="">Typ av kläder</a>
+						</li><li>
+							<a href="" title="">Typ av kläder</a>
+						</li>
+					</ul>
+				</div>
+			</li><li class="hasContent">
+				<a href="" title="">Kvinna</a>
 				<div class="headerDropMenu">
 					<aside>
 						<div style="background:#ddd;height:200px;"></div>
@@ -29,33 +70,33 @@ css('fonts/glyph.css');?>
 					</aside>
 					<ul>
 						<li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li>
 					</ul><ul>
 						<li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li>
 					</ul><ul>
 						<li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li>
 					</ul>
 				</div>
@@ -69,76 +110,41 @@ css('fonts/glyph.css');?>
 						</p>
 					</aside>
 					<ul>
-
 						<li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li>
 					</ul><ul>
 						<li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li>
 					</ul><ul>
 						<li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
+							<a href="" title="">Typ av kläder</a>
 						</li><li>
-							<a href="" title="">Test</a>
-						</li>
-					</ul>
-				</div>
-			</li><li class="hasContent">
-				<a href="rea" title="">Rea</a>
-				<div class="headerDropMenu">
-					<aside>
-						<img alt="">
-						<p>
-							
-						</p>
-					</aside>
-					<ul>
-						<li>
-							<a href="" title="">Veckans erbjudanden</a>
-						</li><li>
-							<a href="" title="">Uppkommande erbjudanden</a>
-						</li><li>
-							<a href="" title="">Veckans erbjudanden</a>
+							<a href="" title="">Typ av kläder</a>
 						</li>
 					</ul>
 				</div>
 			</li><li>
 				<a href="" title="">Nyheter</a>
-			</li><li class="hasContent">
-				<a href="om-butiken" title="">Om butiken</a>
-				<div class="headerDropMenu">
-					<aside>
-						<img alt="">
-						<p>
-							
-						</p>
-					</aside>
-					<ul>
-						<li>
-							<a href="" title="">Om Glad Rags</a>
-						</li><li>
-							<a href="" title="">Vi som jobbar</a>
-						</li>
-					</ul>
-				</div>
+			</li><li>
+				<a href="" title="">Kläder</a>
 			</li><li>
 				<a href="" title="">Service</a>
 			</li>

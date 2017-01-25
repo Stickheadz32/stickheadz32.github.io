@@ -36,32 +36,13 @@ function getLine(){
 		
 	}
 	if(selectedRespond.length>0){
-		if(a.conversation[line].condition.indexOf(currentCond+">"+selectedRespond)<0&&currentCond==""){
-			line++;
-			notResponse=true;
-			getLine();
-		}
-		else{
-			hasResponded=true;
-			currentCond=conditions[Math.floor(Math.random()*3)];
-		}
+		
 	}
 	var d=a.conversation[line],out="";
 	if(!notResponse){
 		if(d.type=="speech")
 		{
 			out+='<div class="speech _'+d.person;
-			if(d.condition){
-				if(d.condition.indexOf(currentCond+">"+selectedRespond)>=0){
-					out+=" response";
-				}
-				else if(d.condition.indexOf("+")>=0){
-					out+=" positive"
-				}
-				else if(d.condition.indexOf("-")>=0){
-					out+=" negative"
-				}
-			}
 			out+='">';
 			out+='<span class="person">'+persons[d.person]+'</span>';
 			out+='<p>';
