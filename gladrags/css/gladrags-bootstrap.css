@@ -210,6 +210,12 @@ header>nav>ul>li>a:hover{
 	position:relative;
 	left:50%;
 }
+.grid{
+	line-height:0;/*tar bort vertikal white-space mellan inline-block-element. Använd line-height:initial/normal för allt inom griden*/
+}
+.grid>*{
+	line-height:initial;
+}
 /*grid layout*/
 .grid:after{
 	content:"";

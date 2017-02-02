@@ -175,38 +175,20 @@ css('fonts/glyph.css');?>
 				</a>
 			</div><div class="grid-small">
 				<a href="" title="" class="content">
-				<img class="gridLogo-center" src="img/logo/jack_jones_logo.svg">
 					<div class="logo-hovertext">
-						<p>JACK &amp; JONES</p>
+						<p>Test</p>
 					</div>
 				</a>
 			</div><div class="grid-small">
 				<a href="" title="" class="content mid-center">
-				<img class="gridLogo-center" src="img/logo/lyle_and_scott.svg">
 					<div class="logo-hovertext">
-						<p>LYLE &amp; SCOTT</p>
+						<p>Test</p>
 					</div>
 				</a>
 			</div><div class="grid-small">
 				<div href="" title="" class="content">
 					test
 				</div>
-			</div><div class="grid-small">
-				<a href="" title="" class="content">
-					test
-				</a>
-			</div><div class="grid-small">
-				<a href="" title="" class="content">
-					test
-				</a>
-			</div><div class="grid-small">
-				<a href="" title="" class="content">
-					test
-				</a>
-			</div><div class="grid-small fullWidth">
-				<a href="" title="" class="content">
-					test
-				</a>
 			</div>
 		</div>
 		<h1>Välkommen!</h1>
