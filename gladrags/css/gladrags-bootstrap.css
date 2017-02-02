@@ -34,6 +34,7 @@ footer{
 /*typography*/
 h1{
 font-size:2em;
+font-weight:normal;
 }
 h2{
 font-size:1.7em;
@@ -41,6 +42,7 @@ font-weight:bold;
 }
 h3{
 font-size:1.7em;
+font-weight:normal;
 }
 h4{
 font-size:1.4em;
@@ -48,6 +50,7 @@ font-weight:bold;
 }
 h5{
 font-size:1.4em;
+font-weight:normal;
 }
 h6{
 font-size:1em;
@@ -55,6 +58,7 @@ font-weight:bold;
 }
 p{
 font-size:14px;
+font-weight:normal;
 }
 /*lists*/
 ol{
@@ -135,7 +139,11 @@ header>nav>ul>li>a:hover{
 	margin:-1em 0 0;
 }
 .headerDropMenu ul li{
-	margin:0;
+	margin:3px 0;
+	font-size:18px;
+}
+.headerDropMenu>ul>li>a{
+	padding:2px 0;
 }
 .headerDropMenu aside{
 	display:block;
@@ -161,7 +169,7 @@ header>nav>ul>li>a:hover{
 .hasContent:hover,header>nav>ul>li.selected{
 	margin-left:10px;
 	padding:0;
-	box-shadow:0 -1px 1px #000;
+	box-shadow:0 -2px 0 1px #888;
 	background:#FFF;
 	border-bottom-color:transparent;
 }
@@ -210,10 +218,15 @@ header>nav>ul>li>a:hover{
 }
 .grid-big{
 	background:#eee;
+	background:center no-repeat;
+	background-size:cover;
 	display:block;
 	float:left;
 	position:relative;
-	width:75%;
+	width:74.998058319%;/*vissa grid-small hoppar ett steg ner när man förminskar webbläsarens fönster.
+	Exempelvis blir grid-small:s höjd och bredd 801.22 px medans 3 grid-small tillsammans är 801.18 i höjd.
+	På grund av att de är i float:left så placeras fjärde grid-small på hörnet ned till höger om grid-big.
+	Försök av lösning: display:inline-block på grid-small.*/
 }
 .grid-big:after{
 	content:"";
@@ -222,10 +235,11 @@ header>nav>ul>li>a:hover{
 }
 .grid-small{
 	box-shadow:inset 0 0 5px #000;
-	display:block;
-	float:left;
+	display:inline-block;
 	position:relative;
 	width:25%;
+	background:center no-repeat;
+	background-size:cover;
 }
 .grid-small:after{
 	content:"";
@@ -243,16 +257,15 @@ header>nav>ul>li>a:hover{
 	text-decoration: none;
 }
 .grid .content.mid-center{
-	text-align:center;
-	vertical-align:middle;
+
 }
 /*grid text*/
 .grid-big .gridText{
-	border-right:solid 1px #000;
 	margin:2%;
 	padding:3%;
 	color:#000;
 	text-align:right;
+	background:rgba(255,255,255,.7);
 }
 .grid-big .gridText h1{
 	font-size:3em;
@@ -266,6 +279,52 @@ header>nav>ul>li>a:hover{
 }
 .big{
 	font-size:2em;
+}
+/*gridlogo*/
+.gridLogo-center{
+	width:50%;
+	height:50%;
+	margin:25%;
+	position:absolute;
+	background:center no-repeat;
+}
+.logo-hovertext{
+	opacity:0;
+	transition:ease-in-out .3s all;
+	color:#000;
+	background:rgba(255,255,255,.8);
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+.logo-hovertext>p{
+	/*midcenter of logo-hovertext*/
+	position:absolute;
+	top:50%;
+	bottom:0;
+	left:0;
+	right:0;
+	padding:5%;
+	font-size:2em;
+	display:inline-block;
+	vertical-align:middle;
+	text-align:center;
+}
+.logo-hovertext:hover{
+	opacity:1;
+	transition:ease-in-out .3s all;
+}
+/*brands*/
+ul.brandList{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+ul.brandList>li{
+	margin:10px;
+	padding:10px;
 }
 /*footer*/
 footer>nav{

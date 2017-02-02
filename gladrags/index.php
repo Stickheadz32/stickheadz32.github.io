@@ -59,11 +59,11 @@ css('fonts/glyph.css');?>
 						</li>
 					</ul>
 				</div>
-			</li><li class="hasContent selected">
+			</li><li class="hasContent">
 				<a href="varumarken.php" title="">Varumärken</a>
 				<div class="headerDropMenu">
 					<aside>
-						<img alt="">
+						<img src="" alt="">
 						<p>
 							
 						</p>
@@ -105,7 +105,7 @@ css('fonts/glyph.css');?>
 				<a href="rea" title="">Rea</a>
 				<div class="headerDropMenu">
 					<aside>
-						<img alt="">
+						<img src="" alt="">
 						<p>
 							
 						</p>
@@ -126,7 +126,7 @@ css('fonts/glyph.css');?>
 				<a href="om-butiken" title="">Om butiken</a>
 				<div class="headerDropMenu">
 					<aside>
-						<img alt="">
+						<img src="" alt="">
 						<p>
 							
 						</p>
@@ -149,7 +149,7 @@ css('fonts/glyph.css');?>
 	<section>
 		<h1>Välkommen till Glad Rags!</h1>
 	</section>
-	<div class="fullwidth" style="background:#CCC">
+	<div class="fullwidth" style="background:#ddd">
 		<div class="aside left">
 			<h1>Veckans erbjudande</h1>
 			<p>testsetsetsetsetset</p>
@@ -165,7 +165,7 @@ css('fonts/glyph.css');?>
 	</div>
 	<section>
 		<div class="grid">
-			<div class="grid-big" style="background:#DDD">
+			<div class="grid-big" style="background-image:url(img/jeans_hog2.jpg)">
 				<!--a-tagg med class "content" gör hela objektet klickbart-->
 				<a href="#" title="" class="content">
 					<div class="gridText">
@@ -175,14 +175,17 @@ css('fonts/glyph.css');?>
 				</a>
 			</div><div class="grid-small">
 				<a href="" title="" class="content">
-					<div class="gridText">
-						<h1>30-70% erbjudande</h1>
-						<h2>Gäller alla plagg</h2>
+				<img class="gridLogo-center" src="img/logo/jack_jones_logo.svg">
+					<div class="logo-hovertext">
+						<p>JACK &amp; JONES</p>
 					</div>
 				</a>
 			</div><div class="grid-small">
 				<a href="" title="" class="content mid-center">
-					test
+				<img class="gridLogo-center" src="img/logo/lyle_and_scott.svg">
+					<div class="logo-hovertext">
+						<p>LYLE &amp; SCOTT</p>
+					</div>
 				</a>
 			</div><div class="grid-small">
 				<div href="" title="" class="content">
@@ -213,17 +216,19 @@ css('fonts/glyph.css');?>
 		<h5>Välkommen!</h5>
 		<h6>Välkommen!</h6>
 		<p>Välkommen!</p>
-		<ol>Test
-		<li>Test</li>
-		Test
-		<li>Test</li>
-		<li>Test</li>
+		<ol>
+			<p>Test</p>
+			<li>Test</li>
+			<p>Test</p>
+			<li>Test</li>
+			<li>Test</li>
 		</ol>
-		<ul>Test
-		<li>Test</li>
-		Test
-		<li>Test</li>
-		<li>Test</li>
+		<ul>
+			<p>Test</p>
+			<li>Test</li>
+			<p>Test</p>
+			<li>Test</li>
+			<li>Test</li>
 		</ul>
 	</section>
 </main>

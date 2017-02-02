@@ -4,7 +4,7 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <title>Weather</title>
 <link rel="stylesheet" type="text/css" href="weather.css"/>
-<script type="text/javascript">
+<script type="text/javascript" defer>
 var appid='<?php include_once "appid.php";echo $APPID;?>',temp,loc,icon,humidity,wind,direction,weatherItems=1;
 function updateByCityName(name){
 	var url="http://api.openweathermap.org/data/2.5/weather?q="+name+"&appid="+appid;
@@ -19,21 +19,27 @@ function updateByGeo(lat,lon){
 	sendRequest(url);
 }
 function sendRequest(url){
-	var x=new XMLHttpRequest();
-	x.onreadystatechange=function(){
-		if(x.readyState==4&&x.status==200){
-			var data=JSON.parse(x.response),a={};
-			a.icon=data.weather[0].id;
-			a.humidity=data.main.humidity;
-			a.wind=mph2ms(data.wind.speed);
-			a.direction=degreesToDirection(data.wind.deg);
-			a.location=data.name;
-			a.temp=k2c(data.main.temp);
-			update(a);
-		}
-	};
-	x.open("GET",url,true);
-	x.send();
+	return new Promise(function(resolve,reject){
+		var x=new XMLHttpRequest();
+		x.onreadystatechange=function(){
+			if(x.readyState===4){
+				if(x.status===200){
+					resolve(x.response);
+					var data=JSON.parse(x.response),a={};
+					a.icon=data.weather[0].id;
+					a.humidity=data.main.humidity;
+					a.wind=mph2ms(data.wind.speed);
+					a.direction=degreesToDirection(data.wind.deg);
+					a.location=data.name;
+					a.temp=k2c(data.main.temp);
+					update(a);
+				}
+				else reject("Error getting weather information. "+x.responseText);
+			}
+		};
+		x.open("GET",url,true);
+		x.send();
+	});
 }
 function degreesToDirection(deg){
 	var range=360/16,low=360-range/2,high=(low+range)%360,angles=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
@@ -156,7 +162,7 @@ function removeCity(a){
 		<div class="remove" id="buttonRemove0" onclick="removeCity(0)"></div>
 	</div>
 </div>
-	<div class="add" onclick="addCity()"><p>Add city<p></div>
+	<div class="add" onclick="addCity()"><p>Add city</p></div>
 <div id="warningBox"></div>
 </body>
 </html>
