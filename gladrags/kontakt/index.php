@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="sv">
 <head>
-<?php include_once("html.php");
-title('Start - Glad Rags');
+<?php include_once("../html.php");
+title('Kontakt - Glad Rags');
 charset();
-base('./');
+base('../');
 cdn();
 meta('description','test');
 meta('keywords','glad,rags,gladrags');
 meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
-canonical('./rea/');
+canonical('./');
 css('css/gladrags-bootstrap.css');
 css('fonts/glyph.css');?>
 </head>
@@ -19,9 +19,9 @@ css('fonts/glyph.css');?>
 		<a href="" title="GladRags" class="headerLogo">
 			<p>GLAD RAGS</p>
 		</a>
-		<!--<div class="headerMenuGuide">Skrollbar</div>-->
+		<!--button for responsive menu-->
 		<ul>
-			<li class="hasContent selected">
+			<li class="hasContent">
 				<a href="rea" title="">Rea</a>
 				<div class="headerDropMenu">
 					<aside>
@@ -38,9 +38,9 @@ css('fonts/glyph.css');?>
 					</ul>
 				</div>
 			</li><li>
-				<a href="varumarken.php" title="">Varumärken</a>
+				<a href="varumarken" title="">Varumärken</a>
 			</li><li>
-				<a href="" title="">Nyheter</a>
+				<a href="nyheter" title="">Nyheter</a>
 			</li><li class="hasContent">
 				<a href="om-butiken" title="">Om butiken</a>
 				<div class="headerDropMenu">
@@ -57,7 +57,7 @@ css('fonts/glyph.css');?>
 					</ul>
 				</div>
 			</li><li>
-				<a href="" title="">Kontakt</a>
+				<a href="kontakt" title="">Kontakt</a>
 			</li>
 		</ul>
 	</nav>

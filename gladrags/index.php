@@ -8,10 +8,19 @@ base('./');
 cdn();
 meta('description','test');
 meta('keywords','glad,rags,gladrags');
-meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
 canonical('./');
 css('css/gladrags-bootstrap.css');
-css('fonts/glyph.css');?>
+css('fonts/glyph.css');
+//defer('js/gladrags.js');?>
+<script defer>
+	function byId(a){return document.getElementById(a);}
+window.onload=function(){
+	var menuButton=byId("menuButton");
+	menuButton.addEventListener('click',function(){
+		menuButton.className=menuButton.className==""?"expand":"";
+	});
+}
+</script>
 </head>
 <body>
 <header>
@@ -19,10 +28,12 @@ css('fonts/glyph.css');?>
 		<a href="" title="GladRags" class="headerLogo">
 			<p>GLAD RAGS</p>
 		</a>
-		<!--<div class="headerMenuGuide">Skrollbar</div>-->
+		<!--button for responsive menu-->
+		<a id="menuButton" href="#"></a>
 		<ul>
 			<li class="hasContent">
 				<a href="rea" title="">Rea</a>
+				<span class="subMenuButton"></span>
 				<div class="headerDropMenu">
 					<aside>
 						<img src="" alt="">
@@ -38,11 +49,12 @@ css('fonts/glyph.css');?>
 					</ul>
 				</div>
 			</li><li>
-				<a href="varumarken.php" title="">Varumärken</a>
+				<a href="varumarken" title="">Varumärken</a>
 			</li><li>
-				<a href="" title="">Nyheter</a>
+				<a href="nyheter" title="">Nyheter</a>
 			</li><li class="hasContent">
 				<a href="om-butiken" title="">Om butiken</a>
+				<a href="#" class="subMenuButton"></a>
 				<div class="headerDropMenu">
 					<aside>
 						<img src="" alt="">
@@ -57,7 +69,7 @@ css('fonts/glyph.css');?>
 					</ul>
 				</div>
 			</li><li>
-				<a href="" title="">Kontakt</a>
+				<a href="kontakt" title="">Kontakt</a>
 			</li>
 		</ul>
 	</nav>

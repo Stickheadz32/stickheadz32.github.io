@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="sv">
 <head>
-<?php include_once("html.php");
+<?php include_once("../html.php");
 title('Varumärken - Glad Rags');
 charset();
-base('./');
+base('../');
 cdn();
 meta('description','test');
 meta('keywords','glad,rags,gladrags');
 meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
-canonical('./varumarken/');
+canonical('./');
 css('css/gladrags-bootstrap.css');
 css('fonts/glyph.css');?>
 </head>
@@ -19,7 +19,7 @@ css('fonts/glyph.css');?>
 		<a href="" title="GladRags" class="headerLogo">
 			<p>GLAD RAGS</p>
 		</a>
-		<!--<div class="headerMenuGuide">Skrollbar</div>-->
+		<!--button for responsive menu-->
 		<ul>
 			<li class="hasContent">
 				<a href="rea" title="">Rea</a>
@@ -37,10 +37,10 @@ css('fonts/glyph.css');?>
 						</li>
 					</ul>
 				</div>
-			</li><li class="selected">
-				<a href="varumarken.php" title="">Varumärken</a>
 			</li><li>
-				<a href="" title="">Nyheter</a>
+				<a href="varumarken" title="">Varumärken</a>
+			</li><li>
+				<a href="nyheter" title="">Nyheter</a>
 			</li><li class="hasContent">
 				<a href="om-butiken" title="">Om butiken</a>
 				<div class="headerDropMenu">
@@ -57,7 +57,7 @@ css('fonts/glyph.css');?>
 					</ul>
 				</div>
 			</li><li>
-				<a href="" title="">Kontakt</a>
+				<a href="kontakt" title="">Kontakt</a>
 			</li>
 		</ul>
 	</nav>
@@ -69,7 +69,6 @@ css('fonts/glyph.css');?>
 <main>
 	<section>
 		<h1>Varumärken</h1>
-		<p>lorem ipsum test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test </p>
 		<ul class="brandList">
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/rut_circle.png)"></div>
