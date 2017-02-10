@@ -9,7 +9,7 @@ cdn();
 meta('description','test');
 meta('keywords','glad,rags,gladrags');
 meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
-canonical('./');
+canonical('./kontakt/');
 css('css/gladrags-bootstrap.css');
 css('fonts/glyph.css');?>
 </head>
@@ -56,7 +56,7 @@ css('fonts/glyph.css');?>
 						</li>
 					</ul>
 				</div>
-			</li><li>
+			</li><li class="selected">
 				<a href="" title="">Kontakt</a>
 			</li>
 		</ul>

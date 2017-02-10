@@ -1,62 +1,42 @@
-.weather-app{
+html{
+	font-family:Verdana,Geneva,sans-serif;
+}
+#weather-app.list{
+	display:table;
+}
+#weather-app .cityinfo{
 	display:inline-block;
+	margin:0 10px;
 }
-.weather-item{
-	vertical-align:top;
-	position:relative;
-	display:inline-block;
-	margin:5px;
+#weather-app.list .cityinfo{
+	display:table-row;
+	padding:5px;
 }
-.weather-item .remove{
-	border-radius:100%;
-	padding:10px;
-	margin:0;
-	width:5px;
-	height:5px;
-	background:#F32;
-	color:#FFF;
-	position:absolute;
-	right:0;
-	top:0;
-	opacity:0;
-}
-.remove:after{
-	content:"x";
-	position:absolute;
-	margin:-6px -1px;
-	font-family:sans-serif;
-}
-.remove:hover{
-	cursor:pointer;
-}
-.weather-item:hover .remove{
-	opacity:1;
-}
-.add{
-	content:"+";
-	width:150px;
-	height:250px;
-	border-radius:15px;
-	border:dotted 5px rgba(0,64,255,.4);
-	display:inline-block;
-	vertical-align: top;
-	margin:5px;
-}
-.add:after{
-	padding-top:100%;
-}
-.add p{
-	margin:auto;
-	height:100%;
-	vertical-align: middle;
-	text-align: center;
-	padding:30%;
-	color:rgba(0,64,255,.4);
-}
-.add:hover p{
-	color:#028;
-	cursor:pointer;
-}
-textarea{
+.cityinfo>*{
 	display:block;
+	margin:5px 10px;
+}
+#weather-app.list .cityinfo>*{
+	display:table-cell;
+	padding:0 10px;
+}
+#weather-app.list img{
+	vertical-align: middle;
+}
+#weather-app .temp{
+	font-size:1.8em;
+	font-weight:900;
+	display:block;
+}
+#weather-app .tempMin{
+	display:inline-block;
+	color:#008;
+	font-weight:900;
+	margin:0 5px;
+}
+#weather-app .tempMax{
+	display:inline-block;
+	color:#800;
+	font-weight:900;
+	margin:0 5px;
 }

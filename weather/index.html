@@ -7,11 +7,17 @@
 <script type="text/javascript" src="weather.js" defer></script>
 </head>
 <body>
+<div>
+	<span id="dateNow_clock"></span>
+	<span id="dateNow_dayMonth"></span>
+	<span id="dateNow_year"></span>
+</div>
 <h1>Weather</h1>
 <header>
 	<p>City</p>
-	<input id="inputCity" type="text"><button id="btnCity">Get data</button>
+	<input id="inputCity" type="text" placeholder="London, New York, ..."><button id="btnCity">Get data</button>
 </header>
+<p><a href="#" id="btnListView">List view</a></p>
 <div id="weather-app">
 <!--
 temperature celsius

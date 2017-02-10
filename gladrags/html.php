@@ -6,5 +6,6 @@ function cdn(){echo t(1,"<link rel=\"stylesheet\" href=\"https://maxcdn.bootstra
 function base($root){echo t(1,"<base href=\"".$root."\">");}
 function meta($name,$content){echo t(1,"<meta name=\"".$name."\" content=\"".$content."\">");}
 function headlink($attr,$url){echo t(1,"<link rel=\"".$attr."\" href=\"".$url."\"/>");}
+function canonical($url){echo t(1,"<link rel=\"canonical\" content=\"".realpath($url)."\"");}
 function css($url){echo t(1,"<link rel=\"stylesheet\" type=\"text/css\" href=\"".$url."\"/>");}
 ?>

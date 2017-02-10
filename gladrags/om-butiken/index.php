@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="sv">
 <head>
-<?php include_once("html.php");
-title('Start - Glad Rags');
+<?php include_once("../html.php");
+title('Om butiken - Glad Rags');
 charset();
-base('./');
+base('../');
 cdn();
 meta('description','test');
 meta('keywords','glad,rags,gladrags');
 meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
-canonical('./');
+canonical('./om-butiken/');
 css('css/gladrags-bootstrap.css');
 css('fonts/glyph.css');?>
 </head>
@@ -41,7 +41,7 @@ css('fonts/glyph.css');?>
 				<a href="varumarken.php" title="">Varumärken</a>
 			</li><li>
 				<a href="" title="">Nyheter</a>
-			</li><li class="hasContent">
+			</li><li class="hasContent selected">
 				<a href="om-butiken" title="">Om butiken</a>
 				<div class="headerDropMenu">
 					<aside>
@@ -66,33 +66,21 @@ css('fonts/glyph.css');?>
 	<section>
 		<h1>Välkommen till Glad Rags!</h1>
 	</section>
-	<div class="fullwidth" style="background-image:url(img/ext2.jpg)">
+	<div class="fullwidth" style="background:#ddd">
 		<div class="aside left">
 			<h2>Veckans erbjudande</h2>
 			<p>testsetsetsetsetset</p>
 			<a href="" title="">erbjudanden</a>
 		</div>
 	</div>
-	<section>
-		<h2>Erbjudanden</h2>
-		<div class="grid">
-			<div class="grid-small" style="background-image:url(img/jeans_hog.jpg)">
-				<!--a-tagg med class "content" gör hela objektet klickbart-->
-				<div class="content">
-					<div class="gridText">
-						<h1><span class="big">30-70%</span> vinterrea</h1>
-						<h2>Gäller alla plagg</h2>
-						<a href="rea"></a>
-					</div>
-				</div>
-			</div><div class="grid-small">
-				<a href="" title="" class="content">
-					<div class="logo-hovertext">
-						<p>Test</p>
-					</div>
-				</a>
-			</div>
+	<div class="fullwidth" style="background:#CCC">
+		<div class="aside right">
+			<h2>Veckans erbjudande</h2>
+			<p>testsetsetsetsetset</p>
+			<a href="" title="">erbjudanden</a>
 		</div>
+	</div>
+	<section>
 		<h1>Välkommen!</h1>
 		<h2>Välkommen!</h2>
 		<h3>Välkommen!</h3>
@@ -138,6 +126,7 @@ css('fonts/glyph.css');?>
 			<p>XXX-XX XX XX</p>
 			<p>Xxxxxxxxx 00</p>
 			<p>XXX XX Katrineholm</p>
+			
 		</aside>
 	</nav>
 </footer>

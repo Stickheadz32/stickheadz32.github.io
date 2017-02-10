@@ -9,7 +9,7 @@ cdn();
 meta('description','test');
 meta('keywords','glad,rags,gladrags');
 meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
-canonical('./');
+canonical('./rea/');
 css('css/gladrags-bootstrap.css');
 css('fonts/glyph.css');?>
 </head>
@@ -21,7 +21,7 @@ css('fonts/glyph.css');?>
 		</a>
 		<!--<div class="headerMenuGuide">Skrollbar</div>-->
 		<ul>
-			<li class="hasContent">
+			<li class="hasContent selected">
 				<a href="rea" title="">Rea</a>
 				<div class="headerDropMenu">
 					<aside>
