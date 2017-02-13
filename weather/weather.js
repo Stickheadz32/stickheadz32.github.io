@@ -20,20 +20,20 @@ function sendRequest(url){
 		//start up new XMLHTTPRequest
 		let x=new XMLHttpRequest();
 		//function for checking the data's download state
-		x.onreadystatechange=function(){
-			//readyState 4: DONE
-			if(x.readyState===4){
-				//HTTP 200: OK
-				if(x.status===200){
-					//prints out data
-					update(JSON.parse(x.response));
-					//
-					resolve(x.response);
+			x.onreadystatechange=function(){
+				//readyState 4: DONE
+				if(x.readyState===4){
+					//HTTP 200: OK
+					if(x.status===200){
+						//prints out data
+						update(JSON.parse(x.response));
+						//resolves when successful
+						resolve(x.response);
+					}
+					//shows error message on failure
+					else reject("Error getting weather information. "+x.responseText);
 				}
-				//debug on failure
-				else reject("Error getting weather information. "+x.responseText);
-			}
-		};
+			};
 		x.open("GET",url,true);
 		x.send();
 	});
@@ -72,28 +72,39 @@ function removeRedundantWhiteSpace(query){
 	return query;
 }
 function update(data){
-	console.log(data);
-	let objWeather={},out="";
-	/*print out data*/
-	objWeather.icon=data.weather[0].icon;
-	objWeather.weatherMain=data.weather[0].description;
-	objWeather.humidity=data.main.humidity;
-	objWeather.wind=mph2ms(data.wind.speed);
-	objWeather.direction=degreesToDirection(data.wind.deg);
-	objWeather.location=data.name;
-	objWeather.temp=k2c(data.main.temp);
-	objWeather.tempMin=k2c(data.main.temp_min);
-	objWeather.tempMax=k2c(data.main.temp_max);
-	out+='<div class="cityinfo">';
-		out+=`<h2>${objWeather.location}</h2>`;
-		out+=`<p><img src="img/w/${objWeather.icon}.png"><b>${objWeather.weatherMain}</b></p>`
-		out+=`<p class="temp">${objWeather.temp}&deg;</p>`;
-		out+=`<p class="tempMin">${objWeather.tempMin}&deg;</p>`;
-		out+=`<p class="tempMax">${objWeather.tempMax}&deg;</p>`;
-		out+=`<p>${objWeather.humidity}% humidity</p>`;
-		out+=`<p>${objWeather.wind} m/s wind</p>`;
-		out+=`<p>${objWeather.direction}</p>`;
-	out+="</div>";
+	if(typeof data!=='object')return;
+	let objWeather={
+		/*print out data*/
+		icon:data.weather[0].icon,
+		weatherMain:data.weather[0].description,
+		humidity:data.main.humidity,
+		//mph to m/s
+		wind:mph2ms(data.wind.speed),
+		direction:degreesToDirection(data.wind.deg),
+		location:data.name,
+		//kelvin to celsius
+		temp:k2c(data.main.temp),
+		tempMin:k2c(data.main.temp_min),
+		tempMax:k2c(data.main.temp_max)
+	},
+	time=new Date(),
+	min=time.getMinutes(),
+	sec=time.getSeconds(),
+	out='<div class="cityinfo">'+
+		`<h2>${objWeather.location}</h2>`+
+		`<p><img src="img/w/${objWeather.icon}.png"><b>${objWeather.weatherMain}</b></p>`+
+		`<p class="dataTime">${time.getHours()}:${
+			//minutes in 00 format
+			(min>9?min:"0"+min)}:${
+				//seconds in 00 format
+				(sec>9?sec:"0"+sec)}</p>`+
+		`<p class="temp">${objWeather.temp}&deg;</p>`+
+		`<p class="tempMin">${objWeather.tempMin}&deg;</p>`+
+		`<p class="tempMax">${objWeather.tempMax}&deg;</p>`+
+		`<p>${objWeather.humidity}% humidity</p>`+
+		`<p>${objWeather.wind} m/s wind</p>`+
+		`<p>${objWeather.direction}</p>`+
+	"</div>";
 	byId("weather-app").innerHTML+=out;
 }
 function updateTime(){
@@ -130,8 +141,12 @@ window.onload=function(){
 	//update every second
 	setInterval(updateTime,1e3);
 	//button for sending API call
-	byId("btnCity").addEventListener('click',function(){
+	byId("btnAddCity").addEventListener('click',function(){
 		updateByCityName(byId("inputCity").value);
+	});
+	//button for clearing weather overview
+	byId("btnClearView").addEventListener('click',function(){
+		byId('weather-app').innerHTML="";
 	});
 	//button for showing in list view
 	byId("btnListView").addEventListener('click',function(){
@@ -140,9 +155,10 @@ window.onload=function(){
 };
 //show in list view
 function showListView(){
-	let w=byId("weather-app"),btn=byId("btnListView");
+	let app=byId("weather-app"),
+	btn=byId("btnListView");
 	//toggle ".list"
-	w.className=w.className=="list"?"":"list";
-	//
+	app.className=app.className==""?"list":"";
+	//switch between list view and card view
 	btn.innerHTML=btn.innerHTML=="List view"?"Card view":"List view";
 }

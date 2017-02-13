@@ -8,19 +8,11 @@ base('./');
 cdn();
 meta('description','test');
 meta('keywords','glad,rags,gladrags');
+cacheControl('private;max_age=600');
 canonical('./');
 css('css/gladrags-bootstrap.css');
 css('fonts/glyph.css');
-//defer('js/gladrags.js');?>
-<script defer>
-	function byId(a){return document.getElementById(a);}
-window.onload=function(){
-	var menuButton=byId("menuButton");
-	menuButton.addEventListener('click',function(){
-		menuButton.className=menuButton.className==""?"expand":"";
-	});
-}
-</script>
+defer('js/gladrags.js');?>
 </head>
 <body>
 <header>
@@ -29,7 +21,8 @@ window.onload=function(){
 			<p>GLAD RAGS</p>
 		</a>
 		<!--button for responsive menu-->
-		<a id="menuButton" href="#"></a>
+		<span id="menuButton"></span>
+		<span class="menuOverlay"></span>
 		<ul>
 			<li class="hasContent">
 				<a href="rea" title="">Rea</a>
@@ -54,7 +47,7 @@ window.onload=function(){
 				<a href="nyheter" title="">Nyheter</a>
 			</li><li class="hasContent">
 				<a href="om-butiken" title="">Om butiken</a>
-				<a href="#" class="subMenuButton"></a>
+				<span class="subMenuButton"></span>
 				<div class="headerDropMenu">
 					<aside>
 						<img src="" alt="">
@@ -105,27 +98,6 @@ window.onload=function(){
 				</a>
 			</div>
 		</div>
-		<h1>Välkommen!</h1>
-		<h2>Välkommen!</h2>
-		<h3>Välkommen!</h3>
-		<h4>Välkommen!</h4>
-		<h5>Välkommen!</h5>
-		<h6>Välkommen!</h6>
-		<p>Välkommen!</p>
-		<ol>
-			<p>Test</p>
-			<li>Test</li>
-			<p>Test</p>
-			<li>Test</li>
-			<li>Test</li>
-		</ol>
-		<ul>
-			<p>Test</p>
-			<li>Test</li>
-			<p>Test</p>
-			<li>Test</li>
-			<li>Test</li>
-		</ul>
 	</section>
 </main>
 <footer>

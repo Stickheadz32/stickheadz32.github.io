@@ -11,7 +11,8 @@ meta('keywords','glad,rags,gladrags');
 meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
 canonical('./');
 css('css/gladrags-bootstrap.css');
-css('fonts/glyph.css');?>
+css('fonts/glyph.css');
+defer('js/gladrags.js');?>
 </head>
 <body>
 <header>
@@ -20,9 +21,12 @@ css('fonts/glyph.css');?>
 			<p>GLAD RAGS</p>
 		</a>
 		<!--button for responsive menu-->
+		<span id="menuButton"></span>
+		<span class="menuOverlay"></span>
 		<ul>
 			<li class="hasContent">
 				<a href="rea" title="">Rea</a>
+				<span class="subMenuButton"></span>
 				<div class="headerDropMenu">
 					<aside>
 						<img src="" alt="">
@@ -43,6 +47,7 @@ css('fonts/glyph.css');?>
 				<a href="nyheter" title="">Nyheter</a>
 			</li><li class="hasContent">
 				<a href="om-butiken" title="">Om butiken</a>
+				<span class="subMenuButton"></span>
 				<div class="headerDropMenu">
 					<aside>
 						<img src="" alt="">
