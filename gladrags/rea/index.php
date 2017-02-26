@@ -6,12 +6,13 @@ title('Rea - Glad Rags');
 charset();
 base('../');
 cdn();
-meta('description','test');
-meta('keywords','glad,rags,gladrags');
-meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
+description('test');
+keywords('glad,rags,gladrags');
+cacheControl('private;max_age=600');
 canonical('./');
 css('css/gladrags-bootstrap.css');
-css('fonts/glyph.css');defer('js/gladrags.js');?>
+css('fonts/glyph.css');
+defer('js/gladrags.js');?>
 </head>
 <body>
 <header>

@@ -6,8 +6,8 @@ title('Start - Glad Rags');
 charset();
 base('./');
 cdn();
-meta('description','test');
-meta('keywords','glad,rags,gladrags');
+description('test');
+keywords('glad,rags,gladrags');
 cacheControl('private;max_age=600');
 canonical('./');
 css('css/gladrags-bootstrap.css');
@@ -65,6 +65,7 @@ defer('js/gladrags.js');?>
 				<a href="kontakt" title="">Kontakt</a>
 			</li>
 		</ul>
+	<div class="social-media-icons"><a href="https://www.facebook.com/GLADRAGS2" class="fb-link-icon" title="GladRags på Facebook"></a></div>
 	</nav>
 </header>
 <main>
@@ -90,12 +91,14 @@ defer('js/gladrags.js');?>
 						<a href="rea"></a>
 					</div>
 				</div>
-			</div><div class="grid-small">
-				<a href="" title="" class="content">
-					<div class="logo-hovertext">
-						<p>Test</p>
+			</div><div class="grid-small" style="background-image:url(img/jeans_hog.jpg)">
+				<div class="content">
+					<div class="gridText">
+						<h1>Senaste nytt</h1>
+						<h2>Lyle &amp; Scott</h2>
+						<a href="rea"></a>
 					</div>
-				</a>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -113,10 +116,8 @@ defer('js/gladrags.js');?>
 			<p>2</p>
 			<p>3</p>
 		</aside><aside>
-			<h2>Kundservice</h2>
-			<p>1</p>
-			<p>2</p>
-			<p>3</p>
+			<h2>Följ Gladrags</h2>
+			<p><a href="https://www.facebook.com/GLADRAGS2" target="_blank">Facebook</a></p>
 		</aside><aside>
 			<h2>Kontakt</h2>
 			<p>XXX-XX XX XX</p>

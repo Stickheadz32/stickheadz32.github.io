@@ -6,9 +6,9 @@ title('Varumärken - Glad Rags');
 charset();
 base('../');
 cdn();
-meta('description','test');
-meta('keywords','glad,rags,gladrags');
-meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
+description('test');
+keywords('glad,rags,gladrags');
+cacheControl('private;max_age=600');
 canonical('./');
 css('css/gladrags-bootstrap.css');
 css('fonts/glyph.css');
@@ -79,86 +79,112 @@ defer('js/gladrags.js');?>
 				<div class="brandLogo" style="background-image:url(img/logo/rut_circle.png)"></div>
 				<div class="brandText">
 					<h2>Rut &amp; Circle</h2>
-					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf goi sndf giu sndfigjnjno tf df gs dfg nsdfjn gnfg nsdfg  sdfsdfn gusdfn go sndofgs dg ndsofgn odsfng sids fisdf odn oi n sdf g sf a g sr jt rt  d hj gh aer g s yj  y hatr  s yj  uk d yj  fg fgh d ghj d  js t h sg h f g j ghk g  jsfd jsod gdfgn aof noandfog adfno gadfgb adfognadfngu adfnbnandfobanodgbau dn gaior gadlfn gafg adf gafdg sdfng xfbx,d fgiugrigbefb df vdfi ad ia u</p>
-					<a href="">Gå till hemsidan</a>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="https://rutandcircle.com/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/jack_jones_logo.png)"></div>
 				<div class="brandText">
 					<h2>Jack &amp; Jones</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://www.jackjones.com/se/sv/home" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/dr_denim.svg)"></div>
 				<div class="brandText">
 					<h2>Dr. Denim</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://www.drdenimjeans.com/se/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/selected.svg)"></div>
 				<div class="brandText">
 					<h2>Selected</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://www.selected.com/se/sv/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/adrian_hammond.png)"></div>
 				<div class="brandText">
 					<h2>Adrian Hammond</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://adrianhammond.com/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/lyle_and_scott.svg)"></div>
 				<div class="brandText">
 					<h2>Lyle &amp; Scott</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://www.lyleandscott.com/sv_SE/home/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/solid.png)"></div>
 				<div class="brandText">
 					<h2>Solid</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://www.solidmen.com/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/dako.png)"></div>
 				<div class="brandText">
 					<h2>Dako</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://dako.nu/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/proud_canadian.png)"></div>
 				<div class="brandText">
 				<h2>Proud Canadian</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://proudcanadian.tictail.com/" target="_blank">Gå till hemsidan</a>
 			</div>
 			</li>
 			<li>
-				<div class="brandLogo" style="background-image:url(img/logo/borjesson.jpg)"></div>
+				<div class="brandLogo" style="background-image:url(img/logo/borjesson.png)"></div>
 				<div class="brandText">
 					<h2>Börjesson</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://www.borjesson.nu/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/shirt_factory.png)"></div>
 				<div class="brandText">
 					<h2>Shirt Factory</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/upfront.png)"></div>
 				<div class="brandText">
 					<h2>Upfront</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://upfrontcompany.com/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/rage_for_leather.png)"></div>
 				<div class="brandText">
 					<h2>Rage</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="http://rageforleather.com/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 			<li>
 				<div class="brandLogo" style="background-image:url(img/logo/seven_east.jpg"></div>
 				<div class="brandText">
 					<h2>Seven East</h2>
+					<p>Lorem ipsum test test test test test test test test sets et est s t soidnos ofs dfiog sdf gsdf giusf gvdfi ad ia u</p>
+					<a href="https://www.seveneast.se/" target="_blank">Gå till hemsidan</a>
 				</div>
 			</li>
 		</ul>

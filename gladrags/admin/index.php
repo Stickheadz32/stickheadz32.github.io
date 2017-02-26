@@ -1,50 +1,29 @@
 <?php
-include_once 'connect.php';
-
-$conn = new mysqli($servername,$username,$password,$dbname);
-if($conn->connect_error){
-	die("Connection failed: ".$conn->connect_error);
+include_once 'login.php';
+if(isset($_SESSION['login_user'])){
+	header("location: profile.php");
 }
 ?>
-<!doctype html>
-<html lang="sv">
+<!DOCTYPE html>
+<html>
 <head>
-<?php include_once("../html.php");
-title('Start - Glad Rags');
-charset();
-cdn();
-base('./');
-meta('description','test');
-meta('keywords','glad,rags,gladrags');
-meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
-canonical('./');
-css('css/gladrags-bootstrap.css');
-css('fonts/glyph.css');?>
+<title>Login Form in PHP with Session</title>
+<link rel="stylesheet" text="text/css" href="../css/bootstrap-v3.3.7.min.css">
+<link rel="stylesheet" text="text/css" href="../css/gladrags-bootstrap.css">
 </head>
 <body>
-	<h1>Login</h1>
-    <form method="post" action="" required>
-        <p>Username</p>
-        <input type="text" name="user" required>
-        <p>Password</p>
-        <input type="password" name="pass">
-        <button type="submit">Login</button>
-    </form>
-<?php
-$sql = "SELECT password FROM admin";
-$result = $conn->query($sql);
-$row = mysqli_fetch_array($result);
-if ($result->num_rows > 0) {
-    // output data of each row
-    do {
-        if(sha1("admin")==$row['password']){
-        	echo "SUCCESS.";
-        }
-    } while($row = $result->fetch_assoc());
-} else {
-    echo "0 results";
-}
-$conn->close();
-?>
+<main>
+	<section>
+		<h1>GladRags Admin</h1>
+		<form action="" method="post">
+			<label>UserName :</label>
+			<input id="name" name="username" placeholder="username" type="text"><br/>
+			<label>Password :</label>
+			<input id="password" name="password" placeholder="**********" type="password">
+			<input name="submit" type="submit" value=" Login ">
+			<span><?php echo $error;?></span>
+		</form>
+	</section>
+</main>
 </body>
 </html>

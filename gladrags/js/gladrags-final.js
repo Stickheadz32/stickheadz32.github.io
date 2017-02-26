@@ -32,12 +32,9 @@ window.onload=function(){
 				if(!hasExpand(this))
 					closeSubs();
 			toggleOpen(this);
-			toggleOpen(this.parentElement);
-			if(containsExpand(btnSub)){
+			if(containsExpand(btnSub))
 				addSub();
-			}else{
-				resetSub();
-			}
+			else resetSub();
 		});
 	});
 };

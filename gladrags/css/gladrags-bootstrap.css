@@ -1,3 +1,5 @@
+@charset "utf-8";
+@import url("../fonts/glyph.css");
 /*debug*/
 /**{box-shadow:0 0 1px #000;}*/
 /*main layout*/
@@ -87,6 +89,18 @@ ul{
 ul li{
 
 }
+input{
+	padding:5px;
+	margin:0 0 10px;
+}
+/*symbol for new tab*/
+a[target=_blank]:after{
+	display:inline-block;
+	padding:.4em .6em;
+	font:.7em Glyphicon;
+	content:"\e164";
+	text-decoration:none;
+}
 /*breadcrumbs items*/
 ul.breadcrumbs{
 	margin:0 2em;
@@ -161,7 +175,7 @@ ul.breadcrumbs>li.selected:after{
 }
 /*headerMenu*/
 header>nav>ul{
-	display:block;
+	display:inline-block;
 	padding:0;
 	margin:0;
 	font:1.2em Verdana;
@@ -405,15 +419,15 @@ ul.brandList>li{
 	display:block;
 	float:left;
 }
+/*brandText typography*/
 .brandText{
-	max-width:59%;
+	max-width:58%;
 	margin:0 0 0 1%;
-	padding:0 0 0 1%;
+	padding:0 0 0 2%;
 	border-left:solid 1px rgba(0,0,0,.7);
 	display:inline-block;
 	min-height:100px;
 }
-/*brandText typography*/
 .brandText h2{
 	margin-top:0;
 	color:rgba(0,0,0,.7);
@@ -421,6 +435,20 @@ ul.brandList>li{
 	text-transform:uppercase;
 	letter-spacing: .07em;
 	word-spacing:.1em;
+}
+.brandText a{
+	display:inline-block;
+	padding:.6em .9em;
+	border:solid 1px;
+	text-transform:uppercase;
+}
+.brandText a:after{
+	content:"\e080";
+	font:1em/0 Glyphicon;
+	padding-right:0;
+	margin:-.15em 0 .15em;
+	display:inline-block;
+	vertical-align:middle;
 }
 /*footer*/
 footer>nav{
@@ -434,6 +462,13 @@ footer aside{
 	min-width:10em;
 	width:30%;
 	vertical-align: top;
+}
+footer a{
+	color:#FFF;
+	padding:5px;
+	font-size:1.2em;
+}
+footer a:hover{
 }
 @media screen and (min-width:1025px){
 	.subMenuButton{
@@ -479,6 +514,9 @@ footer aside{
 		width:100%;
 		padding:0 3em 2em 0;
 	}
+	footer a{
+		text-decoration:underline;
+	}
 	header{
 		position:fixed;
 		top:0;
@@ -498,10 +536,12 @@ footer aside{
 	header>nav>ul{
 		display:none;
 		position:fixed;
+		overflow-x:hidden;
 		top:60px;
 		right:0;
-		max-width:80%;
-		max-height:calc(80% - 60px);
+		max-width:90%;
+		max-height:calc(100% - 60px);
+
 		box-shadow:-1px 1px 1px -1px #000;
 		z-index:-1;
 		background:#FFF;
@@ -528,11 +568,9 @@ footer aside{
 	header>nav>ul>li.hasContent{
 		margin-right:60px;
 	}
-
 	.hasContent>a{
 
 	}
-	/*sumenu button*/
 	header>nav>ul>li.selected{
 		padding:0;
 		box-shadow:0 -2px 0 1px #888;
@@ -575,7 +613,7 @@ footer aside{
 		content:"\e014";
 	}
 	#menuButton.expand:after{
-		content:"Stäng";
+		content:"St\00C4ng";
 	}
 	/*menu overlay*/
 	.menuOverlay{
@@ -607,8 +645,54 @@ footer aside{
 		font:20px/1 "Glyphicon";
 		margin:20px;
 	}
+	/*submenu return button*/
+	.subMenuButton.expand{
+		position:absolute;
+		left:-60px;
+		border-right:solid 1px rgba(0,0,0,.4);
+		cursor:pointer;
+		animation:submenu-returnButton .3s 1;
+	}
 	.subMenuButton.expand:after{
 		content:"\e257";
+	}
+	/*open submenu*/
+	.subMenuButton.expand~.headerDropMenu{
+		display:block;
+		z-index:2;
+		position:fixed;
+		right:0;
+		top:120px;
+	}
+	header>nav>ul.sub{
+
+	}
+	header>nav>ul.sub>li{
+		display:none;
+	}
+	header>nav>ul.sub>.hasContent.expand{
+		display:block;
+		margin-left:60px;
+	}
+	.subMenuButton.expand~.headerDropMenu{
+		padding:0;
+		left:inherit;
+		width:auto;
+	}
+	.subMenuButton.expand~.headerDropMenu ul{
+		max-width:inherit;
+		margin:0;
+		padding:0;
+	}
+	.subMenuButton.expand~.headerDropMenu ul li{
+		margin:0;
+		padding:0;
+
+	}
+	.subMenuButton.expand~.headerDropMenu ul li a{
+		padding:1em;
+		color:#000;
+		display:block;
 	}
 	main{
 	}
@@ -618,7 +702,27 @@ footer aside{
 		top:-50%;
 	}
 	to{
-		top:0;
 		top:60px;
 	}
+}
+@keyframes submenu-returnButton{
+	from{
+		left:100%;
+	}
+	to{
+		left:-60px;
+	}
+}
+.social-media-icons{
+	display:block;
+	float:right;
+	height:30px;
+	padding:15px;
+}
+.fb-link-icon{
+	padding:15px;
+	margin-left:5px;
+	font-size:0;
+	background:url(../img/icon/facebook.svg);
+	display:inline-block;
 }

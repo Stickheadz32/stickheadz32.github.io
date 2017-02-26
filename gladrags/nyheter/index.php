@@ -6,12 +6,13 @@ title('Nyheter - Glad Rags');
 charset();
 base('../');
 cdn();
-meta('description','test');
-meta('keywords','glad,rags,gladrags');
-meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
+description('test');
+keywords('glad,rags,gladrags');
+cacheControl('private;max_age=600');
 canonical('./');
 css('css/gladrags-bootstrap.css');
-css('fonts/glyph.css');defer('js/gladrags.js');?>
+css('fonts/glyph.css');
+defer('js/gladrags.js');?>
 </head>
 <body>
 <header>
@@ -68,55 +69,13 @@ css('fonts/glyph.css');defer('js/gladrags.js');?>
 </header>
 <main>
 	<section>
-		<h1>Välkommen till Glad Rags!</h1>
-	</section>
-	<div class="fullwidth" style="background-image:url(img/ext2.jpg)">
-		<div class="aside left">
-			<h2>Veckans erbjudande</h2>
-			<p>testsetsetsetsetset</p>
-			<a href="" title="">erbjudanden</a>
-		</div>
-	</div>
-	<section>
-		<h2>Erbjudanden</h2>
-		<div class="grid">
-			<div class="grid-small" style="background-image:url(img/jeans_hog.jpg)">
-				<!--a-tagg med class "content" gör hela objektet klickbart-->
-				<div class="content">
-					<div class="gridText">
-						<h1><span class="big">30-70%</span> vinterrea</h1>
-						<h2>Gäller alla plagg</h2>
-						<a href="rea"></a>
-					</div>
-				</div>
-			</div><div class="grid-small">
-				<a href="" title="" class="content">
-					<div class="logo-hovertext">
-						<p>Test</p>
-					</div>
-				</a>
-			</div>
-		</div>
-		<h1>Välkommen!</h1>
-		<h2>Välkommen!</h2>
-		<h3>Välkommen!</h3>
-		<h4>Välkommen!</h4>
-		<h5>Välkommen!</h5>
-		<h6>Välkommen!</h6>
-		<p>Välkommen!</p>
-		<ol>
-			<p>Test</p>
-			<li>Test</li>
-			<p>Test</p>
-			<li>Test</li>
-			<li>Test</li>
-		</ol>
-		<ul>
-			<p>Test</p>
-			<li>Test</li>
-			<p>Test</p>
-			<li>Test</li>
-			<li>Test</li>
+		<h1>Nyheter</h1>
+		<h2>Senaste</h2>
+		<ul class="news">
+			<li>
+				<h3>Rubrik</h3>
+				<p>Lorem ipsum test testt ets etmsk kslmda lks dfkl asdf am fkdlam kl msdfadsiof aoirn iu ij liadf gila bgi arei jafdi ld ian ahg...</p>
+			</li>
 		</ul>
 	</section>
 </main>

@@ -6,12 +6,13 @@ title('Kontakt - Glad Rags');
 charset();
 base('../');
 cdn();
-meta('description','test');
-meta('keywords','glad,rags,gladrags');
-meta('viewport','width=device-width,initial-scale=1,maximum-scale=1');
+description('test');
+keywords('glad,rags,gladrags');
+cacheControl('private;max_age=600');
 canonical('./');
 css('css/gladrags-bootstrap.css');
-css('fonts/glyph.css');defer('js/gladrags.js');?>
+css('fonts/glyph.css');
+defer('js/gladrags.js');?>
 </head>
 <body>
 <header>
@@ -78,25 +79,6 @@ css('fonts/glyph.css');defer('js/gladrags.js');?>
 		</div>
 	</div>
 	<section>
-		<h2>Erbjudanden</h2>
-		<div class="grid">
-			<div class="grid-small" style="background-image:url(img/jeans_hog.jpg)">
-				<!--a-tagg med class "content" gör hela objektet klickbart-->
-				<div class="content">
-					<div class="gridText">
-						<h1><span class="big">30-70%</span> vinterrea</h1>
-						<h2>Gäller alla plagg</h2>
-						<a href="rea"></a>
-					</div>
-				</div>
-			</div><div class="grid-small">
-				<a href="" title="" class="content">
-					<div class="logo-hovertext">
-						<p>Test</p>
-					</div>
-				</a>
-			</div>
-		</div>
 		<h1>Välkommen!</h1>
 		<h2>Välkommen!</h2>
 		<h3>Välkommen!</h3>
@@ -143,6 +125,7 @@ css('fonts/glyph.css');defer('js/gladrags.js');?>
 			<p>Xxxxxxxxx 00</p>
 			<p>XXX XX Katrineholm</p>
 		</aside>
+		<h2>Dela på Facebook</h2>
 	</nav>
 </footer>
 </body>
