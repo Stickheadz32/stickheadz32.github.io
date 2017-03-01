@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Start - GladRags Admin</title>
+<title>Your Home Page</title>
 <link rel="stylesheet" text="text/css" href="../css/bootstrap-v3.3.7.min.css">
 <link rel="stylesheet" text="text/css" href="../css/gladrags-bootstrap.css">
 </head>
@@ -17,12 +17,16 @@
 </header>
 <main>
 	<section>
-		<h1>GladRags Edit</h1>
-		<h2><a href="erbjudanden.php">Erbjudanden</a></h2>
-		<p>stuff</p>
-		<p>Preview</p>
-		<h2><a href="nyheter.php">Nyheter</a></h2>
-		<p>stuff</p>
+		<a href="profile.php">Huvudmenyn</a>
+		<h1>GladRags Edit - Nyheter</h1>
+		<table>
+			<thead>
+				<td>test</td>
+			</thead>
+			<tr>
+				<td>test</td>
+			</tr>
+		</table>
 	</section>
 </main>
 </body>

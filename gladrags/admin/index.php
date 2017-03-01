@@ -7,7 +7,7 @@ if(isset($_SESSION['login_user'])){
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Form in PHP with Session</title>
+<title>Login - GladRags Admin</title>
 <link rel="stylesheet" text="text/css" href="../css/bootstrap-v3.3.7.min.css">
 <link rel="stylesheet" text="text/css" href="../css/gladrags-bootstrap.css">
 </head>

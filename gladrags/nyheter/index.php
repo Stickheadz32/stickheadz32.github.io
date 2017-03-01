@@ -12,7 +12,8 @@ cacheControl('private;max_age=600');
 canonical('./');
 css('css/gladrags-bootstrap.css');
 css('fonts/glyph.css');
-defer('js/gladrags.js');?>
+defer('js/gladrags.js');
+?>
 </head>
 <body>
 <header>
@@ -67,15 +68,34 @@ defer('js/gladrags.js');?>
 		</ul>
 	</nav>
 </header>
+<ul class="breadcrumbs">
+	<li><a href="">Start</a></li>
+	<li class="selected">Nyheter</li>
+</ul>
 <main>
 	<section>
 		<h1>Nyheter</h1>
 		<h2>Senaste</h2>
 		<ul class="news">
-			<li>
-				<h3>Rubrik</h3>
-				<p>Lorem ipsum test testt ets etmsk kslmda lks dfkl asdf am fkdlam kl msdfadsiof aoirn iu ij liadf gila bgi arei jafdi ld ian ahg...</p>
-			</li>
+			<?php
+			include_once '../connect.php';
+			$conn = new mysqli($hostname,$username,$password,$dbname);
+			if($conn->connect_error){
+				die("Connection failed: ".$conn->connect_error);
+			}
+			$conn->query("SET character_set_results = 'utf8';");
+			$sql="SELECT * FROM nyheter ORDER BY publicerad_datum DESC LIMIT 10;";
+			$result = $conn->query($sql);
+			$row = mysqli_fetch_array($result);
+			if ($result->num_rows > 0) {
+			    do{
+			    	echo '<li><span class="published-date">'.$row["publicerad_datum"].'</span><h3><a href="nyheter/artikel.php?id='.$row["artikel_id"].'">'.$row["rubrik"].'</a></h3><p>'.$row["text"].'</p></li>';
+				}while($row = $result->fetch_assoc());
+			} else {
+			    echo "0 results";
+			}
+			$conn->close();
+			?>
 		</ul>
 	</section>
 </main>

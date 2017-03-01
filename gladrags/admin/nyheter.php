@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Erbjudanden - GladRags Admin</title>
+<title>Nyheter - GladRags Admin</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <script src="../js/jquery-1.12.4.min.js" async></script>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap-v3.3.7.min.css">
@@ -22,7 +22,7 @@
 <main>
 	<section>
 		<a href="profile.php">Huvudmenyn</a>
-		<h1>GladRags Edit - Erbjudanden</h1>
+		<h1>GladRags Edit - Nyheter</h1>
 		<table>
 			<thead>
 			<?php
@@ -32,7 +32,7 @@
 					die("Connection failed: ".$conn->connect_error);
 				}
 				$conn->query("SET character_set_results = 'utf8';");
-				$sql="SELECT * FROM erbjudanden ORDER BY erbjudande_id DESC LIMIT 10;";
+				$sql="SELECT * FROM nyheter ORDER BY publicerad_datum DESC LIMIT 10;";
 				$result = $conn->query($sql);
 				$row = mysqli_fetch_array($result);
 				$length = $result->field_count;
