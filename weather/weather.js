@@ -112,7 +112,7 @@ function updateTime(){
 	min=time.getMinutes(),
 	sec=time.getSeconds(),
 	date=time.getDate(),
-	month=["January","February","March","April","May","June","July","August","September","October","November","December"],
+	month="January,February,March,April,May,June,July,August,September,October,November,December".split(","),
 	ordinal_10=date%10,
 	ordinal_100=date%100;
 	byId('dateNow_clock').innerHTML=

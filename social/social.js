@@ -3,7 +3,8 @@ var x=new XMLHttpRequest(),url="outsmart_sarif.txt",a,line=0,
 	conditions,
 	currentCond="",
 	selectedRespond="",
-	hasResponded=false,
+	persuasion=0,
+	positiveResponse=true;
 	buttonNext=true;
 x.onreadystatechange=function(){
 	if(x.readyState==4&&x.status==200){
@@ -28,20 +29,31 @@ document.getElementsByClassName("button-next")[0].addEventListener("click",funct
 document.getElementsByClassName("button-restart")[0].addEventListener("click",function(){
 	line=0;
 	document.getElementById("conv").innerHTML="";
+	currentCond="";
+	selectedRespond="";
+	persuasion=0,
+	positiveResponse=true;
+	buttonNext=true;
+	updateNextButton();
 	getLine();
 });
+function getPersuasion(){
+	for(var i=a.responses,j=0,k=i.length;j<k;j++)
+		if(i[j].choose==selectedRespond)
+			for(var l=a.conditions,m=0,n=l.length;m<n;m++)
+				if(l[m]==currentCond){
+					var points=i[j].points[m];
+					positiveResponse=points>=0;
+					persuasion+=points;
+					return;
+				}
+}
 function getLine(){
-	var notResponse=false;
-	if(!hasResponded){
-		
-	}
-	if(selectedRespond.length>0){
-		
-	}
 	var d=a.conversation[line],out="";
-	if(!notResponse){
 		if(d.type=="speech")
 		{
+			if(d.condition!=undefined)
+				currentCond=d.condition;
 			out+='<div class="speech _'+d.person;
 			out+='">';
 			out+='<span class="person">'+persons[d.person]+'</span>';
@@ -62,8 +74,66 @@ function getLine(){
 			out+="</div>";
 			document.getElementById("conv").innerHTML+=out;out="";
 		}
+		else if(d.type="response"){
+			if(selectedRespond.length){
+				if(d.final!=undefined&&d.final==true){
+					getPersuasion();
+					currentCond=persuasion>=0?"+":"-";
+					redirect(currentCond);
+				}
+				var e=d.outcomes,f=e.length,g=0;
+				for(;g<f;g++){
+					var h=e[g];
+					if(h.type!=undefined){
+						if(h.type=="pheromones"){
+							for(var i=a.pheromones,j=0,k=i.length;j<k;j++){
+								if(a.pheromones[j]==selectedRespond){
+									currentCond="";
+									redirect(h.redirect);
+									break;
+								}
+							}
+						}
+					}
+					if(h.condition!=currentCond+">"+selectedRespond)
+						continue;
+					else{
+						getPersuasion();
+						out+='<div class="speech _1 '+(positiveResponse?"positive":"negative")+'"">';
+						out+='<span class="person">'+persons[1]+'</span>';
+						out+='<p>';
+						out+=h.line+"</p></div>";
+						document.getElementById("conv").innerHTML+=out;
+						document.getElementById("conv").scrollTop=document.getElementById("conv").scrollHeight;
+						currentCond=conditions[Math.floor(Math.random()*3)];
+						return;
+					}
+				}
+				if(g==f){
+					var responseChar=positiveResponse?"+":"-";
+					for(g=0;g<f;g++){
+						if(e[g].condition!=responseChar+currentCond)continue;
+						else{
+							h=e[g];
+							break;
+						}
+					}
+				}
+						out+='<div class="speech _1">';
+				out+='<span class="person">'+persons[1]+'</span>';
+				out+='<p>';
+				out+=h.line+"</p></div>";
+			}
+		}
 		document.getElementById("conv").innerHTML+=out;
 		document.getElementById("conv").scrollTop=document.getElementById("conv").scrollHeight;
+}
+function redirect(to){
+	var ln=a.conversation.length;
+	for(;line<ln;line++){
+		if(a.conversation[line].condition==to){
+			return line--;
+		}
 	}
 }
 function getRespond(){

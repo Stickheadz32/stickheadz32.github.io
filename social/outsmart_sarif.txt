@@ -1,6 +1,19 @@
 {
 	"people":["Adam Jensen","David Sarif"],
 	"conditions":["auth","change","blame"],
+	"pheromones":["appease","charm","pressure"],
+	"responses":[
+		{
+			"choose":"placate",
+			"points":[2,1,-2]
+		},{
+			"choose":"refocus",
+			"points":[-2,2,1]
+		},{
+			"choose":"defend",
+			"points":[1,-2,2]
+		}
+	],
 	"conversation":
 	[
 		{
@@ -53,6 +66,7 @@
 		{
 			"type":"speech",
 			"person":1,
+			"condition":"change",
 			"line":"Yeah, as an ex-cop, I guess you would. But the important thing is, you found the hole and plugged it. We're secure now. And the information you uncovered in that FEMA facility, may actually help us track these guys. So let's just stay focused on what's important."
 		},
 		{
@@ -78,15 +92,15 @@
 			"outcomes":
 			[
 				{
-					"condition":">placate",
+					"condition":"change>placate",
 						"line":"I guess I can see why you'd think that... given everything you've been through recently."
 				},
 				{
-					"condition":">refocus",
+					"condition":"change>refocus",
 						"line":"You're right, you're right. I'm sorry if I seem evasive."
 				},
 				{
-					"condition":">defend",
+					"condition":"change>defend",
 						"line":"Why are you getting so defensive? All I'm saying is we should be looking forward, Adam. Not back."
 				}
 			]
@@ -251,12 +265,20 @@
 			"outcomes":
 			[
 				{
-					"condition":"convinced",
+					"type":"pheromones",
+					"condition":">appease",
 					"redirect":"+",
 					"line":"Adam, wait, you can't leave us...! We need you, now, more than ever!"
 				},
 				{
-					"condition":"pressure",
+					"type":"pheromones",
+					"condition":">charm",
+					"redirect":"+",
+					"line":"Adam, wait, you can't leave us...! We need you, now, more than ever!"
+				},
+				{
+					"type":"pheromones",
+					"condition":">pressure",
 					"redirect":"-",
 					"line":"Or what!? You can't afford to quit right now - not with all those hospital bills racked up behind you...! I know you want to find Megan's killers as badly as I do. How are you gonna do without this company's resources behind you, huh!? We've got bigger fish to fry, so let's focus on them, and forget we've ever had this discussion."
 				},
@@ -299,42 +321,34 @@
 			]
 		},
 		{
-			"type":"speech",
-			"person":1,
-			"condition":"+auth",
-            "line":"If I'm reluctant to show you the data, it's because there's legal issues involved. Every company has its secrets, son. And Megan's research was a big part of ours - but the data I streamed has nothing to do with her. It wasn't even proprietary in nature, so I don't want you to waste any time harping on it. The shareholders expect me to take care of it, and I will. So leave it to me to deal with from here."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"+change",
-            "line":"The data I streamed... had nothing to do with Megan or her work. It was just a routine, fact-finding check that sprang from one of our discussions. The kind of check I have to run quite often here, believe it or not. Now if somebody back-traces this transmission and gets a look at it, I very much doubt they'll know what to do with it. Trust me, we're fine."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"+blame",
-            "line":"The data you're so nervous about is little more than routine, fact-finding reports, the kind of stuff I deal with every day. Megan pointed me in a direction and I followed up on it, that's all...! And now that I've shared this much with you, I have to ask... why your knowing the fine details will keep the rest of us secure...! Can't you trust me to take care of things around here?"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-auth",
-            "line":"Megan was a valuable asset, Adam, in more ways than one. If she pointed me in a direction, I followed up on it. Now if the data i streamed goes public, it's likely to get embarrasing, but that's all...! And it's the kind of embarrassment the shareholders pay me to deal with, so I don't need you wasting your time getting sidetracked. You understand?!"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-change",
-            "line":"Seriously. The data I streamed is not going to hurt anyone. It was just a routine, background information I need to get familiar with, after a discussion I had with Megan one night. It's the kind of stuff I look at all the time - and if someone did get a hold of it, they wouldn't know what to do with it. I'm telling you, were fine. Trust me."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-blame",
-			"line":"I can understand why the mention of Megan's name gets your hackles up. She did break your heart after all. But the data I streamed was a routine, fact-finding check, carried out after one of our many late night discussions, and I don't see how knowing the content of it will make you better equipped for your job. Honestly, Adam... You're starting to appear as jealous as Frank. Just... trust me with this one."
-		},
-		{
+			"type":"response",
+			"outcomes":[
+				{
+					"condition":"+auth",
+		            "line":"If I'm reluctant to show you the data, it's because there's legal issues involved. Every company has its secrets, son. And Megan's research was a big part of ours - but the data I streamed has nothing to do with her. It wasn't even proprietary in nature, so I don't want you to waste any time harping on it. The shareholders expect me to take care of it, and I will. So leave it to me to deal with from here."
+				},
+				{
+					"condition":"+change",
+		            "line":"The data I streamed... had nothing to do with Megan or her work. It was just a routine, fact-finding check that sprang from one of our discussions. The kind of check I have to run quite often here, believe it or not. Now if somebody back-traces this transmission and gets a look at it, I very much doubt they'll know what to do with it. Trust me, we're fine."
+				},
+				{
+					"condition":"+blame",
+		            "line":"The data you're so nervous about is little more than routine, fact-finding reports, the kind of stuff I deal with every day. Megan pointed me in a direction and I followed up on it, that's all...! And now that I've shared this much with you, I have to ask... why your knowing the fine details will keep the rest of us secure...! Can't you trust me to take care of things around here?"
+				},
+				{
+					"condition":"-auth",
+		            "line":"Megan was a valuable asset, Adam, in more ways than one. If she pointed me in a direction, I followed up on it. Now if the data I streamed goes public, it's likely to get embarrasing, but that's all...! And it's the kind of embarrassment the shareholders pay me to deal with, so I don't need you wasting your time getting sidetracked. You understand?!"
+				},
+				{
+					"condition":"-change",
+		            "line":"Seriously. The data I streamed is not going to hurt anyone. It was just a routine, background information I need to get familiar with, after a discussion I had with Megan one night. It's the kind of stuff I look at all the time - and if someone did get a hold of it, they wouldn't know what to do with it. I'm telling you, were fine. Trust me."
+				},
+				{
+					"condition":"-blame",
+					"line":"I can understand why the mention of Megan's name gets your hackles up. She did break your heart after all. But the data I streamed was a routine, fact-finding check, carried out after one of our many late night discussions, and I don't see how knowing the content of it will make you better equipped for your job. Honestly, Adam... You're starting to appear as jealous as Frank. Just... trust me with this one."
+				}
+			]
+		},{
 			"type":"choice",
 			"option":[
 				{
@@ -352,42 +366,35 @@
 			]
 		},
 		{
-			"type":"speech",
-			"person":1,
-			"condition":"+placate",
-			"line":"I can't be a hundred percent sure of something like that, Adam, no-one can...! ...god dammit..."
-        },
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"+refocus",
-			"line":"Adam...! Of course I'd trust you, son! It's not that I'm afraid to tell you, Adam, it's just... I'm afraid you'll take it the wrong way..."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"+defend",
-			"line":"Adam, I didn't mean to imply--... You're right! You're right, I really shouldn't keep this information from you. I just hope you'll understand why I did."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-placate",
-			"line":"I'm glad to hear that, Adam. Because, frankly, I was beginning to wonder. I've told you all you need to know on this subject, so we've got bigger fish to fry, so let's focus on them."
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-refocus",
-			"line":"I'm not afraid to tell you anything, Adam! But neither will I be treated like some two-bit suspect you just hauled in off the street. You're not a cop anymore! You work for me; try not to forget that!"
-		},
-		{
-			"type":"speech",
-			"person":1,
-			"condition":"-defend",
-			"line":"What exactly are you implying, son?! That I would endanger my own staff to cover our indiscretions? I've been willing to give you a bit of leeway here, considering everything you've been through these past months, but let's not forget why it is you're even alive...! Honestly..."
-		},
-		{
+			"type":"response",
+			"final":true,
+			"outcomes":[
+				{
+					"condition":"+>placate",
+					"line":"I can't be a hundred percent sure of something like that, Adam, no-one can...! ...god dammit..."
+		        },
+				{
+					"condition":"+>refocus",
+					"line":"Adam...! Of course I'd trust you, son! It's not that I'm afraid to tell you, Adam, it's just... I'm afraid you'll take it the wrong way..."
+				},
+				{
+					"condition":"+>defend",
+					"line":"Adam, I didn't mean to imply--... You're right! You're right, I really shouldn't keep this information from you. I just hope you'll understand why I did."
+				},
+				{
+					"condition":"->placate",
+					"line":"I'm glad to hear that, Adam. Because, frankly, I was beginning to wonder. I've told you all you need to know on this subject, so we've got bigger fish to fry, so let's focus on them."
+				},
+				{
+					"condition":"->refocus",
+					"line":"I'm not afraid to tell you anything, Adam! But neither will I be treated like some two-bit suspect you just hauled in off the street. You're not a cop anymore! You work for me; try not to forget that!"
+				},
+				{
+					"condition":"->defend",
+					"line":"What exactly are you implying, son?! That I would endanger my own staff to cover our indiscretions? I've been willing to give you a bit of leeway here, considering everything you've been through these past months, but let's not forget why it is you're even alive...! Honestly..."
+				}
+			]
+		},{
 			"type":"speech",
 			"person":1,
 			"condition":"+",
