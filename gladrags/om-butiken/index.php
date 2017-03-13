@@ -45,7 +45,7 @@ defer('js/gladrags.js');?>
 				<a href="varumarken" title="">Varumärken</a>
 			</li><li>
 				<a href="nyheter" title="">Nyheter</a>
-			</li><li class="hasContent">
+			</li><li class="hasContent selected">
 				<a href="om-butiken" title="">Om butiken</a>
 				<span class="subMenuButton"></span>
 				<div class="headerDropMenu">

@@ -24,7 +24,7 @@ defer('js/gladrags.js');?>
 		<span id="menuButton"></span>
 		<span class="menuOverlay"></span>
 		<ul>
-			<li class="hasContent">
+			<li class="hasContent selected">
 				<a href="rea" title="">Rea</a>
 				<span class="subMenuButton"></span>
 				<div class="headerDropMenu">
@@ -69,56 +69,28 @@ defer('js/gladrags.js');?>
 </header>
 <main>
 	<section>
-		<h1>Välkommen till Glad Rags!</h1>
-	</section>
-	<div class="fullwidth" style="background-image:url(img/ext2.jpg)">
-		<div class="aside left">
-			<h2>Veckans erbjudande</h2>
-			<p>testsetsetsetsetset</p>
-			<a href="" title="">erbjudanden</a>
-		</div>
-	</div>
-	<section>
-		<h2>Erbjudanden</h2>
-		<div class="grid">
-			<div class="grid-small" style="background-image:url(img/jeans_hog.jpg)">
-				<!--a-tagg med class "content" gör hela objektet klickbart-->
-				<div class="content">
-					<div class="gridText">
-						<h1><span class="big">30-70%</span> vinterrea</h1>
-						<h2>Gäller alla plagg</h2>
-						<a href="rea"></a>
-					</div>
-				</div>
-			</div><div class="grid-small">
-				<a href="" title="" class="content">
-					<div class="logo-hovertext">
-						<p>Test</p>
-					</div>
-				</a>
-			</div>
-		</div>
-		<h1>Välkommen!</h1>
-		<h2>Välkommen!</h2>
-		<h3>Välkommen!</h3>
-		<h4>Välkommen!</h4>
-		<h5>Välkommen!</h5>
-		<h6>Välkommen!</h6>
-		<p>Välkommen!</p>
-		<ol>
-			<p>Test</p>
-			<li>Test</li>
-			<p>Test</p>
-			<li>Test</li>
-			<li>Test</li>
-		</ol>
-		<ul>
-			<p>Test</p>
-			<li>Test</li>
-			<p>Test</p>
-			<li>Test</li>
-			<li>Test</li>
-		</ul>
+		<h1>Rea</h1>
+		<?php
+		include_once '../connect.php';
+		$conn = new mysqli($hostname,$username,$password,$dbname);
+		if($conn->connect_error){
+			die("Connection failed: ".$conn->connect_error);
+		}
+		$conn->query("SET character_set_results = 'utf8';");
+		$sql="SELECT * FROM erbjudanden ORDER BY erbjudande_id DESC LIMIT 4;";
+		$result = $conn->query($sql);
+		$row = mysqli_fetch_array($result);
+		if ($result->num_rows > 0) {
+			echo '<div class="grid">';
+		    do{
+		    	echo '<div class="grid-small" style="background-image:url(img/'.$row["bild"].')"><div class="content"><div class="gridText"><h1>'.$row["rubrik"].'</h1><h2>'.$row["beskrivning"].'</h2><a href="">Gå till erbjudanden</a></div></div></div>';
+			}while($row = $result->fetch_assoc());
+			echo '</div>';
+		} else {
+		    echo "0 results";
+		}
+		$conn->close();
+		?>
 	</section>
 </main>
 <footer>

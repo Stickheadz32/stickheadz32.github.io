@@ -61,7 +61,7 @@ defer('js/gladrags.js');?>
 						</li>
 					</ul>
 				</div>
-			</li><li>
+			</li><li class="selected">
 				<a href="kontakt" title="">Kontakt</a>
 			</li>
 		</ul>
