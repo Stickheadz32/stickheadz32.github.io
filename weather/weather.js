@@ -20,20 +20,20 @@ function sendRequest(url){
 		//start up new XMLHTTPRequest
 		let x=new XMLHttpRequest();
 		//function for checking the data's download state
-			x.onreadystatechange=function(){
-				//readyState 4: DONE
-				if(x.readyState===4){
-					//HTTP 200: OK
-					if(x.status===200){
-						//prints out data
-						update(JSON.parse(x.response));
-						//resolves when successful
-						resolve(x.response);
-					}
-					//shows error message on failure
-					else reject("Error getting weather information. "+x.responseText);
+		x.onreadystatechange=function(){
+			//readyState 4: DONE
+			if(x.readyState===4){
+				//HTTP 200: OK
+				if(x.status===200){
+					//prints out data
+					update(JSON.parse(x.response));
+					//resolves when successful
+					resolve(x.response);
 				}
-			};
+				//shows error message on failure
+				else reject("Error getting weather information. "+x.responseText);
+			}
+		};
 		x.open("GET",url,true);
 		x.send();
 	});
