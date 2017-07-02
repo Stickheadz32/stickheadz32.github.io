@@ -1,4 +1,4 @@
-body{margin:auto;padding:20px;}
-h1{background:#269;color:#FFF;}
-p{background:#CCC;}
-.menu{border:solid 2px rgba(0,0,0,0.5);border-radius:5px; margin:10px;padding:5px;background:#EEE;}
+body{margin:auto;padding:20px}
+h1{padding:.5em 1em;border-bottom:solid 2px #555}
+p{background:#CCC}
+.menu{border:solid 2px rgba(0,0,0,0.5);border-radius:5px; margin:10px;padding:5px;background:#EEE}

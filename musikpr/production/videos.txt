@@ -1,8 +1,0 @@
-ChipTest1
-
-A quick techno chiptune I made with ModPlug Tracker in 20-30 minutes while at the  RealLan 2016 computer festival in Realgymnasiet during the first hours (GMT+1) of March 26th 2016. Inspiration from Skaven, Alexander Brandon, FantomenK, Michiel Van Den Bos, Kraftwerk, among other artists I forgot to mention.
-
-.MP3 file:
-http://download1285.mediafire.com/383bu60ch3ig/rweqqddb9l29xb5/chiptest1.mp3
-.IT file:
-http://download847.mediafire.com/3789mjfmtmhg/w4wpdz9bmk65n6l/chiptest1.it
