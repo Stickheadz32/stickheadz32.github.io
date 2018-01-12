@@ -1,0 +1,77 @@
+body{
+	background:#260000;
+color:#FFFFFF;
+}
+header{
+background:#CC0000;
+color:#FFFFFF;
+}
+header a{
+color:#FFFFFF;
+}
+.headerSlogan{
+	border-left: solid 1px rgba(255,255,255,0.5);
+}
+.selectColortheme{
+border-left:solid 1px rgba(255,255,255,0.3);
+}
+.sCt_item{
+border:solid 1px rgba(0,0,0,0.7);
+box-shadow:0 0 5px rgba(0,0,0,0.5);
+}
+.mainCat{
+	background: #CC0000;
+}
+.mainCat ul{
+background:#CC0000;
+}
+@media all and (min-width:1001px){
+.mainCat ul li{
+border-left:solid 1px rgba(255,255,255,0.4);
+}
+}
+.mC_breadC{
+background:#5C0000;
+color:rgba(255,255,255,0.9);
+}
+.mC_breadC ul a{
+color:rgba(255,255,255,0.7);
+}
+.mC_breadC_link:hover{
+background-color:#700000;}
+.mC_breadC_selected{
+	background:#880000;
+}
+#mCbC_lA{
+	background:url(../img/testarrow.png) no-repeat -32px 0px;
+	}
+#mCbC_sA{
+	background: url(../img/testarrow.png) no-repeat -48px 0px;
+}
+.mainContent{
+background:#800;
+color:#FEE;
+}
+.mC_rightPanel{
+background:#880000;
+}
+.mainCat ul li a{
+color:rgba(255,255,255,0.65);
+transition:ease-in-out all 0.2s;
+}
+.mainCat ul li a:hover{
+color:rgba(255,255,255,0.9);
+text-shadow:0 0 10px rgba(255,255,255,0.7);
+transition:ease-in-out all 0.05s;
+}
+.mainCat ul li a:active{
+color:rgba(255,255,255,0.4);
+text-shadow:0 0 5px rgba(0,0,0,0.6);
+}
+.mC_block{
+border:solid 1px rgba(255,255,255,0.5);
+}
+footer{
+background:#CC0000;
+color:#FFF;
+}

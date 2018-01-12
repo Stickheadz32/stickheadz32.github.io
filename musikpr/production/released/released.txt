@@ -1,0 +1,70 @@
+[{
+	"Title":"ChipTest1",
+	"By":"Stickheadz32",
+	"Description":"A quick techno chiptune I made with ModPlug Tracker in 20-30 minutes while at the  RealLan 2016 computer festival in Realgymnasiet during the first hours (GMT+1) of March 26th 2016. Inspiration from Skaven, Alexander Brandon, FantomenK, Michiel Van Den Bos, Kraftwerk, among other artists I forgot to mention.",
+	"Date":[{
+		"year":"2016",
+		"month":"4",
+		"day":"20"
+	}],
+	"Media":"Audio",
+	"PreviewUrl":"audio/chiptest1.mp3",
+	"Download":[{
+		"source":"local",
+		"type":".mp3",
+		"url":"audio/chiptest1.mp3"
+	},{
+		"source":"local",
+		"type":".wav",
+		"url":"audio/chiptest.wav"
+	},{
+		"source":"local",
+		"type":".it",
+		"url":"audio/chiptest1.it"
+	},{
+		"source":"mediafire",
+		"type":".mp3",
+		"url":"http://www.mediafire.com/download/rweqqddb9l29xb5/chiptest1.mp3"
+	},{
+		"source":"mediafire",
+		"type":".it",
+		"url":"http://www.mediafire.com/download/w4wpdz9bmk65n6l/chiptest1.it"
+	}],
+	"Tags":"techno,electro,House,chiptest,reallan,"
+},{
+	"Title":"Deus Ex Infolink Replica",
+	"By":"Stickheadz32",
+	"Description":[
+		"A replica I made for the infolink in <i>Deus Ex</i>. Graphics made with MS Paint. Edited with Vegas Pro. Why Paint and not Photoshop? Because I didn't have Photoshop on the computer I made this on at the time. Yay.",
+		"The background color of the graphics is black, and I removed the black color with Chroma Keyer on Vegas Pro (similar to greenscreen, but this lets you choose which color to remove)."
+	],
+	"Date":[{
+		"year":"2015",
+		"month":"10",
+		"day":"20"
+	}],
+	"Media":"Video",
+	"PreviewUrl":"video/deusexmessagereplica.mp4",
+	"Download":[{
+		"source":"local",
+		"type":".mp4",
+		"url":"video/deusexmessagereplica.mp4"
+	}]
+},{
+	"Title":"Supermoon test",
+	"By":"Stickheadz32",
+	"Description":"Made with Photoshop. Positively inspired by the one minute spray art. Mine took 20 minutes to make. Pity me.",
+	"Date":[{
+		"year":"2016",
+		"month":"3",
+		"day":"5"
+	}],
+	"Media":"Art",
+	"PreviewUrl":"art/supermoon.jpg",
+	"Download":[{
+		"source":"local",
+		"type":".jpg",
+		"url":"art/supermoon.jpg"
+	}],
+	"Tags":"supermoon,solar,eclipse"
+}]

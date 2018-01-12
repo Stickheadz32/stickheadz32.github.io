@@ -1,0 +1,674 @@
+/* Designed by Stickheadz32 */
+
+/*If you want to document everything about an element, do it outside the tags and curly braces, not inside.
+
+For very short description of an element style, you may write just above it.
+
+Describe the following:
+-What does the tag mean? What's the tag's initial preferences? What symbol between the tags - if any - represent what tag(s)?
+
+Folk ska se vad som är klickbart*/
+
+/*Import av typsnitten Archer och Lato*/
+@import url("fonts/fonts.css");
+/*ändrar färg på markerad innehåll*/
+/*kan inte gruppera -moz-selection och selection*/
+::selection{
+    background:#BED000; /*realgrön*/
+    color:#000;
+}
+::-moz-selection{
+    background:#BED000;
+    color:#000;
+}
+html{
+    margin:0;
+    padding:0;
+    display:block;
+    background:#FFF;
+    color:#000;
+}
+body{
+    margin:0 auto;
+    padding:0;
+    display:block;
+    font-family: "Lato",sans-serif;
+}
+/*mindre kod ifall man har flera deklarationer för en grupp selektorer, följt av några unika deklarationer för var och en av dem*/
+p,li,u{
+    padding:0;
+}
+/*deklarationer läses kronologiskt, så <li> har margin 0 istället för 0 0 10px*/
+p,li{
+    font:16px/24px "Lato",sans-serif;
+    margin:0 0 10px;
+}
+li{
+    margin:0;
+    line-height:20px;
+}
+ul{
+    margin:0 0 10px 30px;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family:"Archer";
+    line-height:1.5;
+    padding:0 0 10px;
+    margin:0;
+    color:#333;
+}
+h1{
+    font:38px/46px "archer-bold";
+}
+h2{
+    font:28px/27px "archer-semibold";
+}
+h3{
+    font:18px/19px "archer-semibold";
+    text-transform:uppercase;
+    margin:34px 0 21px;
+    padding:0;
+    border-bottom:solid 1px #333;
+}
+/*Karta över Realgymnasiet Norrköping*/
+#realmap{
+    width:400px;
+    height:300px;
+    border:0;
+    margin:20px;
+}
+header{
+    height:90px;
+    display:block;
+    /*real-grön med transparans för slidern*/
+    background:rgba(190,208,0,.9);
+    color:#000;
+    margin:0;
+    padding:0;
+    /*position:relative och z-index:1 för att ställa headern framför slidern*/
+    position:relative;
+    z-index:1;
+}
+footer{
+    margin:0;
+    padding:18px 15px 16px;
+    display:block;
+    background:#282A2B;
+    color:#FFF;
+    font:14px/20px "Lato",sans-serif;
+}
+/*centrera innehåll med maxbredd*/
+header>nav,footer>nav{
+    display:block;
+    max-width:1100px;
+    margin:0 auto;
+    padding:0;
+}
+header>nav{
+    padding:0 20px;
+}
+section{
+    max-width:1100px;
+    margin:0 auto 20px;
+    padding:20px;
+}
+.mainLogo{
+    display:block;
+    float:left;
+    background:url("img/realgymnasiet_svart_logo.png") 19px no-repeat;
+    background-size:150px;
+    height:52px;
+    width:150px;
+    /*utöka klickbar yta av loggan*/
+    margin:0 0 0 -19px;
+    padding:19px;
+}
+/*dölj text inom loggan, eftersom texten kommer visas ifall denna CSS-fil är korrupt*/
+.mainLogo>*{
+    display: none;
+}
+#mainExpand{
+    display:none;/*visas istället i mobil och tablet*/
+    cursor:pointer;
+}
+#mainMenu{
+    display:block;
+    float:left;
+    margin:0 34px;
+    padding:0;
+    height:100%;
+    width:auto;
+    list-style-type:none;
+}
+#mainMenu li{
+    display:inline-block;
+    padding:0;
+    margin:33px 0;
+}
+#mainMenu li a{
+    font:20px/16px "archer-bold";
+    text-decoration: none;
+    color:#000;
+    padding:33px 5px;
+    margin:0 6px;
+}
+#mainMenu li a:hover,.mainMenu>#selected{
+    color:#FFF;
+}
+#slider{
+    height:600px;
+    /*placera på samma höjd som headern*/
+    margin:-90px 0 0;
+    padding:0;
+    clear:both;
+    display:inline-block;
+    width:100%;
+    /*placera sliders bredvid varandra utan att dess överflöde hoppar in i nästa rad*/
+    overflow-y:hidden;
+    overflow-x:scroll;
+    white-space:nowrap;
+}
+.slide{
+    display:inline-block;
+    position:relative;
+    background:#DDD center no-repeat;
+    background-size:cover;
+    height:inherit;
+    width:100%;
+    /*ställa om överflöde för innehållet*/
+    white-space:normal;
+}
+/*centrerad och med max-bredd*/
+.slide>div{
+    max-width:738px;
+    display:block;
+    position:relative;
+    height:inherit;
+    margin:0 auto;
+}
+#slider .sliderinfo{
+    position:absolute;
+    top:239px;
+    background: rgba(0,0,0,.5);
+    color:#FFF;
+    text-align:center;
+    padding:25px;
+    margin:0 auto;
+    display:block;
+}
+#slider .sliderinfo h1{
+    font:60px/60px "archer-semibold";
+    color:#FFF;
+    border-bottom:solid 2px #FFF;
+}
+#slider .sliderinfo h2{
+    font:28px/34px "archer-semibold";
+    padding:5px;
+    color:#FFF;
+}
+#slider .sliderinfo p{
+    font:20px/1 "archer-semibold";
+    padding:5px;
+    margin:7px 0;
+    color:#FFF;
+}
+#slider .sliderinfo a{
+    display: inline-block;
+    clear:both;
+    font:18px/1 "Lato";
+    color:#FFF;
+    padding:9px 10px 5px;
+    border:solid 1px #FFF;
+    text-decoration:none;
+}
+/*"Anmäl intresse!"-bubblan i CSS-form*/
+.flash{
+    display:block;
+    position:absolute;
+    right:15px;
+    top:60px;
+    width:0;
+    height:0;
+    margin:0;
+    padding:50px;
+    background:#E5005A;
+    border-radius:100%;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+    z-index:1;
+    overflow:hidden;
+}
+.flash>*{
+    position:absolute;
+    display:block;
+    top:26%;
+    left:0;
+    text-align:center;
+    align-content: center;
+    margin:auto;
+    font:22px/.9 "Archer";
+    color:#FFF;
+    text-decoration: none;
+}
+.ort{
+    list-style-type:none;
+    margin:0 0 34px;
+    padding:0;
+}
+.ort li{
+    display:inline-block;
+    margin:0;
+    padding:0;
+}
+.ort li a{
+    display:block;
+    font:17px/1 "archer-bold";
+    text-transform: uppercase;
+    padding:15px;
+    margin:2px;
+    background:#BED000;
+    color:#000;
+    text-decoration:none;
+}
+.ort li a:hover{
+    background:#E5005A;
+    color:#FFF;
+}
+.links{
+    background:#EDEDED;
+    padding:17px 0 10px 45px;
+    margin:0 15px 95px 0;
+    display:block;
+}
+.links h2{
+    margin:0 0 10px;
+}
+.links h2:before{
+    content:"";
+    width:20px;
+    height:20px;
+    display:block;
+    position:relative;
+    top:26px;
+    left:-34px;
+    margin:-20px 0 0 0;
+    background:url("img/links_h2.svg") no-repeat;
+
+}
+.links p,.links a{
+    color:#000;
+    font:16px/24px "Lato",sans-serif;
+    display:block;
+    margin:0 0 10px 0;
+    padding:0;
+    width:auto;
+}
+.links p{
+    color:#333;
+}
+.breadcrumbs{
+    display:block;
+    padding:12px 0 28px;
+    margin:0;
+    list-style-type:none;
+}
+/*ifall man har .breadcrumbs utanför section*/
+header~.breadcrumbs{
+    max-width: 1100px;
+    margin:0 auto;
+}
+/*ifall man har .breadcrumbs inom section*/
+section>.breadcrumbs{
+    max-width: 1100px;
+    margin:-20px auto 0;
+}
+.breadcrumbs li{
+    display:inline;
+    margin:0;
+    padding:0;
+    font:14px/20px "Lato",sans-serif;
+}
+.breadcrumbs li a{
+    color:#000;
+    padding:0 10px 0 0;
+    margin:0 7px 0 0;
+    text-decoration:none;
+    border-right:solid 2px #CCC;
+}
+details{
+    margin:20px 0;
+    padding:0;
+    font:16px/22px "Lato",sans-serif;
+    border-bottom:solid 1px #EEE;
+    display:block;
+}
+details>*{
+    display:none;
+}
+details[open]>*,details.open>*,details>summary{
+    display:block;
+    padding:10px 0 20px;
+    cursor:pointer;
+}
+details[open]>summary,details.open>summary{
+    padding:10px 0 25px;
+}
+/*ta bort navigeringspilen i details*/
+summary::-webkit-details-marker{
+    display:none;
+}
+summary:hover{
+    color:#E5005A;
+}
+/*ikon för ihopfälld details-tagg*/
+summary:before{
+    content:"+";
+    width:25px;
+    height:25px;
+    margin:0 18px 0 0;
+    padding:0;
+    display:block;
+    float:left;
+    text-align:center;
+    vertical-align:middle;
+    border-radius: 100%;
+    color:#FFF;
+    background:#E5005A;
+    line-height:26px;
+}
+/*ikon för öppnad details-tagg*/
+details[open] summary:before,details.open summary:before{
+    /*lång bindestreck*/
+    content:"\2013";
+    line-height:25px;
+}
+/*tar bort outline*/
+summary:focus{
+    outline:0;
+}
+form,form>*{
+    font:16px "Lato",sans-serif;
+    display:block;
+}
+form{
+    padding:0;
+    margin:16px 0;
+}
+form label,form legend{
+    padding:7px 0 5px;
+    margin:29px 16px 0 0;
+    font:18px/1.3 "Lato",sans-serif;
+    display:block;
+}
+form select,form input{
+    margin:6px 0 0;
+    padding:5px 4px;
+    width:49.5%;
+}
+form fieldset{
+    border:0;
+    margin:0;
+    padding:0;
+}
+fieldset label{
+    margin:0 0 8px;
+}
+select option{
+    padding:2px;
+    display:block;
+}
+input[type="checkbox"],input[type="radio"]{
+    width:auto;
+    display:inline-block;
+    margin:3px 6px 3px 0px;
+}
+label.terms{
+    font-size:14px;
+    color:#333;
+    padding:7px 0;
+}
+form .required:after{
+    content:" *";
+}
+form textarea{
+    margin:8px 0;
+    padding:8px;
+    height:160px;
+    width:calc(100% - 18px);
+    border:solid 1px #D2D2D2;
+    box-shadow:inset 0 1px 5px rgba(0,0,0,.1);
+    /*förhindra från att ändra storlek*/
+    resize:none;
+    line-height:1.5;
+}
+button{
+    display:block;
+    background:#ddd;
+    margin:32px 0 16px;
+    padding:2px 6px;
+    border:0;
+    border-radius:0;
+    font:16px "Lato",sans-serif;
+    font-weight: bold;
+    text-shadow:0 1px 0 #FFF;
+}
+blockquote{
+    background:#E5005A;
+    color:#FFF;
+    padding:20px;
+    position:relative;
+    margin:0;
+    display:block;
+}
+blockquote>q{
+    padding:0;
+    margin:0;
+    font:28px/27px "archer-semibold";
+}
+/*Pil av pratbubbla
+Width och height måste vara 0 för att forma en pil. Border-width blir längden av pilen.
+*/
+blockquote:after{
+    content:"";
+    position:absolute;
+    top:100%;
+    left:35px;
+    border:solid 10px;
+    border-color:#E5005A transparent transparent;
+}
+blockquote~.quoted-by{
+    display:block;
+    font:16px/20px "Lato",sans-serif;
+    font-weight:bold;
+    margin:12px 0;
+    padding:0;
+
+}
+/*tredjedelsspalter i footer*/
+footer>nav>aside{
+    display:inline-block;
+    width:30%;
+    vertical-align:top;
+    margin:60px 0 50px;
+    padding:0 3.33% 0 0;
+}
+footer h2{
+    font:20px "archer-bold";
+    padding:0 0 20px;
+    text-transform: uppercase;
+    color:#FFF;
+}
+footer aside>a,footer aside>p{
+    color:#FFF;
+    display:block;
+    text-decoration:none;
+    font:16px/20px "Lato",sans-serif;
+}
+footer aside>a:hover{
+    text-decoration:underline;
+}
+.copyright{
+    border-top:solid 1px #FFF;
+    margin:0;
+    padding:4px 0 0;
+    font-size:14px;
+}
+footer>nav>a{
+    color:#BFBFBF;
+    display:block;
+    text-decoration:none;
+    font:14px/17px "Lato",sans-serif;
+}
+.toTop{
+    text-align: center;
+    padding:20px;
+    font-size:20px;
+}
+/*fluid layout i header*/
+@media all and (max-width:1159px){
+    #mainMenu{
+        /*1vw = 1% av viewport-width*/
+        /*34px * 2 = 68px*/
+        /*68px / 1160px = 9.4%*/
+        margin:0 calc(9.4% - 68px);
+    }
+    #mainMenu li a{
+        /*16px på 768px device-width*/
+        /*20px på 1160px device-width*/
+        /* y=kx+m */
+        font-size:calc(.98vw + 8px);
+    }
+    #slider{
+        /*340px på 768px device-width*/
+        /*600px på 1160 devide-width*/
+        /* y=kx+m */
+        height:calc(26vw + 298px);
+    }
+    .slide>div{
+        /* 738/1160 = 63% */
+        max-width:63%;
+    }
+    #slider .sliderinfo{
+        top:calc(16.5vw + 48px);
+    }
+    #slider .sliderinfo h1{
+        /*60px på 1160px device-width*/
+        /*42px på 800px device-width*/
+        font:calc(6vw - 9px)/1 "archer-semibold";
+    }
+    #slider .sliderinfo h2{
+        font:calc(2vw + 2px)/1.21 "archer-semibold";
+        padding:.43vw;
+    }
+    #slider .sliderinfo p{
+        font-size:calc(1.5vw + 2.2px);
+        padding:.43vw;
+    }
+}
+@media all and (max-width:768px){
+    header{
+        background:#BED000;
+        height:75px;
+    }
+    header>nav,footer>nav{
+        margin:0;
+        padding:0;
+    }
+    footer{
+        padding:18px 10px 16px;
+    }
+    footer>nav{
+        text-align: center;
+    }
+    .mainLogo{
+        background-size:110px;
+        width:115px;
+        background-position:10px 20px;
+        padding:10px 11px;
+        margin:0;
+        float:none;
+        display:inline-block;
+    }
+    #mainExpand{
+        display:block;
+        width:75px;
+        height:75px;
+        float:right;
+        padding:0;
+        margin:0;
+        outline:0;
+        background:rgba(0,0,0,0);
+    }
+    #mainExpand:active{
+        background:rgba(0,0,0,.2);
+    }
+    #mainExpand:before{
+        content:"";
+        display:block;
+        position:relative;
+        margin:24px 0 0 32px;
+        padding:0;
+        background:url("img/links_h2.svg") -20px 0 no-repeat;
+        width:30px;
+        height:20px;
+    }
+    #mainMenu{
+        display:none;
+        float:none;
+        margin:0;
+        /*padding är redan 0*/
+    }
+    #mainOn #mainMenu{
+        display:block;
+    }
+    #mainMenu li,#mainMenu li a{
+        display:block;
+        padding:10px;
+        margin:0;
+        font:18px/1 "archer-semibold";
+    }
+    #mainMenu li{
+        border-bottom:solid 1px #DBDBDB;
+        padding:0;
+        background:#FFF;
+    }
+    #mainMenu .selected{
+        background:#EEE;
+    }
+    #slider{
+        margin:0;
+        height:calc(65vw - 71px);
+    }
+    #slider .sliderinfo{
+        top:16vw;
+    }
+    #realmap{
+        width:100%;
+        height:300px;
+        border:0;
+        margin:20px auto;
+        padding:0;
+    }
+    form>select,form>input{
+        width:100%;
+    }
+    footer>nav>aside{
+        width:auto;
+        padding:0;
+        display:block;
+    }
+    footer aside>a,footer aside>p{
+        display:block;
+        text-decoration:none;
+        font:20px/28px "Lato",sans-serif;
+    }
+    footer aside>a{
+        text-decoration: underline;
+    }
+    .copyright{
+        padding-top:15px;
+    }
+}

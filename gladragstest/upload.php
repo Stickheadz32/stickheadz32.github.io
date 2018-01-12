@@ -24,7 +24,11 @@ if(isset($_POST["submit"])) {
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+<<<<<<< HEAD
             $sql = "INSERT INTO images (id,text,img) VALUES ('','".$_POST['uploadTitle']."', '".$target_file."',NOW())";
+=======
+            $sql = "INSERT INTO images (id,text,img,date) VALUES ('','".$_POST['uploadTitle']."', '".$target_file."',NOW())";
+>>>>>>> parent of ab11728... removing old unneeded stuff
             if ($conn->query($sql) === TRUE) {
                 header('Location: index.php');
             } else {

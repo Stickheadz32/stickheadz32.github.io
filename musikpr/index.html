@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--Structured by Stickheadz32 (c) 2015-2016-->
+<html lang="en">
+
+<head>
+    <title>Start - The Works of Stickheadz32</title>
+    <meta name="description" content="Welcome to The Works of Stickheadz32, where all my production of music, videos and other forms of art belongs."/>
+    <meta name="keywords" content="the works of stickheadz32, music, video, blog, Windows XP remix"/>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel="canonical" href="/musikpr/"/>
+    <link href="css/musikpr.css" rel="stylesheet" type="text/css"/>
+	<!--[if lt IE 9]><link href="css/musikpr-lte8.css" rel="stylesheet" type="text/css"/><![endif]-->
+	<link href="opensearch.xml" rel="search" type="application/opensearchdescription+xml" title="Search - The Works of Stickheadz32"/>
+    <!-- jQuery v1.11.3 - (c) 2005, 2015 jQuery Foundation, Inc. - jquery.org/license -->
+    <script type="text/javascript" src="player/jquery-1.11.3.min.js"></script>
+	<!-- Mediaelement.js - (c) John Dyer -->
+    <script type="text/javascript" src="player/mediaelement-and-player.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="player/mediaelementplayer.css"/>
+	<link rel="stylesheet" type="text/css" href="player/mejs-skins.css"/>
+</head>
+
+<body>
+<header>
+	<!--left side of header-->
+	<div class="leftTab">
+
+		<a href=""><h1>The Works of Stickheadz32</h1></a>
+
+	</div>
+	
+	<!--right side of header-->
+	<div class="rightTab">
+
+		<form class="searchTab" method="GET" name="search" action="search">
+			<label for="query" title="search">Search:</label>
+			<input type="text" name="query" title="Enter search word(s) here" label="Search here" placeholder="in The Works of Stickheadz32...">
+			<button type="submit" value="Search">Search</button>
+		</form>
+		
+		<div class="dateNow">
+			<div id="dateNow_clock"></div>
+			<div id="dateNow_dayMonth"></div>
+			<div id="dateNow_year"></div>
+		</div><!--.dateNow-->
+		<script type="text/javascript" src="datetime.js"></script>
+		<noscript>Javascript not enabled.</noscript>
+
+	</div>
+</header>
+
+<ul class="startMenu">
+  <li class="sM_selectedLink">Start
+  </li><li class="sM_Link"><a href="about" title="About me ">About me</a>
+  </li><li class="sM_Link"><a href="production" title="Production ">Production</a>
+  </li><li class="sM_Link"><a href="tutorials" title="Tutorials ">Tutorials</a>
+  </li><li class="sM_Link"><a href="contact" title="Contact ">Contact</a>
+</li></ul><!--.startMenu-->
+
+<div class="pageContent">
+    <h2>Home page</h2>
+    <p>Welcome to my website of my productions, both <abbr title="Found at &quot;Released&quot; under the &quot;Production&quot; section.">released</abbr>, upcoming and unreleased, experimental ones.</p>
+    
+    <h2>Testing out the MediaElement.js plugin</h2>
+	<p>HTML5 <b>&lt;audio&gt;</b> and <b>&lt;video&gt;</b> was supposed to be awesome, powerful and fun.</p>
+	<p>But browser vendors couldn't agree on a codec. Thus, older browsers (specifically those with no HTML5 support), don't support <b>&lt;audio&gt;</b> or <b>&lt;video&gt;</b> at all, which means that <b>&lt;audio src="myfile.mp3" /&gt;</b> doesn't work, nor does <b>&lt;video src="myfile.mp4" /&gt;</b>.</p>
+	
+	<p>This plugin, however, - <a href="http://mediaelementjs.com/" title="MediaElement.js">MediaElement.js, made by John Dyer</a> - is a Javascript plugin that replaces <b>&lt;audio&gt;</b> and <b>&lt;video&gt;</b> tags with a native HTML+CSS player that looks and works the same in every browser.</p>
+	
+	<p>&lt;audio&gt; tag in action with the plugin. Example song: "chiptest1" by Stickheadz32.</p>
+	<audio src="./production/released/audio/chiptest1.mp3" controls="controls"></audio>
+	
+	<p>&lt;video&gt; tag in action. This video is a replica of the audio message user interface from the video game <i>Deus Ex</i> (2000).</p>
+	<video width="640" height="360" src="./production/released/video/deusexmessagereplica.mp4" controls="controls" preload="none">
+		<track srclang="en" src="./production/released/video/deusexmessagereplica.srt"/>
+	</video>
+</div><!--.pageContent-->
+
+<!--start footer-->
+<footer>
+<p>Website structured and designed by Stickheadz32.</p>
+<p>Mediaelement.js (c) John Dyer.</p>
+</footer>
+<!--end footer-->
+
+<!--MediaElement.js Player bootup-->
+	<script>
+	$('audio,video').mediaelementplayer({
+		startVolume:1.,
+		defaultVideoHeight:9/16*this.width,
+		features: ['playpause','progress','current','duration','volume','fullscreen']
+	});
+	</script>
+	
+</body>
+</html>
