@@ -1,48 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html>
-<head>
-	<title>Canvas test</title>
-</head>
-<style type="text/css"><!--
-
---></style>
-<script type="text/javascript" defer>
-	(function(){
-		function getjson(url,func){
-			return new Promise(function(resolve,reject){
-				let x=new XMLHttpRequest();
-				x.onload=function(){
-					if(x.readyState==4){
-						if(x.status==200){
-							//egen funktion
-							func(JSON.parse(x.response));
-							resolve(x.response);
-						}else reject("Data kunde inte hämtas. "+x.responseText);
-					}
-				}
-				x.open("GET",url,true);
-				x.send();
-			});
-		}
-		//json-server
-		getjson("http://localhost:3000/info",function(data){
-			let a=`<h1>Antagningsstatistik</h1><h2>${data.nameOfProgram} ${data.timePeriod}</h2><p><b>Total number of applicants: ${data.totalNumberOfApplicants}</b></p>`;
-			document.getElementById('infotest').innerHTML=a;
-		});
-		getjson("http://localhost:3000/schools",function(data){
-			let out="";
-			for(let a=0,b=data.length;a<b;a++){
-				out+=`<p>${data[a].name}: ${data[a].totalApplicants}</p>`;
-			}
-			document.getElementById('datatest').innerHTML=out;
-		});
-	})();
-</script>
-<body>
-<div id="infotest"></div>
-<div id="datatest"></div>
-=======
 <html lang="sv">
 <head>
 	<title>Canvas test</title>
@@ -53,6 +9,5 @@
 <body>
 	<div id="infotest"></div>
 	<div id="datatest"></div>
->>>>>>> parent of ab11728... removing old unneeded stuff
 </body>
 </html>
