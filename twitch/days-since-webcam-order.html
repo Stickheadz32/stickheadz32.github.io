@@ -11,6 +11,12 @@
     .container{
       background:#444;
       display:inline-block;
+      width:400px;
+      height:400px;
+    }
+    .heightAdjust{
+      display:block;
+      padding:2.5em;
     }
     .mainbox{
       background:#444;
@@ -18,17 +24,15 @@
       border:solid 1px #fff;
       border-width:0.2em 0;
       padding:0.5em;
-      margin:2.5em;
-      display:inline-block;
-      width:400px;
-      height:400px;
+      display:block;
+      min-height:297px;
     }
     .mainbox>.days{
       opacity:.8;
-      font-size:16em;
-      line-height:1;
+      font-size:12em;
+      line-height:0.9;
       padding:0;
-      margin:0.05em 0 0;
+      margin:0.1em 0 0;
     }
     .mainbox>.description{
       line-height:1.5;
@@ -40,9 +44,11 @@
 </head>
 <body>
   <div class="container">
-    <div class="mainbox">
-      <h1 class="days">Loading...</h1>
-      <p class="description">DAYS SINCE<br>WEBCAM ORDER</p>
+    <div class="heightAdjust">
+      <div class="mainbox">
+        <h1 class="days">Loading...</h1>
+        <p class="description">DAYS SINCE<br>WEBCAM ORDER</p>
+      </div>
     </div>
   </div>
   <script type="text/javascript">
